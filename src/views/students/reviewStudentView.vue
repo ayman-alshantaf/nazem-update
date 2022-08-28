@@ -58,7 +58,6 @@ export default {
         backgroundColor: 'transparent',
         border: "1px solid #E2E2EA",
         borderRadius: "10px",
-
       },
       items: ['foo', 'bar', 'fizz', 'buzz'],
       value: ['foo', 'bar', 'fizz', 'buzz'],

@@ -11,7 +11,7 @@
               <div class="header-tabs">
                 <div class="import-export-file">
                   <div class="search pt-2" style="display: flex">
-                    <search-input/>
+                    <search-input :style="styleSearch"/>
                     <btn-search style="width: 100px"/>
                   </div>
                   <div class="export-file">
@@ -20,8 +20,8 @@
                   <div class="import-file">
                     <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
                   </div>
-                  <div class="add-new" >
-                    <dialog-modal :name-input="'إضافة إنذار جديد'" :title="'إضافة إنذار جديد'">
+                  <div class="add-new">
+                    <dialog-modal :name-input="'إضافة فترة جديد'" :title="'إضافة فترة جديد'">
                       <div class="form-modal">
                         <form>
                           <v-row>
@@ -29,30 +29,30 @@
                               <label style="right: 4%">اسم الطالب</label>
                               <select-input :name="'أختر من هنا اسم الطالب'" :items="items"/>
                             </v-col>
-                            <v-col cols="12">
-                              <label style="right: 4%">اسم المسار</label>
-                              <select-input :name="'اسم المسار'" :items="items"/>
+                            <v-col cols="12" lg="6">
+                              <label style="right: 7%">اسم المسار</label>
+                              <select-input :name="'أختر المسار'" :items="items"/>
                             </v-col>
-                            <v-col cols="12">
-                              <label style="right: 4%">اسم التحذير</label>
-                              <input-text :placeholder="'اسم التحذير'"/>
-                            </v-col>
-                            <v-col cols="12" lg="6" md="6">
-                              <label>تحويل التحذير لانذار</label>
-                              <select-input :name="'نعم/لا'" :items="['نعم','لا']"/>
+                            <v-col cols="12" lg="6">
+                              <label style="right: 7%">الفصل</label>
+                              <select-input :name="'أختر  الفصل'" :items="items"/>
                             </v-col>
                             <v-col cols="12" lg="6" md="6">
-                              <label>استبعاد من البرنامج</label>
-                              <select-input :name="'نعم/لا/ايقاف مؤقت'" :items="['ايقاف مؤقت','نعم','لا']"/>
+                              <label style="right: 7%">مقدار الفترة</label>
+                              <input-text :placeholder="'مقدار الفترة'"/>
+                            </v-col>
+                            <v-col cols="12" lg="6" md="6">
+                              <label>نوعه</label>
+                              <select-input :name="'عرض'" :items="['نعم','لا']"/>
+                            </v-col>
+                            <v-col cols="12" lg="6" md="6">
+                              <label>تاريخ الاختبار</label>
+                              <select-input :name="'تاريخ الاختبار'" :items="['ايقاف مؤقت','نعم','لا']"/>
                             </v-col>
 
                             <v-col cols="12" lg="6" md="6">
-                              <label>تحديد المده</label>
-                              <select-input :name="'شهري'" :items="['شهري','اسبوعي','سنوي']"/>
-                            </v-col>
-                            <v-col cols="12" lg="6" md="6">
-                              <label>عدد الانذرات</label>
-                              <input-text :placeholder="'عدد الانذرات'"/>
+                              <label>وقت الاختبار</label>
+                              <select-input :name="'وقت الاختبار'" :items="['شهري','اسبوعي','سنوي']"/>
                             </v-col>
                             <v-col cols="12">
                               <v-btn block color="#00B5AD" style="color: white;font-size: 15px;height: 45px">اضافة
@@ -72,19 +72,32 @@
             <template v-slot:contentTabOne>
               <div class="all-card">
                 <v-row>
-                  <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6"
-                         style="padding: 10px 9px">
-                    <card-inter-view
-                        name-btn="تصفيير"
-                        :name="student.name"
-                        :class-name="student.className"
-                        :statusStudent="student.alarm"
-                        :status="student.alarmStatus"
-                        :items-path-array="student.alarmStudent"
-                        :idCardStudent="student.id"
-                        :show-btn="false"
-                        :show-btn-warning="true"
-                    />
+                  <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6" style="padding: 10px 9px">
+                    <card-inter-view name-btn="إعادة الاختبار" :name="student.name"
+                        :class-name="student.className" :items-path-array="student.ourPrograms"
+                        :idCardStudent="student.id" :show-btn="false" :show-btn-warning="true">
+                      <div class="form-program py-5">
+                        <v-row>
+                          <v-col cols="12">
+                            <input-text label-top="مقدار الخطأ" :placeholder="'مرات الخطأ'"/>
+                          </v-col>
+                          <v-col cols="12" lg="6" style="padding-left: 0">
+                            <input-text label-top="مقدار اللحن" :placeholder="'مقدار اللحن'"/>
+                          </v-col>
+                          <v-col cols="12" lg="6" style="padding-right: 0">
+                            <input-text label-top="مقدار التنبيه" :placeholder="'مقدار التنبيه'"/>
+                          </v-col>
+                        </v-row>
+                        <div class="degree">
+                          <div class="all-degree">
+                            <span>الدرجة الكلية:100</span>
+                          </div>
+                          <div class="success-degree">
+                            <span>الدرجة النجاح:50</span>
+                          </div>
+                        </div>
+                      </div>
+                    </card-inter-view>
                   </v-col>
                 </v-row>
               </div>
@@ -154,7 +167,7 @@ export default {
   data() {
     return {
       items: [
-     'الأختبارات',    'العرض',
+        'الأختبارات', 'العرض',
       ],
       itemsOption: [
         {title: 'الفصل '},
@@ -229,11 +242,39 @@ export default {
 </style>
 <style lang="scss">
 .ourProgramsView {
+
+
   .theme--light.v-input input, .theme--light.v-input textarea {
     font-size: 14px !important;
     font-weight: bold !important;
     color: #707070 !important;
     margin-top: 5px;
+  }
+
+  .form-program {
+    border-bottom:1px solid rgba(143, 146, 161, 0.26);
+    .input-text label {
+      right: 5% !important;
+    }
+
+    .theme--light.v-input input, .theme--light.v-input textarea {
+      font-size: 13px !important;
+      padding-right: 10px !important;
+      color: #CBCACA !important;
+    }
+
+    .degree {
+      display: flex;
+      justify-content: space-between;
+      color: #202020;
+      padding-top: 10px;
+      padding-right: 10px;
+      padding-left: 10px;
+
+      span {
+        font-size: 17px !important;
+      }
+    }
   }
 
   .v-input__icon i {
@@ -295,8 +336,9 @@ export default {
   .theme--light.v-tabs > .v-tabs-bar {
     min-height: 65px !important;
   }
-.main-right-section{
-  min-width: 28% !important;
-}
+
+  .main-right-section {
+    min-width: 28% !important;
+  }
 }
 </style>

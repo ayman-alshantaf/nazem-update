@@ -35,6 +35,7 @@
         <div class=" last-of-type" style="width: 100% "></div>
       </v-row>
     </div>
+    <slot></slot>
     <div class="btn-done">
       <v-btn  v-show="showBtn" :to="{name: 'recitationView' , params:{id:idCardStudent}}" class="mt-3 mb-4" block>
         تسميع

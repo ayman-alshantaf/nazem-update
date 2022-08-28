@@ -281,6 +281,44 @@ export default new Vuex.Store({
                         subTitle: 'شهري'
                     },
                 ],
+                ourPrograms: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار ',
+                        subTitle: 'المسار الاول'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'الفصل',
+                        subTitle: 'الفصل الاول'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'نوعه',
+                        subTitle: 'عرض أو اختبار'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ الاختبار',
+                        subTitle: '12-2-1344'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'وقت الاختبار',
+                        subTitle: 'الساعه (12:12) ص'
+                    },
+                ],
             },
             {
                 id: 2,
@@ -376,6 +414,45 @@ export default new Vuex.Store({
                         subTitle: 'شهري'
                     },
                 ],
+                ourPrograms: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار ',
+                        subTitle: 'المسار الاول'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'الفصل',
+                        subTitle: 'الفصل الاول'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'نوعه',
+                        subTitle: 'عرض أو اختبار'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ الاختبار',
+                        subTitle: '12-2-1344'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'وقت الاختبار',
+                        subTitle: 'الساعه (12:12) ص'
+                    },
+                ],
+
             },
             {
                 id: 3,
@@ -467,6 +544,44 @@ export default new Vuex.Store({
                         icon: require('@/assets/image/icon/Group 77770.png'),
                         title: 'المدة',
                         subTitle: 'شهري'
+                    },
+                ],
+                ourPrograms: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار ',
+                        subTitle: 'المسار الاول'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'الفصل',
+                        subTitle: 'الفصل الاول'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'نوعه',
+                        subTitle: 'عرض أو اختبار'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ الاختبار',
+                        subTitle: '12-2-1344'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'وقت الاختبار',
+                        subTitle: 'الساعه (12:12) ص'
                     },
                 ],
 
@@ -561,6 +676,44 @@ export default new Vuex.Store({
                         icon: require('@/assets/image/icon/Group 77770.png'),
                         title: 'المدة',
                         subTitle: 'شهري'
+                    },
+                ],
+                ourPrograms: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار ',
+                        subTitle: 'المسار الاول'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'الفصل',
+                        subTitle: 'الفصل الاول'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'نوعه',
+                        subTitle: 'عرض أو اختبار'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ الاختبار',
+                        subTitle: '12-2-1344'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'وقت الاختبار',
+                        subTitle: 'الساعه (12:12) ص'
                     },
                 ],
 
@@ -660,6 +813,44 @@ export default new Vuex.Store({
                         subTitle: 'شهري'
                     },
                 ],
+                ourPrograms: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار ',
+                        subTitle: 'المسار الاول'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'الفصل',
+                        subTitle: 'الفصل الاول'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'نوعه',
+                        subTitle: 'عرض أو اختبار'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ الاختبار',
+                        subTitle: '12-2-1344'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'وقت الاختبار',
+                        subTitle: 'الساعه (12:12) ص'
+                    },
+                ],
 
 
             },
@@ -753,6 +944,44 @@ export default new Vuex.Store({
                         icon: require('@/assets/image/icon/Group 77770.png'),
                         title: 'المدة',
                         subTitle: 'شهري'
+                    },
+                ],
+                ourPrograms: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار ',
+                        subTitle: 'المسار الاول'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'الفصل',
+                        subTitle: 'الفصل الاول'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'نوعه',
+                        subTitle: 'عرض أو اختبار'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ الاختبار',
+                        subTitle: '12-2-1344'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'وقت الاختبار',
+                        subTitle: 'الساعه (12:12) ص'
                     },
                 ],
 
@@ -850,6 +1079,44 @@ export default new Vuex.Store({
                         subTitle: 'شهري'
                     },
                 ],
+                ourPrograms: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار ',
+                        subTitle: 'المسار الاول'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'الفصل',
+                        subTitle: 'الفصل الاول'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'نوعه',
+                        subTitle: 'عرض أو اختبار'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ الاختبار',
+                        subTitle: '12-2-1344'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'وقت الاختبار',
+                        subTitle: 'الساعه (12:12) ص'
+                    },
+                ],
 
 
             },
@@ -944,6 +1211,44 @@ export default new Vuex.Store({
                         icon: require('@/assets/image/icon/Group 77770.png'),
                         title: 'المدة',
                         subTitle: 'شهري'
+                    },
+                ],
+                ourPrograms: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار ',
+                        subTitle: 'المسار الاول'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'الفصل',
+                        subTitle: 'الفصل الاول'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'نوعه',
+                        subTitle: 'عرض أو اختبار'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ الاختبار',
+                        subTitle: '12-2-1344'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'وقت الاختبار',
+                        subTitle: 'الساعه (12:12) ص'
                     },
                 ],
 
@@ -1043,8 +1348,44 @@ export default new Vuex.Store({
                         subTitle: 'شهري'
                     },
                 ],
-
-
+                ourPrograms: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار ',
+                        subTitle: 'المسار الاول'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'الفصل',
+                        subTitle: 'الفصل الاول'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'نوعه',
+                        subTitle: 'عرض أو اختبار'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ الاختبار',
+                        subTitle: '12-2-1344'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'وقت الاختبار',
+                        subTitle: 'الساعه (12:12) ص'
+                    },
+                ],
             },
         ],
         recitationDetails: [
