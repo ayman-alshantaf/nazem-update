@@ -456,6 +456,7 @@ export default {
           .container-radio {
             border: 1px solid rgba(6, 83, 254, 0.21);
             border-radius: 5px;
+            padding: 25px 15px;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -531,7 +532,7 @@ export default {
     font-size: 20px !important;
   }
 
-  .v-input--radio-group--column .v-radio[data-v-ae2cdb60]:not(:last-child):not(:only-child) {
+  .v-input--radio-group--column .v-radio {
     margin-bottom: 0;
     width: 100% !important;
     position: absolute !important;
