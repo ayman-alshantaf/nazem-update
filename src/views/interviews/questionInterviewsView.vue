@@ -515,7 +515,7 @@ export default {
 </style>
 <style lang="scss">
 .recitation-interview {
-  .v-btn:not(.v-btn--round).v-size--default {
+ .v-size--default {
     padding-top: 22px !important;
     padding-bottom: 24px !important;
   }
@@ -711,7 +711,7 @@ label.custom-label-recitation-interview {
   .container-question-modal .all-answer .content-answer .answer .container-radio {
     padding: 10px !important;
   }
-  .v-btn:not(.v-btn--round).v-size--default {
+  .v-size--default {
     padding-top: 22px !important;
     padding-bottom: 24px !important;
   }
