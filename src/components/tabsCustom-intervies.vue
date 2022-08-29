@@ -8,7 +8,6 @@
       </div>
       <div class="main-left-section">
         <slot name="header-tabs"></slot>
-        <slot name="header-tabs2"></slot>
       </div>
     </div>
     <v-tabs-slider color="#00B5AD"></v-tabs-slider>

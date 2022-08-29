@@ -65,64 +65,6 @@
                 </div>
               </div>
             </template>
-            <template v-slot:header-tabs2>
-              <div class="header-tabs">
-                <div class="import-export-file">
-                  <div class="search pt-2" style="display: flex">
-                    <search-input :style="styleSearch"/>
-                    <btn-search style="width: 100px"/>
-                  </div>
-                  <div class="export-file">
-                    <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
-                  </div>
-                  <div class="import-file">
-                    <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
-                  </div>
-                  <div class="add-new">
-                    <dialog-modal :name-input="'إضافة فترة جديد'" :title="'إضافة فترة جديد'">
-                      <div class="form-modal">
-                        <form>
-                          <v-row>
-                            <v-col cols="12">
-                              <label style="right: 4%">اسم الطالب</label>
-                              <select-input :name="'أختر من هنا اسم الطالب'" :items="items"/>
-                            </v-col>
-                            <v-col cols="12" lg="6">
-                              <label style="right: 7%">اسم المسار</label>
-                              <select-input :name="'أختر المسار'" :items="items"/>
-                            </v-col>
-                            <v-col cols="12" lg="6">
-                              <label style="right: 7%">الفصل</label>
-                              <select-input :name="'أختر  الفصل'" :items="items"/>
-                            </v-col>
-                            <v-col cols="12" lg="6" md="6">
-                              <label style="right: 7%">مقدار الفترة</label>
-                              <input-text :placeholder="'مقدار الفترة'"/>
-                            </v-col>
-                            <v-col cols="12" lg="6" md="6">
-                              <label>نوعه</label>
-                              <select-input :name="'عرض'" :items="['نعم','لا']"/>
-                            </v-col>
-                            <v-col cols="12" lg="6" md="6">
-                              <date-customer :label="'تاريخ الاختبار'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
-                            </v-col>
-
-                            <v-col cols="12" lg="6" md="6">
-                              <label>وقت الاختبار</label>
-                              <select-input :name="'وقت الاختبار'" :items="['شهري','اسبوعي','سنوي']"/>
-                            </v-col>
-                            <v-col cols="12">
-                              <v-btn block color="#00B5AD" style="color: white;font-size: 15px;height: 45px">اضافة
-                              </v-btn>
-                            </v-col>
-                          </v-row>
-                        </form>
-                      </div>
-                    </dialog-modal>
-                  </div>
-                </div>
-              </div>
-            </template>
             <!-- end   section header top tabs-->
 
             <!-- start   section content 'card' top tabs-->
@@ -409,6 +351,8 @@ export default {
     min-height: 45px !important;
   }
 }
-
+ .edit-delete{
+  cursor: pointer !important;
+}
 
 </style>
