@@ -329,6 +329,7 @@ export default {
     .number-question {
       display: flex;
       background-color: rgba(56, 91, 114, 0.16);
+      padding: 25px 30px;
       justify-content: space-between;
       align-items: center;
 
@@ -455,7 +456,6 @@ export default {
           .container-radio {
             border: 1px solid rgba(6, 83, 254, 0.21);
             border-radius: 5px;
-            padding: 25px 15px;
             display: flex;
             align-items: center;
             justify-content: space-between;
