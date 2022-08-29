@@ -1,6 +1,6 @@
 <template>
-  <div class="text-center select-radio">
-    <v-menu offset-y>
+  <div class="text-center select-radio" >
+    <v-menu offset-y >
       <template v-slot:activator="{ on, attrs }">
         <v-btn class="custom-select" dark v-bind="attrs" v-on="on" >
           طريقة التحديد

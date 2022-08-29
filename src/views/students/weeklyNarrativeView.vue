@@ -47,8 +47,7 @@
                             <select-input :name="'أختر الفترة'" :items="items"/>
                           </v-col>
                           <v-col cols="12" lg="6" md="6">
-                            <label class="custom-label"> أختر يوم السرد</label>
-                            <select-input :name="'أختر يوم السرد'" :items="items"/>
+                            <date-customer :label="'أختر يوم السرد'" :name-placeholder="'أختر يوم السرد'"/>
                           </v-col>
                           <v-col  cols="12" lg="6" md="6">
                             <label class="custom-label"> أختر من بنود السرد</label>
@@ -60,25 +59,16 @@
 
                           </v-col>
                           <v-col cols="12" class="custom-input">
-                            <v-text-field
-                                v-model="name"
-                                label="مقدار البند"
-                                required
-                            ></v-text-field>
+                            <label style="right: 4%">مقدار البند</label>
+                            <input-text :placeholder="'مقدار البند'"/>
                           </v-col>
                           <v-col cols="12" lg="6" md="6" class="custom-input">
-                            <v-text-field
-                                v-model="name"
-                                label="من الوجه"
-                                required
-                            ></v-text-field>
+                            <label style="right: 7%">من الوجه</label>
+                            <input-text :placeholder="'من الوجه'"/>
                           </v-col>
                           <v-col cols="12" lg="6" md="6" class="custom-input">
-                            <v-text-field
-                                v-model="name"
-                                label="الى الوجه"
-                                required
-                            ></v-text-field>
+                            <label style="right: 7%">الى الوجه</label>
+                            <input-text :placeholder="'الى الوجه'"/>
                           </v-col>
                           <v-col cols="12">
                             <v-btn block color="#00B5AD" style="color: white;font-size: 15px;height: 45px">اضافة</v-btn>
@@ -115,10 +105,14 @@ import CardNarrative from "@/components/cards/cardNarrative";
 import SelectInput from "@/components/select-input";
 import {mapMutations} from "vuex";
 import BtnSearch from "@/components/btnSearch";
+import DateCustomer from "@/components/date-customer";
+import InputText from "@/components/input-text";
 
 export default {
   name: "weeklyNarrativeView",
   components: {
+    InputText,
+    DateCustomer,
     BtnSearch,
     SelectInput,
     CardNarrative,
@@ -262,37 +256,61 @@ export default {
     margin-right: 3px;
   }
 
+  .form-modal {
+    padding: 15px 0;
+    .col-12{
+      position: relative;
+    }
+    .v-label {
+      right: 0 !important;
+      left: auto !important;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 15px ;
+      background-color: white;
+      position: absolute;
+      top: 0;
+      z-index: 50;
+      right: 7%;
+    }
+    label.custom-label{
+      font-size: 14px !important;
+    }
+
+    .v-input__slot {
+      margin-bottom: 0 !important;
+       input{
+         font-size: 14px !important;
+       }
+    }
+
+    .custom-input {
+      .v-text-field {
+        border: 1px solid rgba(21, 57, 135, 0.28);
+        border-radius: 5px;
+      }
+
+      .v-text-field__details {
+        display: none;
+      }
+
+      label {
+        padding-right: 0px !important;
+        margin-bottom: 0px !important;
+      }
+
+      .v-text-field .v-label {
+        top: 3px !important;
+      }
+    }
+
+  }
 
 }
-
 .form-modal {
-  padding: 15px 0;
-  .col-12{
-    position: relative;
-  }
-  .v-label {
-    right: 0 !important;
-    left: auto !important;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 15px ;
-    background-color: white;
-    position: absolute;
-    top: 0;
-    z-index: 50;
-    right: 7%;
-  }
-  label.custom-label{
-    font-size: 14px !important;
-  }
-
-  .v-input__slot {
-    margin-bottom: 0 !important;
-  }
-
   .custom-input {
     .v-text-field {
       border: 1px solid rgba(21, 57, 135, 0.28);
@@ -304,14 +322,22 @@ export default {
     }
 
     label {
-      padding-right: 10px;
-      margin-bottom: 10px;
+      padding-right: 0px !important;
+      margin-bottom: 0px !important;
     }
 
     .v-text-field .v-label {
       top: 3px !important;
     }
   }
-
+  .v-input__slot {
+    margin-bottom: 0 !important;
+    input{
+      font-size: 14px !important;
+      padding-right: 9px;
+    }
+  }
 }
+
+
 </style>

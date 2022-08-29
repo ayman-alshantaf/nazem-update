@@ -20,13 +20,13 @@ export default new Vuex.Store({
                 {id: 6, title: "الاذونات", icon: 'fa fa-stop-circle-o', urlPath: "/permissionsView"},
             ],
             interviews: [
-                {id: 1, title: "المقابلات", icon: 'fa fa-home', urlPath: "/interviewsView"},
+                {id: 1, title: "المقابلات", icon: 'fa-solid fa-video-slash', urlPath: "/interviewsView"},
                 {id: 2, title: "أسئلة المقابلات", icon: 'fa fa-home', urlPath: "/questionInterview"},
-                {id: 3, title: "طلبات القبول", icon: 'fa fa-home', urlPath: "/admissionRequests"},
+                {id: 3, title: "طلبات القبول", icon: 'fa fa-user-plus', urlPath: "/admissionRequests"},
             ],
             records: [
-                {id: 1, title: "سجل الانذرات", icon: 'fa fa-home', urlPath: "/alarmView"},
-                {id: 2, title: "سجل التحذيرات", icon: 'fa fa-home', urlPath: "/warningView"},
+                {id: 1, title: "سجل الانذرات", icon: 'fa fa-exclamation-circle', urlPath: "/alarmView"},
+                {id: 2, title: "سجل التحذيرات", icon: 'fa fa-ban', urlPath: "/warningView"},
             ],
             ourPrograms: [
                 {id: 1, title: "الاختبار والعرض", icon: 'fa fa-home', urlPath: "/ourPrograms"},
@@ -175,6 +175,18 @@ export default new Vuex.Store({
                 },
                 {
                     id: 8,
+                    name: "عبدالرحمن بن علي عثمان العيد",
+                    className: 'طالب في فصل مالك ابن انس',
+                    saveStudent: 'لم تم الحفظ',
+                    status: 0,
+                    reviewStudent: 'تم المراجعة',
+                    statusReview: 1,
+                    score: 75,
+                    passingScore: 50,
+                    description: 'هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات في الصفحة التي يقرأها.'
+                },
+                {
+                    id: 9,
                     name: "عبدالرحمن بن علي عثمان العيد",
                     className: 'طالب في فصل مالك ابن انس',
                     saveStudent: 'لم تم الحفظ',

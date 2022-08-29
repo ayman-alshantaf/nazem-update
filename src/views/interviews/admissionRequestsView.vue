@@ -48,8 +48,7 @@
                           <select-input :name="'أدخل هنا وقت التسميع'" :items="items"/>
                         </v-col>
                         <v-col  cols="12" lg="6" md="6">
-                          <label>أيام التسميع</label>
-                          <select-input :name="'أدخل هنا أيام التسميع'" :items="items"/>
+                            <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
                         </v-col>
                         <v-col  cols="12" lg="6" md="6">
                           <label>كيفية التسميع</label>
@@ -102,10 +101,12 @@ import DialogModal from "@/components/dialogModal";
 import SelectInput from "@/components/select-input";
 import {mapMutations, mapState} from "vuex";
 import CardInterView from "@/components/cards/card-interView";
+import DateCustomer from "@/components/date-customer";
 
 export default {
   name: "permissionsView",
   components: {
+    DateCustomer,
     CardInterView,
     SelectInput,
     DialogModal, ImportFile, DateSelectModal, SearchInput, PaginationComponents
@@ -301,4 +302,5 @@ export default {
   }
 
 }
+
 </style>

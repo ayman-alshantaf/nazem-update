@@ -2,7 +2,7 @@
   <div class="card-number">
     <h6>{{ title }}</h6>
     <h5>
-      <counter-number :from="500" :to="number" />
+      <counter-number  :from="500" :to="number" />
     </h5>
     <div class="percent-container">
       <div style="display: flex">

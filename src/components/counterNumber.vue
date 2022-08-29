@@ -4,7 +4,7 @@
       :from="from"
       :to="to"
       :format="theFormat"
-      :duration="5"
+      :duration="1"
       easing="Power1.easeOut"/>
 
 </template>

@@ -49,22 +49,18 @@
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
                           <label>أختر فترة الاجازة</label>
-                          <select-input :name="'أختر  فترة الاجازة'" :items="items"/>
+                          <select-input :name="'أختر الفترة'" :items="items"/>
                         </v-col>
                         <v-col  cols="12" lg="6" md="6">
                           <label>أختر نوع الاجازة </label>
-                          <select-input :name="'اختر نوع الاجازة'" :items="['نعم','لا']"/>
+                          <select-input :name="'أختر المسار'" :items="['نعم','لا']"/>
 
                         </v-col>
                         <v-col  cols="12" lg="6" md="6">
-                          <label> اختر بداية الاجازة</label>
-                          <select-input :name="'اختر بداية الاجازة'" :items="['نعم','لا']"/>
-
+                          <date-customer :label="'اختر بداية الاجازة'" :name-placeholder="'اختر بداية الاجازة'"/>
                         </v-col>
                         <v-col  cols="12" lg="6" md="6">
-                          <label>اختر نهاية الاجازة</label>
-                          <select-input :name="'اختر نهاية الاجازة'" :items="['نعم','لا']"/>
-
+                          <date-customer :label="'اختر نهاية الاجازة'" :name-placeholder="'اختر نهاية الاجازة'"/>
                         </v-col>
                         <v-col cols="12" class="custom-input">
                           <v-textarea
@@ -112,10 +108,12 @@ import DialogModal from "@/components/dialogModal";
 import SelectInput from "@/components/select-input";
 import {mapMutations, mapState} from "vuex";
 import CardFollow from "@/components/cards/cardFollow";
+import DateCustomer from "@/components/date-customer";
 
 export default {
   name: "studentVacationsView",
   components: {
+    DateCustomer,
     CardFollow,
     SelectInput,
     DialogModal, ImportFile, DateSelectModal, SearchInput, PaginationComponents

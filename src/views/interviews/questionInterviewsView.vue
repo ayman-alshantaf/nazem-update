@@ -8,7 +8,7 @@
               <div class="icon">
                 <img :src="imageIcon.squareIcon" alt="image icon">
               </div>
-              <h3>السؤال الأول</h3>
+              <h3> السؤال الأول</h3>
             </div>
             <div class="left-section">
               <div class="degree">
@@ -515,6 +515,10 @@ export default {
 </style>
 <style lang="scss">
 .recitation-interview {
+  .v-btn:not(.v-btn--round).v-size--default {
+    padding-top: 22px !important;
+    padding-bottom: 24px !important;
+  }
   .v-input--selection-controls .v-input__slot > .v-label, .v-input--selection-controls .v-radio > .v-label {
     color: #00B5AD !important;
     margin-bottom: 7px;
@@ -707,6 +711,12 @@ label.custom-label-recitation-interview {
   .container-question-modal .all-answer .content-answer .answer .container-radio {
     padding: 10px !important;
   }
+  .v-btn:not(.v-btn--round).v-size--default {
+    padding-top: 22px !important;
+    padding-bottom: 24px !important;
+  }
 }
-
+.v-btn__content{
+  font-size: 18px;
+}
 </style>

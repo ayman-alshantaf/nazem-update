@@ -3,12 +3,14 @@
 
     <v-tabs v-model="tab" background-color="transparent" color="basil" grow>
       <v-tab ripple href='#tab-1'>
+        <span class="number-step1">1</span>
         نوع السؤال
         <div class="dote dote-one">
           <i class="fa fa-dot-circle-o"></i>
         </div>
       </v-tab>
       <v-tab ripple href='#tab-2'>
+        <span class="number-step2">2</span>
         إضافة السؤال
         <div class="dote dote-tow">
           <i class="fa fa-dot-circle-o"></i>
@@ -66,6 +68,24 @@ export default {
 
 <style lang="scss" scoped>
 .step-by-step {
+  .number-step1 , .number-step2{
+    width: 22px;
+    height: 22px;
+    background-color: #00B5AD;
+    border-radius: 50%;
+    font-size: 13px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 2px;
+    padding-left: 1px;
+    margin-top: 5px;
+    margin-left: 8px;
+  }
+  .number-step2{
+    background-color: v-bind('backgroundColorDote');
+  }
   .dote {
     position: absolute;
     bottom: -27%;

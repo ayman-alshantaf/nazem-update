@@ -57,14 +57,10 @@
 
                         </v-col>
                         <v-col  cols="12" lg="6" md="6">
-                          <label>بداية الاجازة</label>
-                          <select-input :name="'اختر بداية الاجازة'" :items="['نعم','لا']"/>
-
+                          <date-customer :label="'اختر بداية الاجازة'" :name-placeholder="'اختر بداية الاجازة'"/>
                         </v-col>
                         <v-col  cols="12" lg="6" md="6">
-                          <label>نهاية الاجازة</label>
-                          <select-input :name="'اختر نهاية الاجازة'" :items="['نعم','لا']"/>
-
+                          <date-customer :label="'اختر نهاية الاجازة'" :name-placeholder="'اختر نهاية الاجازة'"/>
                         </v-col>
                         <v-col cols="12" class="custom-input">
                           <v-textarea
@@ -113,10 +109,12 @@ import DialogModal from "@/components/dialogModal";
 import SelectInput from "@/components/select-input";
 import {mapMutations, mapState} from "vuex";
 import CardFollow from "@/components/cards/cardFollow";
+import DateCustomer from "@/components/date-customer";
 
 export default {
   name: "permissionsView",
   components: {
+    DateCustomer,
     CardFollow,
     SelectInput,
     DialogModal, ImportFile, DateSelectModal, SearchInput, PaginationComponents
