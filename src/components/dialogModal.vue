@@ -2,11 +2,15 @@
   <div class="text-center modal-custom">
     <v-dialog v-model="dialog" :width="widthSize">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn color="button-modal" dark v-bind="attrs" v-on="on">
+        <v-btn  v-show="showBasicBtn" color="button-modal" dark v-bind="attrs" v-on="on">
           <i class="fa fa-plus" style="font-size: 13px;margin-bottom: 2px"></i>
           {{ nameInput }}
         </v-btn>
+        <a class="add-new-option" v-show="showTowBtn"  v-bind="attrs" v-on="on">
+          {{ nameInput }}
+        </a>
       </template>
+
 
       <v-card>
         <v-card-title class=" grey lighten-2 py-9" style="background-color: #385B72 ">
@@ -42,7 +46,15 @@ export default {
     widthSize:{
       type:Number,
       default:700
-    }
+    },
+    showBasicBtn:{
+      type:Boolean,
+      default:true
+    },
+    showTowBtn:{
+      type:Boolean,
+      default:false
+    },
   },
   data() {
     return {
@@ -107,5 +119,14 @@ export default {
   align-items: center;
   border-radius: 50%;
   color: #E71D36;
+}
+.add-new-option {
+  position: absolute;
+  bottom: -2%;
+  left: 2%;
+  font-size: 15px;
+  text-decoration: underline;
+  color: #00B5AD !important;
+  font-weight: bold;
 }
 </style>

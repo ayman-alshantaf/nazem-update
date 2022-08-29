@@ -2,131 +2,132 @@
   <section class="recitation-interview">
     <v-main>
       <div class="container--fluid">
-        <div class="container-question">
-          <div class="number-question">
-            <div class="right-section">
-              <div class="icon">
-                <img :src="imageIcon.squareIcon" alt="image icon">
-              </div>
-              <h3> السؤال الأول</h3>
-            </div>
-            <div class="left-section">
-              <div class="degree">
-                <h3>درجة السؤال</h3>
-                <span class="number">50</span>
-                <span class="close-icon"><i class="fa fa-times"></i></span>
-              </div>
-            </div>
-          </div>
-          <div class="content-question">
-            <div class="question">
-              <h5>عبدالله بن عباس.. لماذا لقب بـ حبر الأمة وترجمان القرآن؟</h5>
-              <span class="type-question">سؤال أختر</span>
-            </div>
-            <div class="all-answer">
-              <div class="content-answer">
-                <div class="image-option">
-                  <div class="image">
-                    <img :src="imageIcon.squareIcon2">
-                  </div>
-                  <div class="number-option">
-                    <span>الأختيار الأول</span>
-                  </div>
-                </div>
-                <div class="answer">
-                  <v-radio-group v-model="radioGroup" dir="ltr">
-                    <div class="container-radio">
-                      <v-radio
-                          :label="'الاجابة الصحيحة'"
-                          :value="'عبدالله بن عباس'"
-                      ></v-radio>
-                      <p>عبدالله بن عباس</p>
-                    </div>
-                  </v-radio-group>
-                </div>
-                <div class="delete-option">
-                  <img :src="imageIcon.blockIcon">
-                </div>
-              </div>
-              <div class="content-answer">
-                <div class="image-option">
-                  <div class="image">
-                    <img :src="imageIcon.squareIcon2">
-                  </div>
-                  <div class="number-option">
-                    <span>الأختيار الثاني</span>
-                  </div>
-                </div>
-                <div class="answer">
-                  <v-radio-group v-model="radioGroup" dir="ltr">
-                    <div class="container-radio">
-                      <v-radio
-                          :label="'الاجابة الصحيحة'"
-                          :value="'أبو الحسن علي بن أبي طالب الهاشمي '"
-                      ></v-radio>
-                      <p>أبو الحسن علي بن أبي طالب الهاشمي </p>
-                    </div>
-                  </v-radio-group>
-                </div>
-                <div class="delete-option">
-                  <img :src="imageIcon.blockIcon">
-                </div>
-              </div>
-              <div class="content-answer">
-                <div class="image-option">
-                  <div class="image">
-                    <img :src="imageIcon.squareIcon2">
-                  </div>
-                  <div class="number-option">
-                    <span>الأختيار الثالث</span>
-                  </div>
-                </div>
-                <div class="answer">
-                  <v-radio-group v-model="radioGroup" dir="ltr">
-                    <div class="container-radio">
-                      <v-radio
-                          :label="'الاجابة الصحيحة'"
-                          :value="'طَلْحَة بن عُبَيْد اللّه التَّيمي القُرشي'"
-                      ></v-radio>
-                      <p>طَلْحَة بن عُبَيْد اللّه التَّيمي القُرشي</p>
-                    </div>
-                  </v-radio-group>
-                </div>
-                <div class="delete-option">
-                  <img :src="imageIcon.blockIcon">
-                </div>
-              </div>
-              <div class="content-answer">
-                <div class="image-option">
-                  <div class="image">
-                    <img :src="imageIcon.squareIcon2">
-                  </div>
-                  <div class="number-option">
-                    <span>الأختيار الرابع</span>
-                  </div>
-                </div>
-                <div class="answer">
-                  <v-radio-group v-model="radioGroup" dir="ltr">
-                    <div class="container-radio">
-                      <v-radio
-                          :label="'الاجابة الصحيحة'"
-                          :value="'عبد الرّحمن بن عوف القرشيّ الزهريّ'"
-                      ></v-radio>
-                      <p>عبد الرّحمن بن عوف القرشيّ الزهريّ</p>
-                    </div>
-                  </v-radio-group>
-                </div>
-                <div class="delete-option">
-                  <img :src="imageIcon.blockIcon">
-                </div>
-              </div>
-              <a class="add-new-option">
-                اضافة اختيار
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="container-question">
+        <to-do/>
+<!--        <div class="container-question">-->
+<!--          <div class="number-question">-->
+<!--            <div class="right-section">-->
+<!--              <div class="icon">-->
+<!--                <img :src="imageIcon.squareIcon" alt="image icon">-->
+<!--              </div>-->
+<!--              <h3> السؤال الأول</h3>-->
+<!--            </div>-->
+<!--            <div class="left-section">-->
+<!--              <div class="degree">-->
+<!--                <h3>درجة السؤال</h3>-->
+<!--                <span class="number">50</span>-->
+<!--                <span class="close-icon"><i class="fa fa-times"></i></span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="content-question">-->
+<!--            <div class="question">-->
+<!--              <h5>عبدالله بن عباس.. لماذا لقب بـ حبر الأمة وترجمان القرآن؟</h5>-->
+<!--              <span class="type-question">سؤال أختر</span>-->
+<!--            </div>-->
+<!--            <div class="all-answer">-->
+<!--              <div class="content-answer">-->
+<!--                <div class="image-option">-->
+<!--                  <div class="image">-->
+<!--                    <img :src="imageIcon.squareIcon2">-->
+<!--                  </div>-->
+<!--                  <div class="number-option">-->
+<!--                    <span>الأختيار الأول</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="answer">-->
+<!--                  <v-radio-group v-model="radioGroup" dir="ltr">-->
+<!--                    <div class="container-radio">-->
+<!--                      <v-radio-->
+<!--                          :label="'الاجابة الصحيحة'"-->
+<!--                          :value="'عبدالله بن عباس'"-->
+<!--                      ></v-radio>-->
+<!--                      <p>عبدالله بن عباس</p>-->
+<!--                    </div>-->
+<!--                  </v-radio-group>-->
+<!--                </div>-->
+<!--                <div class="delete-option">-->
+<!--                  <img :src="imageIcon.blockIcon">-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="content-answer">-->
+<!--                <div class="image-option">-->
+<!--                  <div class="image">-->
+<!--                    <img :src="imageIcon.squareIcon2">-->
+<!--                  </div>-->
+<!--                  <div class="number-option">-->
+<!--                    <span>الأختيار الثاني</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="answer">-->
+<!--                  <v-radio-group v-model="radioGroup" dir="ltr">-->
+<!--                    <div class="container-radio">-->
+<!--                      <v-radio-->
+<!--                          :label="'الاجابة الصحيحة'"-->
+<!--                          :value="'أبو الحسن علي بن أبي طالب الهاشمي '"-->
+<!--                      ></v-radio>-->
+<!--                      <p>أبو الحسن علي بن أبي طالب الهاشمي </p>-->
+<!--                    </div>-->
+<!--                  </v-radio-group>-->
+<!--                </div>-->
+<!--                <div class="delete-option">-->
+<!--                  <img :src="imageIcon.blockIcon">-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="content-answer">-->
+<!--                <div class="image-option">-->
+<!--                  <div class="image">-->
+<!--                    <img :src="imageIcon.squareIcon2">-->
+<!--                  </div>-->
+<!--                  <div class="number-option">-->
+<!--                    <span>الأختيار الثالث</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="answer">-->
+<!--                  <v-radio-group v-model="radioGroup" dir="ltr">-->
+<!--                    <div class="container-radio">-->
+<!--                      <v-radio-->
+<!--                          :label="'الاجابة الصحيحة'"-->
+<!--                          :value="'طَلْحَة بن عُبَيْد اللّه التَّيمي القُرشي'"-->
+<!--                      ></v-radio>-->
+<!--                      <p>طَلْحَة بن عُبَيْد اللّه التَّيمي القُرشي</p>-->
+<!--                    </div>-->
+<!--                  </v-radio-group>-->
+<!--                </div>-->
+<!--                <div class="delete-option">-->
+<!--                  <img :src="imageIcon.blockIcon">-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="content-answer">-->
+<!--                <div class="image-option">-->
+<!--                  <div class="image">-->
+<!--                    <img :src="imageIcon.squareIcon2">-->
+<!--                  </div>-->
+<!--                  <div class="number-option">-->
+<!--                    <span>الأختيار الرابع</span>-->
+<!--                  </div>-->
+<!--                </div>-->
+<!--                <div class="answer">-->
+<!--                  <v-radio-group v-model="radioGroup" dir="ltr">-->
+<!--                    <div class="container-radio">-->
+<!--                      <v-radio-->
+<!--                          :label="'الاجابة الصحيحة'"-->
+<!--                          :value="'عبد الرّحمن بن عوف القرشيّ الزهريّ'"-->
+<!--                      ></v-radio>-->
+<!--                      <p>عبد الرّحمن بن عوف القرشيّ الزهريّ</p>-->
+<!--                    </div>-->
+<!--                  </v-radio-group>-->
+<!--                </div>-->
+<!--                <div class="delete-option">-->
+<!--                  <img :src="imageIcon.blockIcon">-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <a class="add-new-option">-->
+<!--                اضافة اختيار-->
+<!--              </a>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+        <div class="container-question" >
           <div class="number-question">
             <div class="right-section">
               <div class="icon">
@@ -137,8 +138,8 @@
             <div class="left-section">
               <div class="degree">
                 <h3>درجة السؤال</h3>
-                <span class="number">50</span>
-                <span class="close-icon"><i class="fa fa-times"></i></span>
+                <input type="text" placeholder="50" class="number ml-4">
+                <span class="close-icon" @click="hideQuestion()"><i class="fa fa-times"></i></span>
               </div>
             </div>
           </div>
@@ -273,7 +274,6 @@
                         اضافة اختيار
                       </a>
                     </div>
-
                   </div>
                 </div>
               </div>
@@ -290,10 +290,11 @@ import DialogModal from "@/components/dialogModal";
 import StepBystep from "@/components/stepBystep";
 import SelectInput from "@/components/select-input";
 import InputText from "@/components/input-text";
+import ToDo from "@/components/toDo";
 
 export default {
   name: "questionInterviewsView",
-  components: {InputText, SelectInput, StepBystep, DialogModal},
+  components: {ToDo, InputText, SelectInput, StepBystep, DialogModal},
   data() {
     return {
       imageIcon: {
@@ -302,6 +303,13 @@ export default {
         blockIcon: require('@/assets/image/icon/Icon ionic-md-remove-circle-outline.png'),
       },
       radioGroup: 1,
+      displayShow:'block'
+
+    }
+  },
+  methods:{
+    hideQuestion(){
+      this.displayShow='none'
     }
   }
 }
@@ -320,6 +328,7 @@ export default {
   }
 
   .container-question {
+    display: v-bind('displayShow');
     background-color: white;
     border-radius: 20px;
     padding-bottom: 30px;
@@ -365,7 +374,8 @@ export default {
             margin-left: 10px;
           }
 
-          span.number {
+          input.number {
+            width: 40px;
             background-color: #FAFBFC;
             padding: 4px 8px;
             border: 1px solid rgba(6, 83, 254, 0.2);
@@ -507,7 +517,7 @@ export default {
     }
   }
 
-  .v-input--radio-group--column .v-radio:not(:last-child):not(:only-child) {
+  .v-input--radio-group--column .v-radio {
     margin-bottom: 0;
   }
 

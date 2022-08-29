@@ -147,7 +147,7 @@ const gradients = [
 ]
 export default {
   name: "dashboardView",
-  components: { PercentChart, CardNumber, DatePickers, DateSelectModal, CalenderDashboard},
+  components: {PercentChart, CardNumber, DatePickers, DateSelectModal, CalenderDashboard},
   data() {
     return {
       events: [
