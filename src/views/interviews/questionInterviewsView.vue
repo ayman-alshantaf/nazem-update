@@ -329,7 +329,6 @@ export default {
     .number-question {
       display: flex;
       background-color: rgba(56, 91, 114, 0.16);
-      padding: 25px 30px;
       justify-content: space-between;
       align-items: center;
 
