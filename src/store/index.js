@@ -20,8 +20,8 @@ export default new Vuex.Store({
                 {id: 6, title: "الاذونات", icon: 'fa fa-stop-circle-o', urlPath: "/permissionsView"},
             ],
             interviews: [
-                {id: 1, title: "المقابلات", icon: 'fa-solid fa-video-slash', urlPath: "/interviewsView"},
-                {id: 2, title: "أسئلة المقابلات", icon: 'fa fa-home', urlPath: "/questionInterview"},
+                {id: 1, title: "المقابلات", icon: 'fa fa-map-o', urlPath: "/interviewsView"},
+                {id: 2, title: "أسئلة المقابلات", icon: 'fa fa-leanpub', urlPath: "/questionInterview"},
                 {id: 3, title: "طلبات القبول", icon: 'fa fa-user-plus', urlPath: "/admissionRequests"},
             ],
             records: [
@@ -29,7 +29,7 @@ export default new Vuex.Store({
                 {id: 2, title: "سجل التحذيرات", icon: 'fa fa-ban', urlPath: "/warningView"},
             ],
             ourPrograms: [
-                {id: 1, title: "الاختبار والعرض", icon: 'fa fa-home', urlPath: "/ourPrograms"},
+                {id: 1, title: "الاختبار والعرض", icon: 'fa fa-map-o', urlPath: "/ourPrograms"},
                 {id: 2, title: "تسجيل في البرامج", icon: 'fa fa-home', urlPath: "/...3"},
             ],
             branches: [
