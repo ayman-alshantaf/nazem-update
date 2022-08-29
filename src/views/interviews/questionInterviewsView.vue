@@ -557,7 +557,7 @@ export default {
     font-size: 16px !important;
   }
 
-  .modal-custom .button-modal[data-v-5b6df5e5] {
+  .modal-custom .button-modal {
     width: 100%;
   }
 
