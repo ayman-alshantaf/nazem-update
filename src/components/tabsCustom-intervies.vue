@@ -38,7 +38,17 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.section-top-tabs {
 
+  .v-tab--active {
+    color: black !important;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+}
+</style>
 <style lang="scss">
 .interviews {
   .v-slide-group.v-item-group > .v-slide-group__next, .v-slide-group.v-item-group > .v-slide-group__prev {
