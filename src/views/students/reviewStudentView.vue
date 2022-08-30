@@ -1,7 +1,8 @@
 <template>
+<!--start page reviewup student-->
   <section class="review-up-student">
     <v-main>
-      <div class="container--fluid" style="border-radius: 15px; background-color: white; padding: 15px">
+      <div class="container--fluid">
         <div class="top-bar-search">
           <div class="search-section">
             <form>
@@ -82,11 +83,12 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
-
 .review-up-student {
   background-color: $background-main-page;
   padding: 40px 20px;
-
+  .container--fluid{
+    border-radius: 15px; background-color: white; padding: 15px
+  }
   .top-bar-search {
     display: flex;
     justify-content: space-between;

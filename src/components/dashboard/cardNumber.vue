@@ -1,4 +1,5 @@
 <template>
+
   <div class="card-number">
     <h6>{{ title }}</h6>
     <h5>
@@ -14,7 +15,6 @@
           {{ percent }}%+
           <i class="fa fa-long-arrow-down"   style="transform: rotate(30deg);margin-right: 5px;"></i>
         </small>
-
       </div>
       <div class="chart-percent" v-show="viewShowChart">
         <slot></slot>

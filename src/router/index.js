@@ -15,6 +15,8 @@ import admissionRequestsView from "@/views/interviews/admissionRequestsView";
 import alarmView from "@/views/records/alarmView";
 import warningView from "@/views/records/warningView";
 import ourProgramsView from "@/views/ourPrograms/ourProgramsView";
+import registrationProgramView from "@/views/ourPrograms/registrationProgramView";
+import branchesView from "@/views/branches/branchesView";
 
 Vue.use(VueRouter)
 
@@ -93,6 +95,16 @@ const routes = [
     path: '/ourPrograms',
     name: 'ourPrograms',
     component: ourProgramsView
+  },
+  {
+    path: '/registrationProgram',
+    name: 'registrationProgram',
+    component: registrationProgramView
+  },
+  {
+    path: '/branches',
+    name: 'branches',
+    component: branchesView
   },
 
 

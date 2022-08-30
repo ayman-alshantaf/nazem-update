@@ -107,8 +107,7 @@
             <template v-slot:contentTabTow>
               <div class="all-card">
                 <v-row>
-                  <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6"
-                         style="padding: 10px 9px">
+                  <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6" style="padding: 10px 9px">
                     <card-test/>
 
                   </v-col>
@@ -190,7 +189,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
-
 .ourProgramsView {
   background-color: $background-main-page;
   padding: 30px 15px;
@@ -233,7 +231,6 @@ export default {
 
 
 }
-
 </style>
 <style lang="scss">
 .ourProgramsView {

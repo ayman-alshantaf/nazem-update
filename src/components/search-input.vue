@@ -27,9 +27,8 @@ export default {
 
 <style lang="scss" scoped>
 .search-input {
-
   background-color: #F6F7FB;
-  padding: 0px 20px;
+  padding: 0 20px;
   width: 100%;
 
   .form {

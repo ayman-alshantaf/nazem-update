@@ -2,14 +2,12 @@
   <!-- start page follow up students-->
   <section class="follow-up-student">
     <v-main>
-      <div class="container--fluid" style="border-radius: 15px; background-color: white; padding: 15px">
+      <div class="container--fluid">
         <!--start section tabs top-->
         <div class="section-tabs">
-          <!-- start content tabs-->
+          <!--content tabs-->
           <tabs-custom :items="items">
-            <!-- end content tabs-->
-
-            <!-- start content tabs 'card follow student'-->
+            <!--  content tabs 'card follow student'-->
             <div class="all-card">
               <v-row>
                 <v-col v-for="student in allStudents" :key="student.id" cols="12" lg="4" md="6">
@@ -25,7 +23,6 @@
                 </v-col>
               </v-row>
             </div>
-            <!-- end content tabs 'card follow student'-->
           </tabs-custom>
         </div>
         <!--end section tabs top-->
@@ -75,6 +72,12 @@ export default {
 .follow-up-student {
   background-color: $background-main-page;
   padding: 40px 20px;
+
+  .container--fluid {
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px
+  }
 
   .all-card {
     padding-top: 25px;

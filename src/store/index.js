@@ -30,7 +30,7 @@ export default new Vuex.Store({
             ],
             ourPrograms: [
                 {id: 1, title: "الاختبار والعرض", icon: 'fa fa-map-o', urlPath: "/ourPrograms"},
-                {id: 2, title: "تسجيل في البرامج", icon: 'fa fa-home', urlPath: "/...3"},
+                {id: 2, title: "تسجيل في البرامج", icon: 'fa fa-home', urlPath: "/registrationProgram"},
             ],
             branches: [
                 {id: 1, title: "الفروع", icon: 'fa fa-home', urlPath: "/..4"},
@@ -331,6 +331,69 @@ export default new Vuex.Store({
                         subTitle: 'الساعه (12:12) ص'
                     },
                 ],
+                informationStudent: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 3.png'),
+                        title: 'يحفظ عشرة أجزاء  ',
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 4.png'),
+                        title: '1008137554',
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 5.png'),
+                        title: '966505142048',
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 6.png'),
+                        title: '4003122542',
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 9.png'),
+                        title: 'asd2498@gmail.com',
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 12.png'),
+                        title: '26-12-1995',
+                    },
+                    {
+                        id: 7,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 11.png'),
+                        title: 'الصف الدراسي الأول لعام 1888 هجري',
+                    },
+                ],
+                detailsRegistration: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'نوع البرنامج',
+                        subTitle: 'البرنامج الاول'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار',
+                        subTitle: 'المسار الاول'
+                    },
+                ],
             },
             {
                 id: 2,
@@ -462,6 +525,69 @@ export default new Vuex.Store({
                         icon: require('@/assets/image/icon/New folder/Color.png'),
                         title: 'وقت الاختبار',
                         subTitle: 'الساعه (12:12) ص'
+                    },
+                ],
+                informationStudent: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 3.png'),
+                        title: 'يحفظ عشرة أجزاء  ',
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 4.png'),
+                        title: '1008137554',
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 5.png'),
+                        title: '966505142048',
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 6.png'),
+                        title: '4003122542',
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 9.png'),
+                        title: 'asd2498@gmail.com',
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 12.png'),
+                        title: '26-12-1995',
+                    },
+                    {
+                        id: 7,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 11.png'),
+                        title: 'الصف الدراسي الأول لعام 1888 هجري',
+                    },
+                ],
+                detailsRegistration: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'نوع البرنامج',
+                        subTitle: 'البرنامج الاول'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار',
+                        subTitle: 'المسار الاول'
                     },
                 ],
 
@@ -596,7 +722,69 @@ export default new Vuex.Store({
                         subTitle: 'الساعه (12:12) ص'
                     },
                 ],
-
+                informationStudent: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 3.png'),
+                        title: 'يحفظ عشرة أجزاء  ',
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 4.png'),
+                        title: '1008137554',
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 5.png'),
+                        title: '966505142048',
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 6.png'),
+                        title: '4003122542',
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 9.png'),
+                        title: 'asd2498@gmail.com',
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 12.png'),
+                        title: '26-12-1995',
+                    },
+                    {
+                        id: 7,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 11.png'),
+                        title: 'الصف الدراسي الأول لعام 1888 هجري',
+                    },
+                ],
+                detailsRegistration: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'نوع البرنامج',
+                        subTitle: 'البرنامج الاول'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار',
+                        subTitle: 'المسار الاول'
+                    },
+                ],
             },
             {
                 id: 4,
@@ -728,7 +916,69 @@ export default new Vuex.Store({
                         subTitle: 'الساعه (12:12) ص'
                     },
                 ],
-
+                informationStudent: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 3.png'),
+                        title: 'يحفظ عشرة أجزاء  ',
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 4.png'),
+                        title: '1008137554',
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 5.png'),
+                        title: '966505142048',
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 6.png'),
+                        title: '4003122542',
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 9.png'),
+                        title: 'asd2498@gmail.com',
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 12.png'),
+                        title: '26-12-1995',
+                    },
+                    {
+                        id: 7,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 11.png'),
+                        title: 'الصف الدراسي الأول لعام 1888 هجري',
+                    },
+                ],
+                detailsRegistration: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'نوع البرنامج',
+                        subTitle: 'البرنامج الاول'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار',
+                        subTitle: 'المسار الاول'
+                    },
+                ],
 
             },
             {
@@ -863,7 +1113,69 @@ export default new Vuex.Store({
                         subTitle: 'الساعه (12:12) ص'
                     },
                 ],
-
+                informationStudent: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 3.png'),
+                        title: 'يحفظ عشرة أجزاء  ',
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 4.png'),
+                        title: '1008137554',
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 5.png'),
+                        title: '966505142048',
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 6.png'),
+                        title: '4003122542',
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 9.png'),
+                        title: 'asd2498@gmail.com',
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 12.png'),
+                        title: '26-12-1995',
+                    },
+                    {
+                        id: 7,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 11.png'),
+                        title: 'الصف الدراسي الأول لعام 1888 هجري',
+                    },
+                ],
+                detailsRegistration: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'نوع البرنامج',
+                        subTitle: 'البرنامج الاول'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار',
+                        subTitle: 'المسار الاول'
+                    },
+                ],
 
             },
             {
@@ -996,7 +1308,69 @@ export default new Vuex.Store({
                         subTitle: 'الساعه (12:12) ص'
                     },
                 ],
-
+                informationStudent: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 3.png'),
+                        title: 'يحفظ عشرة أجزاء  ',
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 4.png'),
+                        title: '1008137554',
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 5.png'),
+                        title: '966505142048',
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 6.png'),
+                        title: '4003122542',
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 9.png'),
+                        title: 'asd2498@gmail.com',
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 12.png'),
+                        title: '26-12-1995',
+                    },
+                    {
+                        id: 7,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 11.png'),
+                        title: 'الصف الدراسي الأول لعام 1888 هجري',
+                    },
+                ],
+                detailsRegistration: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'نوع البرنامج',
+                        subTitle: 'البرنامج الاول'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار',
+                        subTitle: 'المسار الاول'
+                    },
+                ],
 
             },
             {
@@ -1129,7 +1503,69 @@ export default new Vuex.Store({
                         subTitle: 'الساعه (12:12) ص'
                     },
                 ],
-
+                informationStudent: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 3.png'),
+                        title: 'يحفظ عشرة أجزاء  ',
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 4.png'),
+                        title: '1008137554',
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 5.png'),
+                        title: '966505142048',
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 6.png'),
+                        title: '4003122542',
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 9.png'),
+                        title: 'asd2498@gmail.com',
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 12.png'),
+                        title: '26-12-1995',
+                    },
+                    {
+                        id: 7,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 11.png'),
+                        title: 'الصف الدراسي الأول لعام 1888 هجري',
+                    },
+                ],
+                detailsRegistration: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'نوع البرنامج',
+                        subTitle: 'البرنامج الاول'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار',
+                        subTitle: 'المسار الاول'
+                    },
+                ],
 
             },
             {
@@ -1261,6 +1697,69 @@ export default new Vuex.Store({
                         icon: require('@/assets/image/icon/New folder/Color.png'),
                         title: 'وقت الاختبار',
                         subTitle: 'الساعه (12:12) ص'
+                    },
+                ],
+                informationStudent: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 3.png'),
+                        title: 'يحفظ عشرة أجزاء  ',
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 4.png'),
+                        title: '1008137554',
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 5.png'),
+                        title: '966505142048',
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 6.png'),
+                        title: '4003122542',
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 9.png'),
+                        title: 'asd2498@gmail.com',
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 12.png'),
+                        title: '26-12-1995',
+                    },
+                    {
+                        id: 7,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 11.png'),
+                        title: 'الصف الدراسي الأول لعام 1888 هجري',
+                    },
+                ],
+                detailsRegistration: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'نوع البرنامج',
+                        subTitle: 'البرنامج الاول'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار',
+                        subTitle: 'المسار الاول'
                     },
                 ],
 
@@ -1396,6 +1895,69 @@ export default new Vuex.Store({
                         icon: require('@/assets/image/icon/New folder/Color.png'),
                         title: 'وقت الاختبار',
                         subTitle: 'الساعه (12:12) ص'
+                    },
+                ],
+                informationStudent: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 3.png'),
+                        title: 'يحفظ عشرة أجزاء  ',
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 4.png'),
+                        title: '1008137554',
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 5.png'),
+                        title: '966505142048',
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 6.png'),
+                        title: '4003122542',
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 9.png'),
+                        title: 'asd2498@gmail.com',
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 12.png'),
+                        title: '26-12-1995',
+                    },
+                    {
+                        id: 7,
+                        icon: require('@/assets/image/informationStudent/Repeat Grid 11.png'),
+                        title: 'الصف الدراسي الأول لعام 1888 هجري',
+                    },
+                ],
+                detailsRegistration: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 78359.png'),
+                        title: 'نوع البرنامج',
+                        subTitle: 'البرنامج الاول'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Color.png'),
+                        title: 'المسار',
+                        subTitle: 'المسار الاول'
                     },
                 ],
             },

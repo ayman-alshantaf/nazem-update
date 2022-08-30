@@ -1,27 +1,19 @@
 <template>
-  <!--start page permission-student-->
-  <section class="permission-student">
+  <section class="branches-view">
     <v-main>
-      <div class="container--fluid">
-        <!--section all card with top tabs -->
+      <div class="container--fluid" style="border-radius: 15px; background-color: white; padding: 15px">
         <div class="all-card">
-          <!-- top bar (search section and import file) -->
           <div class="top-bar-search">
             <div class="search-section">
               <form>
                 <div class="search">
                   <v-row>
-                    <v-col cols="12" lg="5" style="padding-left: 4px">
-                      <search-input :style="styleSearch"></search-input>
+                    <v-col cols="12" lg="8" style="padding-left: 4px">
+                      <search-input :style="styleSearch">
+                      </search-input>
                     </v-col>
-                    <v-col cols="12" lg="7">
-                      <div class="main-container-date">
-                        <div>
-                          <date-select-modal/>
-                        </div>
-                        <div>
-                          <date-select-modal/>
-                        </div>
+                    <v-col cols="12" lg="4">
+                      <div style="display: flex;align-items: center">
                         <button>بحث</button>
                       </div>
                     </v-col>
@@ -37,33 +29,34 @@
                 <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
               </div>
               <div class="add-new">
-                <dialog-modal :name-input="'إضافة اذن'" :title="'إضافة اذن جديد'">
+                <dialog-modal :name-input="'تحديد موعد مقابلة'" :title="'تحديد موعد مقابلة'">
                   <div class="form-modal">
                     <form>
                       <v-row>
-                        <v-col cols="12" lg="6" md="6">
-                          <select-input :label="'أختر الطالب'" :name="'أختر من هنا الطالب'" :items="items"/>
+                        <v-col cols="12"  >
+                          <label>اسم الطالب</label>
+                          <select-input :name="'أختر من هنا اسم الطالب'" :items="items"/>
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
-                          <select-input label="المسار" :name="'أختر المسار'" :items="items"/>
+                          <label>وقت التسميع</label>
+                          <select-input :name="'أدخل هنا وقت التسميع'" :items="items"/>
                         </v-col>
-                        <v-col cols="12" lg="6" md="6">
-                          <select-input :label="' فترة الاجازة'" :name="'أختر  فترة الاجازة'" :items="items"/>
+                        <v-col  cols="12" lg="6" md="6">
+                            <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
                         </v-col>
-                        <v-col cols="12" lg="6" md="6">
-                          <select-input :label="'نوع الاجازة'" :name="'اختر نوع الاجازة'" :items="['نعم','لا']"/>
+                        <v-col  cols="12" lg="6" md="6">
+                          <label>كيفية التسميع</label>
+                          <select-input :name="'أونلاين'" :items="['نعم','لا']"/>
+
                         </v-col>
-                        <v-col cols="12" lg="6" md="6">
-                          <date-customer :label="'اختر بداية الاجازة'" :name-placeholder="'اختر بداية الاجازة'"/>
+                        <v-col  cols="12" lg="6" md="6">
+                          <label>موقع التسميع</label>
+                          <select-input :name="'موقع التسميع'" :items="['نعم','لا']"/>
+
                         </v-col>
-                        <v-col cols="12" lg="6" md="6">
-                          <date-customer :label="'اختر نهاية الاجازة'" :name-placeholder="'اختر نهاية الاجازة'"/>
-                        </v-col>
+
                         <v-col cols="12">
-                          <text-area :value-label="'اضافة الملاحظات'"/>
-                        </v-col>
-                        <v-col cols="12">
-                          <btn-submit :value-btn="'اضافة'"/>
+                          <v-btn block color="#00B5AD" style="color: white;font-size: 15px;height: 45px">اضافة</v-btn>
                         </v-col>
                       </v-row>
                     </form>
@@ -72,19 +65,18 @@
               </div>
             </div>
           </div>
-          <!--the cads -->
           <v-row>
-            <v-col v-for="student in allStudents" :key="student.id" cols="12" lg="4" md="6">
-              <card-follow
+            <v-col v-for="student in allInterview" :key="student.id"  cols="12" lg="4" md="6">
+              <card-inter-view
                   :name="student.name"
                   :class-name="student.className"
-                  :saveStudent="student.saveStudent"
-                  :description="student.description"
-                  :score="student.score"
-                  :passing-score="student.passingScore"
-                  :status="student.status"
-                  :show-vacations-student="true"
-                  :show-follow-student="false"/>
+                  :statusStudent="student.Admission"
+                  :items-path-array="student.detailsAdmission"
+                  :status="student.statusAdmission"
+                  :idCardStudent="student.id"
+                  :show-btn="false"
+                  :show-edit-delete="true"
+                />
             </v-col>
           </v-row>
         </div>
@@ -97,25 +89,20 @@
 <script>
 import PaginationComponents from "@/components/dashboard/paginationComponents";
 import SearchInput from "@/components/search-input";
-import DateSelectModal from "@/components/dashboard/dateSelectModal";
 import ImportFile from "@/components/import-file";
 import DialogModal from "@/components/dialogModal";
 import SelectInput from "@/components/select-input";
 import {mapMutations, mapState} from "vuex";
-import CardFollow from "@/components/cards/cardFollow";
+import CardInterView from "@/components/cards/card-interView";
 import DateCustomer from "@/components/date-customer";
-import TextArea from "@/components/textArea";
-import BtnSubmit from "@/components/btnSubmit";
 
 export default {
-  name: "permissionsView",
+  name: "branchesView",
   components: {
-    BtnSubmit,
-    TextArea,
     DateCustomer,
-    CardFollow,
+    CardInterView,
     SelectInput,
-    DialogModal, ImportFile, DateSelectModal, SearchInput, PaginationComponents
+    DialogModal, ImportFile, SearchInput, PaginationComponents
   },
   data() {
     return {
@@ -130,8 +117,8 @@ export default {
       },
     }
   },
-  computed: {
-    ...mapState(['allStudents'])
+  computed:{
+    ...mapState(['allInterview'])
   },
   methods: {
     ...mapMutations(['pageTitle'])
@@ -145,7 +132,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 
-.permission-student {
+.branches-view {
   background-color: $background-main-page;
   padding: 40px 15px;
 
@@ -168,11 +155,6 @@ export default {
         display: flex;
         align-items: center;
         padding: 12px 0;
-
-        .main-container-date {
-          display: flex;
-          align-items: center
-        }
 
         button {
           border: 1px solid #00B5AD;
@@ -202,13 +184,12 @@ export default {
 
 </style>
 <style lang="scss">
-.permission-student {
-  .container--fluid {
-    border-radius: 15px;
-    background-color: white;
-    padding: 15px
-  }
+.theme--light.v-text-field > .v-input__control > .v-input__slot:before {
+  display: none !important;
+  border: none !important;
+}
 
+.branches-view {
   .theme--light.v-input input, .theme--light.v-input textarea {
     font-size: 14px !important;
     font-weight: bold !important;
@@ -263,5 +244,56 @@ export default {
     margin-right: 3px;
   }
 
+
 }
+
+.form-modal {
+  padding: 15px 0;
+  .col-12{
+    position: relative;
+  }
+  .v-label {
+    right: 0 !important;
+    left: auto !important;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 15px ;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    z-index: 50;
+    right: 7%;
+  }
+  label.custom-label{
+    font-size: 14px !important;
+  }
+  .v-input__slot {
+    margin-bottom: 0 !important;
+  }
+
+  .custom-input {
+    .v-text-field {
+      border: 1px solid rgba(21, 57, 135, 0.28);
+      border-radius: 5px;
+    }
+
+    .v-text-field__details {
+      display: none;
+    }
+
+    label {
+      padding-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .v-text-field .v-label {
+      top: 3px !important;
+    }
+  }
+
+}
+
 </style>

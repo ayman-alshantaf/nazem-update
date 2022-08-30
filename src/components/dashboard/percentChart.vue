@@ -1,4 +1,5 @@
 <template>
+<!--section char dashboard in counter number-->
   <v-container fluid>
     <v-sparkline
         :fill="fill"

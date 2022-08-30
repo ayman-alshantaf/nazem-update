@@ -1,5 +1,6 @@
 <template>
-  <section class="interviews">
+  <!--  start page registration-program-->
+  <section class="registration-program">
     <v-main>
       <div class="container--fluid">
         <!-- start section tabs interview with content tabs-->
@@ -10,19 +11,13 @@
               <div class="header-tabs">
                 <form>
                   <v-row>
-                    <v-col>
+                    <v-col >
                       <select-option-customer :items="itemsOption"/>
                     </v-col>
-                    <v-col lg="3" style="padding-right: 1px">
+                    <v-col lg="6" style="padding-right: 1px">
                       <search-input :style="styleSearch"></search-input>
                     </v-col>
-                    <v-col lg="2">
-                      <date-select-modal/>
-                    </v-col>
-                    <v-col lg="2">
-                      <date-select-modal/>
-                    </v-col>
-                    <v-col style="padding-left: 0px;padding-right: 5px">
+                    <v-col   style="padding-left: 0px;padding-right: 5px">
                       <div class="input-search">
                         <btn-search/>
                       </div>
@@ -39,12 +34,14 @@
                 <v-row>
                   <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6"
                          style="padding: 10px 9px">
-                    <card-inter-view :name="student.name"
-                                     :class-name="student.className"
-                                     :statusStudent="student.Admission"
-                                     :status="student.statusAdmission"
-                                     :items-path-array="student.detailsRecitation"
-                                     :idCardStudent="student.id"
+                    <card-registration-program
+                        :name="student.name"
+                        :class-name="student.className"
+                        :statusStudent="student.Admission"
+                        :status="student.statusAdmission"
+                        :items-path-array="student.detailsRegistration"
+                        :information-student-array="student.informationStudent"
+                        :idCardStudent="student.id"
 
                     />
                   </v-col>
@@ -59,12 +56,13 @@
                 <v-row>
                   <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6"
                          style="padding: 10px 9px">
-                    <card-inter-view :name="student.name"
-                                     :class-name="student.className"
-                                     :statusStudent="student.statusStudent"
-                                     :items-path-array="student.detailsRecitation"
-                                     :status="student.status"
-                                     :idCardStudent="student.id"
+                    <card-registration-program
+                        :name="student.name"
+                        :class-name="student.className"
+                        :statusStudent="student.statusStudent"
+                        :items-path-array="student.detailsRecitation"
+                        :status="student.status"
+                        :idCardStudent="student.id"
 
                     />
                   </v-col>
@@ -92,23 +90,22 @@ import PaginationComponents from "@/components/dashboard/paginationComponents";
 import {mapMutations, mapState} from "vuex";
 import TabsCustomInterviews from "@/components/tabsCustom-intervies";
 import SearchInput from "@/components/search-input";
-import DateSelectModal from "@/components/dashboard/dateSelectModal";
 import BtnSearch from "@/components/btnSearch";
-import CardInterView from "@/components/cards/card-interView";
 import SelectOptionCustomer from "@/components/select-option-customer";
+import CardRegistrationProgram from "@/components/cards/card-registrationProgram";
 
 
 export default {
-  name: "interviewsView",
+  name: "registrationProgramView",
   components: {
+    CardRegistrationProgram,
     SelectOptionCustomer,
-    CardInterView,
-    BtnSearch, DateSelectModal, SearchInput, TabsCustomInterviews, PaginationComponents
+    BtnSearch,  SearchInput, TabsCustomInterviews, PaginationComponents
   },
   data() {
     return {
       items: [
-        'جميع المقابلات', 'نتيجه المقابلات',
+        'كل الطلاب', 'المقبولين', 'المستبعدين'
       ],
       itemsOption: [
         {title: 'مقبول '},
@@ -138,7 +135,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 
-.interviews {
+.registration-program {
   background-color: $background-main-page;
   padding: 30px 15px;
 
@@ -158,6 +155,7 @@ export default {
 
   .header-tabs {
     padding-top: 5px;
+    width: 100%;
 
     .row {
       align-items: center;
@@ -171,7 +169,7 @@ export default {
 
 </style>
 <style lang="scss">
-.interviews {
+.registration-program {
   .theme--light.v-input input, .theme--light.v-input textarea {
     font-size: 14px !important;
     font-weight: bold !important;
@@ -262,6 +260,7 @@ export default {
 
     .main-left-section {
       height: 100%;
+      width: 60%;
       display: flex;
       align-items: center;
     }

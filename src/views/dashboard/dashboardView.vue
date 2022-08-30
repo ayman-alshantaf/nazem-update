@@ -1,15 +1,18 @@
 <template>
+<!--  start page dashboard-->
   <section class="dashboard">
     <v-main>
+      <!--section counter animation number-->
       <div class="section-number">
         <v-row>
-          <v-col style="padding: 5px" v-for="card in dataChartCardOne" :key="card.id">
+          <v-col v-for="card in dataChartCardOne" :key="card.id" style="padding: 5px">
             <card-number  :title="card.title" :number="card.number" :percent="card.percent">
               <percent-chart :gradients-value="card.gradients" />
             </card-number>
           </v-col>
         </v-row>
       </div>
+      <!--section section-calendar-->
       <div class="section-calendar">
         <div class="event-date">
           <div class="selectAction">
@@ -37,6 +40,7 @@
           </v-col>
         </v-row>
       </div>
+      <!--section counter animation number tow-->
       <div class="card-section-number">
         <v-row>
           <v-col cols="12" lg="3" sm="6" v-for="card in dataChartCardTwo" :key="card.id">
@@ -44,6 +48,7 @@
           </v-col>
         </v-row>
       </div>
+      <!--section statistics-->
       <div class="section-statistics">
         <v-row>
           <v-col cols="12" lg="4" md="4">
@@ -130,8 +135,8 @@
         </v-row>
       </div>
     </v-main>
-
   </section>
+<!--  start page dashboard-->
 </template>
 
 <script>
@@ -147,7 +152,7 @@ const gradients = [
 ]
 export default {
   name: "dashboardView",
-  components: {PercentChart, CardNumber, DatePickers, DateSelectModal, CalenderDashboard},
+  components: { PercentChart, CardNumber, DatePickers, DateSelectModal, CalenderDashboard},
   data() {
     return {
       events: [
@@ -204,7 +209,6 @@ export default {
 .dashboard {
   background-color: $background-main-page;
   padding: 50px 20px 0px 20px;
-
   .section-calendar {
     background-color: white;
     margin: 40px 0;
@@ -375,29 +379,18 @@ export default {
       }
     }
   }
-
-
 }
 
 </style>
 <style lang="scss">
-  //.dashboard-select .menuable__content__active {
-  //  top: 363px !important;
-  //}
+//review code
 
-
-
-.section-calendar{
-  div[role=menu].v-menu__content {
-    left: 625px !important;
-  }
-}
-
-
-.v-application--is-ltr .v-text-field .v-input__append-inner {
-  padding-top: 8px !important;
-}
-
+//.section-calendar{
+//  div.v-menu__content {
+//    left: 625px !important;
+//    background-color: red !important;
+//  }
+//}
 .dashboard {
   .section-calendar {
     .theme--light.v-text-field > .v-input__control > .v-input__slot:before {
@@ -406,10 +399,6 @@ export default {
 
     .theme--light.v-text-field > .v-input__control > .v-input__slot:focus:before {
       border: none !important;
-    }
-
-    input {
-
     }
 
     ::placeholder {
@@ -442,8 +431,9 @@ export default {
     margin-right: 0px;
   }
 
+  .v-text-field .v-input__append-inner {
+    padding-top: 8px !important;
+  }
 }
-
-
 </style>
 

@@ -1,7 +1,7 @@
 <template>
-  <section class="weekly-narrative">
+  <section class="vacations-student">
     <v-main>
-      <div class="container--fluid" style="border-radius: 15px; background-color: white; padding: 15px">
+      <div class="container--fluid" style="">
         <div class="all-card">
           <div class="top-bar-search">
             <div class="search-section">
@@ -9,15 +9,14 @@
                 <div class="search">
                   <v-row>
                     <v-col cols="12" lg="5" style="padding-left: 4px">
-                      <search-input :style="styleSearch">
-                      </search-input>
+                      <search-input :style="styleSearch"/>
                     </v-col>
                     <v-col cols="12" lg="7">
-                      <div style="display: flex;align-items: center">
-                        <div class="container-date">
+                      <div class="main-container-date">
+                        <div>
                           <date-select-modal/>
                         </div>
-                        <div class="container-date">
+                        <div>
                           <date-select-modal/>
                         </div>
                         <button>بحث</button>
@@ -40,37 +39,28 @@
                     <form>
                       <v-row>
                         <v-col cols="12" lg="6" md="6">
-                          <label> أختر من هنا الطالب</label>
-                          <select-input :name="'أختر من هنا الطالب'" :items="items"/>
+                          <select-input :label="' أختر من هنا الطالب'" :name="'أختر من هنا الطالب'" :items="items"/>
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
-                          <label>أختر المسار</label>
-                          <select-input :name="'أختر المسار'" :items="items"/>
+                          <select-input :label="'أختر المسار'" :name="'أختر المسار'" :items="items"/>
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
-                          <label>أختر فترة الاجازة</label>
-                          <select-input :name="'أختر الفترة'" :items="items"/>
+                          <select-input :label="'أختر فترة الاجازة'" :name="'أختر الفترة'" :items="items"/>
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
-                          <label>أختر نوع الاجازة </label>
-                          <select-input :name="'أختر المسار'" :items="['نعم','لا']"/>
-
+                        <v-col cols="12" lg="6" md="6">
+                          <select-input :label="'أختر نوع الاجازة '" :name="'أختر المسار'" :items="['نعم','لا']"/>
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
+                        <v-col cols="12" lg="6" md="6">
                           <date-customer :label="'اختر بداية الاجازة'" :name-placeholder="'اختر بداية الاجازة'"/>
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
+                        <v-col cols="12" lg="6" md="6">
                           <date-customer :label="'اختر نهاية الاجازة'" :name-placeholder="'اختر نهاية الاجازة'"/>
                         </v-col>
                         <v-col cols="12" class="custom-input">
-                          <v-textarea
-                              rows="3"
-                              label="اضافة الملاحظات"
-                              required
-                          ></v-textarea>
+                          <text-area :value-label="'اضافة الملاحظات'"/>
                         </v-col>
                         <v-col cols="12">
-                          <v-btn block color="#00B5AD" style="color: white;font-size: 15px;height: 45px">اضافة</v-btn>
+                          <btn-submit :value-btn="'اضافة'"/>
                         </v-col>
                       </v-row>
                     </form>
@@ -80,7 +70,7 @@
             </div>
           </div>
           <v-row>
-            <v-col v-for="student in allStudents" :key="student.id" cols="12" lg="4" md="6" >
+            <v-col v-for="student in allStudents" :key="student.id" cols="12" lg="4" md="6">
               <card-follow
                   :name="student.name"
                   :class-name="student.className"
@@ -109,10 +99,14 @@ import SelectInput from "@/components/select-input";
 import {mapMutations, mapState} from "vuex";
 import CardFollow from "@/components/cards/cardFollow";
 import DateCustomer from "@/components/date-customer";
+import BtnSubmit from "@/components/btnSubmit";
+import TextArea from "@/components/textArea";
 
 export default {
   name: "studentVacationsView",
   components: {
+    TextArea,
+    BtnSubmit,
     DateCustomer,
     CardFollow,
     SelectInput,
@@ -146,9 +140,15 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 
-.weekly-narrative {
+.vacations-student {
   background-color: $background-main-page;
   padding: 40px 15px;
+
+  .container--fluid {
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px
+  }
 
   .top-bar-search {
     display: flex;
@@ -169,7 +169,10 @@ export default {
         display: flex;
         align-items: center;
         padding: 12px 0;
-
+        .main-container-date {
+          display: flex;
+          align-items: center
+        }
         button {
           border: 1px solid #00B5AD;
           padding: 10px 40px;
@@ -198,12 +201,7 @@ export default {
 
 </style>
 <style lang="scss">
-.theme--light.v-text-field > .v-input__control > .v-input__slot:before {
-  display: none !important;
-  border: none !important;
-}
-
-.weekly-narrative {
+.vacations-student {
   .theme--light.v-input input, .theme--light.v-input textarea {
     font-size: 14px !important;
     font-weight: bold !important;
@@ -234,7 +232,7 @@ export default {
   }
 
   .theme--light.v-input {
-    margin: 0px 10px 0px 16px;
+    margin: 0 10px 0 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -258,55 +256,6 @@ export default {
     margin-right: 3px;
   }
 
-
-}
-
-.form-modal {
-  padding: 15px 0;
-  .col-12{
-    position: relative;
-  }
-  .v-label {
-    right: 0 !important;
-    left: auto !important;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 15px ;
-    background-color: white;
-    position: absolute;
-    top: 0;
-    z-index: 50;
-    right: 7%;
-  }
-  label.custom-label{
-    font-size: 14px !important;
-  }
-  .v-input__slot {
-    margin-bottom: 0 !important;
-  }
-
-  .custom-input {
-    .v-text-field {
-      border: 1px solid rgba(21, 57, 135, 0.28);
-      border-radius: 5px;
-    }
-
-    .v-text-field__details {
-      display: none;
-    }
-
-    label {
-      padding-right: 10px;
-      margin-bottom: 10px;
-    }
-
-    .v-text-field .v-label {
-      top: 3px !important;
-    }
-  }
 
 }
 </style>
