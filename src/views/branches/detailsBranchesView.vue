@@ -1,70 +1,82 @@
 <template>
-  <section class="branches-view">
+  <section class="detailsBranches-view">
     <v-main>
       <div class="container--fluid" style="border-radius: 15px; background-color: white; padding: 15px">
         <div class="all-card">
-          <div class="top-bar-search">
-            <div class="search-section">
-              <form>
-                <div class="search">
-                  <v-row>
-                    <v-col cols="12" lg="8" style="padding-left: 4px">
-                      <search-input :style="styleSearch">
-                      </search-input>
-                    </v-col>
-                    <v-col cols="12" lg="4">
-                      <div style="display: flex;align-items: center">
-                        <button>بحث</button>
+          <v-row>
+            <v-col  cols="12" md="6">
+              <div class="title-section">
+                <h4>مدير الفرع</h4>
+              </div>
+              <v-row>
+                <v-col style="padding-left: 5px" cols="7">
+                  <card-branches-details/>
+                </v-col>
+                <v-col cols="5">
+                  <div style="padding-right: 2px;padding-left: 5px;border: 1px solid #D2D5E1;min-width:45%;height: 100%;border-radius: 5px;display: flex;align-items: center;justify-content: center" class="add-employee">
+                      <div class="icon" style="text-align: center;color: #00B5AD">
+                        <i class="fa fa-plus mb-3" style="font-size: 35px"></i>
+                        <h2 style="font-size: 22px">إضافة موظف</h2>
                       </div>
-                    </v-col>
-                  </v-row>
-                </div>
-              </form>
-            </div>
-            <div class="import-export-file">
-              <div class="export-file">
-                <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
-              </div>
-              <div class="import-file">
-                <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
-              </div>
-              <div class="add-new">
-                <dialog-modal :name-input="'اضافة فرع جديد'" :title="'اضافة فرع جديد'">
-                  <div class="form-modal">
-                    <form>
-                      <v-row>
-                        <v-col cols="12"  >
-                          <label>اسم الطالب</label>
-                          <select-input :name="'أختر من هنا اسم الطالب'" :items="items"/>
-                        </v-col>
-                        <v-col cols="12" lg="6" md="6">
-                          <label>وقت التسميع</label>
-                          <select-input :name="'أدخل هنا وقت التسميع'" :items="items"/>
-                        </v-col>
-                        <v-col  cols="12" lg="6" md="6">
-                            <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
-                        </v-col>
-                        <v-col  cols="12" lg="6" md="6">
-                          <label>كيفية التسميع</label>
-                          <select-input :name="'أونلاين'" :items="['نعم','لا']"/>
-
-                        </v-col>
-                        <v-col  cols="12" lg="6" md="6">
-                          <label>موقع التسميع</label>
-                          <select-input :name="'موقع التسميع'" :items="['نعم','لا']"/>
-
-                        </v-col>
-
-                        <v-col cols="12">
-                          <v-btn block color="#00B5AD" style="color: white;font-size: 15px;height: 45px">اضافة</v-btn>
-                        </v-col>
-                      </v-row>
-                    </form>
                   </div>
-                </dialog-modal>
+                </v-col>
+
+              </v-row>
+
+            </v-col>
+            <v-col  cols="12" md="6">
+              <div class="title-section">
+                <h4>مدير الفرع</h4>
               </div>
-            </div>
-          </div>
+              <v-row>
+                <v-col style="padding-left: 5px" cols="7">
+                  <card-branches-details/>
+                </v-col>
+                <v-col cols="5">
+                  <div style="padding-right: 2px;padding-left: 5px;border: 1px solid black;min-width:45%;height: 100%" class="add-employee">
+
+                  </div>
+                </v-col>
+
+              </v-row>
+
+            </v-col>
+            <v-col  cols="12" md="6">
+              <div class="title-section">
+                <h4>مدير الفرع</h4>
+              </div>
+              <v-row>
+                <v-col style="padding-left: 5px" cols="7">
+                  <card-branches-details/>
+                </v-col>
+                <v-col cols="5">
+                  <div style="padding-right: 2px;padding-left: 5px;border: 1px solid black;min-width:45%;height: 100%" class="add-employee">
+
+                  </div>
+                </v-col>
+
+              </v-row>
+
+            </v-col>
+            <v-col  cols="12" md="6">
+              <div class="title-section">
+                <h4>مدير الفرع</h4>
+              </div>
+              <v-row>
+                <v-col style="padding-left: 5px" cols="7">
+                  <card-branches-details/>
+                </v-col>
+                <v-col cols="5">
+                  <div style="padding-right: 2px;padding-left: 5px;border: 1px solid black;min-width:45%;height: 100%" class="add-employee">
+
+                  </div>
+                </v-col>
+
+              </v-row>
+
+            </v-col>
+
+          </v-row>
           <v-row>
             <v-col v-for="student in allInterview" :key="student.id"  cols="12" lg="4" md="6">
               <card-branches
@@ -77,6 +89,7 @@
                   :show-btn="false"
                   :show-edit-delete="true"
                 />
+
             </v-col>
           </v-row>
         </div>
@@ -88,21 +101,16 @@
 
 <script>
 import PaginationComponents from "@/components/dashboard/paginationComponents";
-import SearchInput from "@/components/search-input";
-import ImportFile from "@/components/import-file";
-import DialogModal from "@/components/dialogModal";
-import SelectInput from "@/components/select-input";
 import {mapMutations, mapState} from "vuex";
-import DateCustomer from "@/components/date-customer";
 import CardBranches from "@/components/cards/card-branches";
+import CardBranchesDetails from "@/components/cards/card-branchesDetails";
 
 export default {
-  name: "branchesView",
+  name: "detailsBranches",
   components: {
+    CardBranchesDetails,
     CardBranches,
-    DateCustomer,
-    SelectInput,
-    DialogModal, ImportFile, SearchInput, PaginationComponents
+PaginationComponents
   },
   data() {
     return {
@@ -132,7 +140,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 
-.branches-view {
+.detailsBranches-view {
   background-color: $background-main-page;
   padding: 40px 15px;
 
@@ -189,7 +197,7 @@ export default {
   border: none !important;
 }
 
-.branches-view {
+.detailsBranches-view {
   .theme--light.v-input input, .theme--light.v-input textarea {
     font-size: 14px !important;
     font-weight: bold !important;

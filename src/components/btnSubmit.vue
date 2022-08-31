@@ -30,8 +30,7 @@ export default {
 <style lang="scss" >
 .btn-submit-component {
   .v-btn__content {
-    font-size: 16px !important;
-    font-weight: 600;
+    font-size: 17px !important;
   }
 }
 </style>

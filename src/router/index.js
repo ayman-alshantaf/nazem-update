@@ -17,6 +17,7 @@ import warningView from "@/views/records/warningView";
 import ourProgramsView from "@/views/ourPrograms/ourProgramsView";
 import registrationProgramView from "@/views/ourPrograms/registrationProgramView";
 import branchesView from "@/views/branches/branchesView";
+import detailsBranchesView from "@/views/branches/detailsBranchesView";
 
 Vue.use(VueRouter)
 
@@ -105,6 +106,11 @@ const routes = [
     path: '/branches',
     name: 'branches',
     component: branchesView
+  },
+  {
+    path: '/detailsBranches',
+    name: 'detailsBranches',
+    component: detailsBranchesView
   },
 
 

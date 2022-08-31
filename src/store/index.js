@@ -33,7 +33,7 @@ export default new Vuex.Store({
                 {id: 2, title: "تسجيل في البرامج", icon: 'fa fa-home', urlPath: "/registrationProgram"},
             ],
             branches: [
-                {id: 1, title: "الفروع", icon: 'fa fa-home', urlPath: "/..4"},
+                {id: 1, title: "الفروع", icon: 'fa fa-home', urlPath: "/branches"},
             ],
             other: [
                 {id: 1, title: "الفصول", icon: 'fa fa-home', urlPath: "/..5"},
