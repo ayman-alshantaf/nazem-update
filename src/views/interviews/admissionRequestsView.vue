@@ -104,7 +104,7 @@ import CardInterView from "@/components/cards/card-interView";
 import DateCustomer from "@/components/date-customer";
 
 export default {
-  name: "permissionsView",
+  name: "admissionRequestsView",
   components: {
     DateCustomer,
     CardInterView,

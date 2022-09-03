@@ -1,19 +1,26 @@
 <template>
-  <section class="branches-view">
+  <section class="tracks-student">
     <v-main>
       <div class="container--fluid" style="border-radius: 15px; background-color: white; padding: 15px">
+        <!--  content tabs 'card follow student'-->
         <div class="all-card">
           <div class="top-bar-search">
             <div class="search-section">
               <form>
                 <div class="search">
                   <v-row>
-                    <v-col cols="12" lg="8" style="padding-left: 4px">
+                    <v-col cols="12" lg="5" style="padding-left: 4px">
                       <search-input :style="styleSearch">
                       </search-input>
                     </v-col>
-                    <v-col cols="12" lg="4">
+                    <v-col cols="12" lg="7">
                       <div style="display: flex;align-items: center">
+                        <div class="container-date">
+                          <date-select-modal/>
+                        </div>
+                        <div class="container-date">
+                          <date-select-modal/>
+                        </div>
                         <button>بحث</button>
                       </div>
                     </v-col>
@@ -29,11 +36,11 @@
                 <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
               </div>
               <div class="add-new">
-                <dialog-modal :name-input="'اضافة فرع جديد'" :title="'اضافة فرع جديد'">
+                <dialog-modal :name-input="'تحديد موعد مقابلة'" :title="'تحديد موعد مقابلة'">
                   <div class="form-modal">
                     <form>
                       <v-row>
-                        <v-col cols="12"  >
+                        <v-col cols="12">
                           <label>اسم الطالب</label>
                           <select-input :name="'أختر من هنا اسم الطالب'" :items="items"/>
                         </v-col>
@@ -41,15 +48,15 @@
                           <label>وقت التسميع</label>
                           <select-input :name="'أدخل هنا وقت التسميع'" :items="items"/>
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
-                            <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
+                        <v-col cols="12" lg="6" md="6">
+                          <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
+                        <v-col cols="12" lg="6" md="6">
                           <label>كيفية التسميع</label>
                           <select-input :name="'أونلاين'" :items="['نعم','لا']"/>
 
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
+                        <v-col cols="12" lg="6" md="6">
                           <label>موقع التسميع</label>
                           <select-input :name="'موقع التسميع'" :items="['نعم','لا']"/>
 
@@ -66,17 +73,19 @@
             </div>
           </div>
           <v-row>
-            <v-col v-for="student in allInterview" :key="student.id"  cols="12" lg="4" md="6">
+            <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6">
               <card-branches
-                  :name="'الفرع الاول'"
-                  :items-path-array="student.detailsAdmission"
-                  :show-btn="true"
+                  :name="'الفصل الدراسي الاول'"
+                  :items-path-array="student.detailsClasses"
+                  :value-button="'تفاصيل الفترة'"
+                  :path-link="'detailsTracksTow'"
+                  :path-time-section="true"
                   :show-edit-delete="true"
-                  :path-link="'detailsBranches'"
-                />
+              />
             </v-col>
           </v-row>
         </div>
+
         <pagination-components/>
       </div>
     </v-main>
@@ -86,6 +95,7 @@
 <script>
 import PaginationComponents from "@/components/dashboard/paginationComponents";
 import SearchInput from "@/components/search-input";
+import DateSelectModal from "@/components/dashboard/dateSelectModal";
 import ImportFile from "@/components/import-file";
 import DialogModal from "@/components/dialogModal";
 import SelectInput from "@/components/select-input";
@@ -94,17 +104,17 @@ import DateCustomer from "@/components/date-customer";
 import CardBranches from "@/components/cards/card-branches";
 
 export default {
-  name: "branchesView",
+  name: "detailsTracksView",
   components: {
     CardBranches,
     DateCustomer,
     SelectInput,
-    DialogModal, ImportFile, SearchInput, PaginationComponents
+    DialogModal, ImportFile, DateSelectModal, SearchInput, PaginationComponents
   },
   data() {
     return {
       items: [
-        'ربط ', 'مراجعه', 'تكرار',
+        'الحفظ', 'اتقان', 'سماع', 'تكرار', 'ربط', 'مراجعه', 'تسميع', 'اختبار', 'تلاوة', 'سرد اسبوعي',
       ],
       styleSearch: {
         backgroundColor: 'transparent',
@@ -114,7 +124,7 @@ export default {
       },
     }
   },
-  computed:{
+  computed: {
     ...mapState(['allInterview'])
   },
   methods: {
@@ -129,7 +139,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 
-.branches-view {
+.tracks-student {
   background-color: $background-main-page;
   padding: 40px 15px;
 
@@ -186,7 +196,7 @@ export default {
   border: none !important;
 }
 
-.branches-view {
+.tracks-student {
   .theme--light.v-input input, .theme--light.v-input textarea {
     font-size: 14px !important;
     font-weight: bold !important;
@@ -246,9 +256,11 @@ export default {
 
 .form-modal {
   padding: 15px 0;
-  .col-12{
+
+  .col-12 {
     position: relative;
   }
+
   .v-label {
     right: 0 !important;
     left: auto !important;
@@ -257,16 +269,18 @@ export default {
   label {
     display: block;
     margin-bottom: 10px;
-    font-size: 15px ;
+    font-size: 15px;
     background-color: white;
     position: absolute;
     top: 0;
     z-index: 50;
     right: 7%;
   }
-  label.custom-label{
+
+  label.custom-label {
     font-size: 14px !important;
   }
+
   .v-input__slot {
     margin-bottom: 0 !important;
   }

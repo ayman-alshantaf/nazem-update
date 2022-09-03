@@ -7,24 +7,50 @@
       <div class="name">
         <div class="name-branch">
           <p>{{ name }}</p>
-          <i class="fa fa-check"></i>
+          <i class="fa fa-check" v-show="checkIconShow" ></i>
+          <div v-if="status === 1" class="status-student">
+            {{ statusStudent }}
+          </div>
+          <div v-if="status === 0" style="background-color: rgba(209,26,42,0.23);color: #D11A2A" class="status-student">
+            {{ statusStudent }}
+          </div>
+          <div v-if="status === 2" style="background-color: rgba(56,91,114,0.26);color: #385B72" class="status-student">
+            {{ statusStudent }}
+          </div>
         </div>
       </div>
     </div>
+    <div class="path-time" v-show="pathTimeSection">
+      <v-row>
+        <v-col cols="6" v-for="itemPath in itemsPathArray" :key="itemPath.id">
+          <div class="path">
+            <div class="image">
+              <img :src="itemPath.icon">
+            </div>
+            <div class="text-path">
+              <p>{{ itemPath.title }}</p>
+              <span>{{ itemPath.subTitle }}</span>
+            </div>
+          </div>
+        </v-col>
+<!--        <div class=" last-of-type" style="width: 100% "></div>-->
+      </v-row>
+    </div>
     <div class="text-card">
-      <p>هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
+      <p v-show="textCard">هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
         لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص
         أو شكل توضع الفقرات في الصفحة التي يقرأها.</p>
-      <div class="avatar-branch">
+      <div class="avatar-branch" v-show="avatarBranch">
         <span><img src="../../assets/image/avatar/Ellipse5883.png"></span>
         <span><img src="../../assets/image/avatar/Ellipse5883.png"></span>
         <span><img src="../../assets/image/avatar/Ellipse5883.png"></span>
         <span><img src="../../assets/image/avatar/Ellipse5883.png"></span>
         <span class="icon-plus"><i class="fa fa-plus"></i></span>
       </div>
-      <div class="btn-done">
-        <btn-submit :value-btn="' تفاصيل الفرع'" :to="{name: 'recitationView' , params:{id:idCardStudent}}" class="mt-3 mb-4" />
+      <div class="btn-done" v-show="showBtn">
+        <btn-submit :value-btn="valueButton" :route-link="pathLink" class="mt-3 mb-4"/>
       </div>
+
       <div class=" last-of-type" style="width: 100% "></div>
     </div>
     <div v-show="showEditDelete" class="edit-delete">
@@ -44,14 +70,12 @@
 
 <script>
 import BtnSubmit from "@/components/btnSubmit";
+
 export default {
   name: "card-branches",
   components: {BtnSubmit},
   props: {
     name: {
-      type: String
-    },
-    className: {
       type: String
     },
     statusStudent: {
@@ -63,9 +87,6 @@ export default {
     itemsPathArray: {
       type: Array
     },
-    idCardStudent: {
-      type: Number
-    },
     showBtn: {
       type: Boolean,
       default: true
@@ -74,14 +95,29 @@ export default {
       type: Boolean,
       default: false
     },
-    showBtnWarning: {
+    pathTimeSection: {
       type: Boolean,
       default: false
     },
-    nameBtn: {
+    avatarBranch: {
+      type: Boolean,
+      default: true
+    },
+    textCard: {
+      type: Boolean,
+      default: true
+    },
+    checkIconShow: {
+      type: Boolean,
+      default: true
+    },
+    valueButton:{
       type: String,
-      default: 'تسميع'
-    }
+      default:'تفاصيل الفرع'
+    },
+    pathLink:{
+      type: String,
+    },
   },
   data() {
     return {
@@ -96,7 +132,7 @@ export default {
 .card-branches {
   border: 1px solid #D2D5E1;
   border-radius: 5px;
-  padding: 20px 10px 0px 10px;
+  padding: 20px 10px 0 10px;
 
   .name-branches {
     display: flex;
@@ -119,18 +155,19 @@ export default {
       position: relative;
       margin-right: 10px;
 
-      .name-branch{
+      .name-branch {
         display: flex;
         align-items: center;
+
         p {
-          font-size: 23px;
+          font-size: 21px;
           font-weight: bold;
-          margin-bottom: 0;
+          margin-bottom: 10px;
         }
-        i{
+
+        i {
           background-color: #00B5AD;
           margin-right: 13px;
-          margin-top: 10px;
           width: 21px;
           height: 21px;
           display: flex;
@@ -142,6 +179,7 @@ export default {
           color: white;
         }
       }
+
       //p {
       //  font-size: 15px;
       //  font-weight: bold;
@@ -154,29 +192,35 @@ export default {
       }
     }
   }
-  .text-card{
-    p{
+
+  .text-card {
+    p {
       color: #B4B4B4;
       font-size: 14px;
       line-height: 2em;
     }
   }
-  .avatar-branch{
+
+  .avatar-branch {
     display: flex;
     align-items: center;
-    span{
+
+    span {
       margin-right: -3%;
       width: 27px;
       height: 27px;
       border-radius: 50%;
-      img{
+
+      img {
         width: 100%;
       }
     }
-    span:first-child{
+
+    span:first-child {
       margin-right: 0;
     }
-    span.icon-plus{
+
+    span.icon-plus {
       background-color: #1FD0A3;
       display: flex;
       align-items: center;
@@ -184,12 +228,14 @@ export default {
       font-size: 13px;
       color: white;
       border: 2px solid white;
-      i{
+
+      i {
         margin-top: 2px;
       }
     }
 
   }
+
   .status-student {
     position: absolute;
     left: 2%;

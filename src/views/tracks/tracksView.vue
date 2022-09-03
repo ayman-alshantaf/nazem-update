@@ -1,82 +1,63 @@
 <template>
-  <section class="branches-view">
+  <section class="tracks-student">
     <v-main>
       <div class="container--fluid" style="border-radius: 15px; background-color: white; padding: 15px">
-        <div class="all-card">
-          <div class="top-bar-search">
-            <div class="search-section">
-              <form>
-                <div class="search">
-                  <v-row>
-                    <v-col cols="12" lg="8" style="padding-left: 4px">
-                      <search-input :style="styleSearch">
-                      </search-input>
-                    </v-col>
-                    <v-col cols="12" lg="4">
-                      <div style="display: flex;align-items: center">
-                        <button>بحث</button>
+        <div class="top-bar-search">
+          <div class="search-section">
+            <form>
+              <div class="search">
+                <v-row>
+                  <v-col cols="12" lg="5" style="padding-left: 4px">
+                    <search-input :style="styleSearch">
+                    </search-input>
+                  </v-col>
+                  <v-col cols="12" lg="7">
+                    <div style="display: flex;align-items: center">
+                      <div class="container-date">
+                        <date-select-modal/>
                       </div>
-                    </v-col>
-                  </v-row>
-                </div>
-              </form>
+                      <div class="container-date">
+                        <date-select-modal/>
+                      </div>
+                      <button>بحث</button>
+                    </div>
+                  </v-col>
+                </v-row>
+              </div>
+            </form>
+          </div>
+          <div class="import-export-file">
+            <div class="export-file">
+              <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
             </div>
-            <div class="import-export-file">
-              <div class="export-file">
-                <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
-              </div>
-              <div class="import-file">
-                <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
-              </div>
-              <div class="add-new">
-                <dialog-modal :name-input="'اضافة فرع جديد'" :title="'اضافة فرع جديد'">
-                  <div class="form-modal">
-                    <form>
-                      <v-row>
-                        <v-col cols="12"  >
-                          <label>اسم الطالب</label>
-                          <select-input :name="'أختر من هنا اسم الطالب'" :items="items"/>
-                        </v-col>
-                        <v-col cols="12" lg="6" md="6">
-                          <label>وقت التسميع</label>
-                          <select-input :name="'أدخل هنا وقت التسميع'" :items="items"/>
-                        </v-col>
-                        <v-col  cols="12" lg="6" md="6">
-                            <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
-                        </v-col>
-                        <v-col  cols="12" lg="6" md="6">
-                          <label>كيفية التسميع</label>
-                          <select-input :name="'أونلاين'" :items="['نعم','لا']"/>
-
-                        </v-col>
-                        <v-col  cols="12" lg="6" md="6">
-                          <label>موقع التسميع</label>
-                          <select-input :name="'موقع التسميع'" :items="['نعم','لا']"/>
-
-                        </v-col>
-
-                        <v-col cols="12">
-                          <v-btn block color="#00B5AD" style="color: white;font-size: 15px;height: 45px">اضافة</v-btn>
-                        </v-col>
-                      </v-row>
-                    </form>
-                  </div>
-                </dialog-modal>
-              </div>
+            <div class="import-file">
+              <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+            </div>
+            <div class="add-new">
+              <btn-submit style="height: 35px" :value-btn="'إضافة مسار جديد'" :route-link="'/addTracks'">
+                <i class="fa fa-plus ml-3 mt-2"></i>
+              </btn-submit>
             </div>
           </div>
-          <v-row>
-            <v-col v-for="student in allInterview" :key="student.id"  cols="12" lg="4" md="6">
-              <card-branches
-                  :name="'الفرع الاول'"
-                  :items-path-array="student.detailsAdmission"
-                  :show-btn="true"
-                  :show-edit-delete="true"
-                  :path-link="'detailsBranches'"
-                />
-            </v-col>
-          </v-row>
         </div>
+        <tabs-custom :items="items">
+          <!--  content tabs 'card follow student'-->
+          <div class="all-card mt-5">
+            <v-row>
+              <v-col v-for="student in allInterview" :key="student.id"  cols="12" lg="4" md="6">
+                <card-branches
+                    :name="'الفصل الدراسي الاول'"
+                    :items-path-array="student.detailsClasses"
+                    :value-button="'تفاصيل المسار'"
+                    :path-link="'detailsTracks'"
+                    :path-time-section="true"
+                    :show-edit-delete="true"
+                />
+              </v-col>
+            </v-row>
+          </div>
+        </tabs-custom>
+
         <pagination-components/>
       </div>
     </v-main>
@@ -86,25 +67,25 @@
 <script>
 import PaginationComponents from "@/components/dashboard/paginationComponents";
 import SearchInput from "@/components/search-input";
+import DateSelectModal from "@/components/dashboard/dateSelectModal";
 import ImportFile from "@/components/import-file";
-import DialogModal from "@/components/dialogModal";
-import SelectInput from "@/components/select-input";
 import {mapMutations, mapState} from "vuex";
-import DateCustomer from "@/components/date-customer";
 import CardBranches from "@/components/cards/card-branches";
+import TabsCustom from "@/components/tabsCustom";
+import BtnSubmit from "@/components/btnSubmit";
 
 export default {
-  name: "branchesView",
+  name: "tracksView",
   components: {
+    BtnSubmit,
+    TabsCustom,
     CardBranches,
-    DateCustomer,
-    SelectInput,
-    DialogModal, ImportFile, SearchInput, PaginationComponents
+  ImportFile, DateSelectModal, SearchInput, PaginationComponents
   },
   data() {
     return {
       items: [
-        'ربط ', 'مراجعه', 'تكرار',
+        'الحفظ', 'اتقان', 'سماع', 'تكرار', 'ربط', 'مراجعه', 'تسميع', 'اختبار', 'تلاوة', 'سرد اسبوعي',
       ],
       styleSearch: {
         backgroundColor: 'transparent',
@@ -129,7 +110,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 
-.branches-view {
+.tracks-student {
   background-color: $background-main-page;
   padding: 40px 15px;
 
@@ -186,7 +167,7 @@ export default {
   border: none !important;
 }
 
-.branches-view {
+.tracks-student {
   .theme--light.v-input input, .theme--light.v-input textarea {
     font-size: 14px !important;
     font-weight: bold !important;
@@ -241,6 +222,12 @@ export default {
     margin-right: 3px;
   }
 
+    .add-new{
+      .btn-submit-component .btn-submit{
+        height: 38px !important;
+        margin-top: 2px;
+      }
+    }
 
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <section class="branches-view">
+  <section class="classes-student">
     <v-main>
       <div class="container--fluid" style="border-radius: 15px; background-color: white; padding: 15px">
         <div class="all-card">
@@ -8,12 +8,18 @@
               <form>
                 <div class="search">
                   <v-row>
-                    <v-col cols="12" lg="8" style="padding-left: 4px">
+                    <v-col cols="12" lg="5" style="padding-left: 4px">
                       <search-input :style="styleSearch">
                       </search-input>
                     </v-col>
-                    <v-col cols="12" lg="4">
+                    <v-col cols="12" lg="7">
                       <div style="display: flex;align-items: center">
+                        <div class="container-date">
+                          <date-select-modal/>
+                        </div>
+                        <div class="container-date">
+                          <date-select-modal/>
+                        </div>
                         <button>بحث</button>
                       </div>
                     </v-col>
@@ -29,7 +35,7 @@
                 <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
               </div>
               <div class="add-new">
-                <dialog-modal :name-input="'اضافة فرع جديد'" :title="'اضافة فرع جديد'">
+                <dialog-modal :name-input="'تحديد موعد مقابلة'" :title="'تحديد موعد مقابلة'">
                   <div class="form-modal">
                     <form>
                       <v-row>
@@ -68,11 +74,16 @@
           <v-row>
             <v-col v-for="student in allInterview" :key="student.id"  cols="12" lg="4" md="6">
               <card-branches
-                  :name="'الفرع الاول'"
-                  :items-path-array="student.detailsAdmission"
-                  :show-btn="true"
+                  :name="'الفصل الدراسي الاول'"
+                  :statusStudent="student.class"
+                  :status="student.classStatus"
+                  :items-path-array="student.detailsClasses"
+                  :idCardStudent="student.id"
+                  :text-card="false"
+                  :avatar-branch="false"
+                  :path-time-section="true"
+                  :show-btn="false"
                   :show-edit-delete="true"
-                  :path-link="'detailsBranches'"
                 />
             </v-col>
           </v-row>
@@ -86,6 +97,7 @@
 <script>
 import PaginationComponents from "@/components/dashboard/paginationComponents";
 import SearchInput from "@/components/search-input";
+import DateSelectModal from "@/components/dashboard/dateSelectModal";
 import ImportFile from "@/components/import-file";
 import DialogModal from "@/components/dialogModal";
 import SelectInput from "@/components/select-input";
@@ -94,12 +106,12 @@ import DateCustomer from "@/components/date-customer";
 import CardBranches from "@/components/cards/card-branches";
 
 export default {
-  name: "branchesView",
+  name: "classesStudentView",
   components: {
     CardBranches,
     DateCustomer,
     SelectInput,
-    DialogModal, ImportFile, SearchInput, PaginationComponents
+    DialogModal, ImportFile, DateSelectModal, SearchInput, PaginationComponents
   },
   data() {
     return {
@@ -129,7 +141,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 
-.branches-view {
+.classes-student {
   background-color: $background-main-page;
   padding: 40px 15px;
 
@@ -186,7 +198,7 @@ export default {
   border: none !important;
 }
 
-.branches-view {
+.classes-student {
   .theme--light.v-input input, .theme--light.v-input textarea {
     font-size: 14px !important;
     font-weight: bold !important;

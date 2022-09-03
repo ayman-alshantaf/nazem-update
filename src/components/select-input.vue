@@ -5,6 +5,7 @@
         :items="items"
         :label="name"
         solo
+        required
     ></v-select>
   </div>
 
@@ -14,6 +15,11 @@
 export default {
   name: "select-input",
   props: ['name', 'items','label'],
+  data(){
+    return{
+
+    }
+  }
 
 }
 </script>
@@ -21,6 +27,7 @@ export default {
 <style lang="scss">
 .select-component {
   width: 100%;
+
 
   .v-text-field.v-text-field--solo .v-label {
     right: 0 !important;
@@ -68,12 +75,13 @@ export default {
     background-color: white;
     position: absolute;
     top: 0;
-    z-index: 50;
+    z-index: 1;
     right: 5%;
   }
   label.main-label{
     font-weight: bold;
     font-size: 14px !important;
+    color: rgba(0,0,0,0.6) !important;
   }
 
 }

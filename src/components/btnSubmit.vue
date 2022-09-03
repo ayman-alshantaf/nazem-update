@@ -1,6 +1,9 @@
 <template>
   <div class="btn-submit-component">
-    <v-btn class="btn-submit" block :color="colorValue">{{ valueBtn }}</v-btn>
+    <v-btn class="btn-submit" block :to="routeLink" :color="colorValue">
+      <slot></slot>
+      {{ valueBtn }}
+    </v-btn>
   </div>
 </template>
 
@@ -14,6 +17,9 @@ export default {
     colorValue:{
       type:String,
       default:'#00B5AD'
+    },
+    routeLink:{
+      type:String
     }
   }
 }

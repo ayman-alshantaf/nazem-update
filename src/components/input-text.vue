@@ -42,13 +42,14 @@ export default {
   label {
     display: block;
     margin-bottom: 10px;
-    font-size: 13px ;
+    font-size: 14px ;
     background-color: white;
     position: absolute;
     top: -25%;
     z-index: 50;
     padding: 0 1px;
     right: 2%;
+    font-weight: bold;
   }
   label.custom-label{
     font-size: 14px !important;
@@ -57,6 +58,9 @@ export default {
   .v-input__slot {
     margin-bottom: 0 !important;
     padding-bottom: 5px;
+  }
+  .v-input__slot input {
+    font-size: 14px;
   }
 
 }

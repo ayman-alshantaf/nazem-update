@@ -1,97 +1,108 @@
 <template>
   <section class="detailsBranches-view">
     <v-main>
-      <div class="container--fluid" style="border-radius: 15px; background-color: white; padding: 15px">
+      <div class="container--fluid" >
         <div class="all-card">
           <v-row>
-            <v-col  cols="12" md="6">
+            <v-col cols="12" md="6">
               <div class="title-section">
-                <h4>مدير الفرع</h4>
+                <span>مدير الفرع</span>
               </div>
               <v-row>
                 <v-col style="padding-left: 5px" cols="7">
                   <card-branches-details/>
                 </v-col>
                 <v-col cols="5">
-                  <div style="padding-right: 2px;padding-left: 5px;border: 1px solid #D2D5E1;min-width:45%;height: 100%;border-radius: 5px;display: flex;align-items: center;justify-content: center" class="add-employee">
-                      <div class="icon" style="text-align: center;color: #00B5AD">
-                        <i class="fa fa-plus mb-3" style="font-size: 35px"></i>
-                        <h2 style="font-size: 22px">إضافة موظف</h2>
-                      </div>
+                  <div
+                      style="padding-right: 2px;padding-left: 5px;border: 1px solid #D2D5E1;min-width:45%;height: 100%;border-radius: 5px;display: flex;align-items: center;justify-content: center"
+                      class="add-employee">
+                    <div class="icon" style="text-align: center;color: #00B5AD">
+                      <i class="fa fa-plus mb-3" style="font-size: 35px"></i>
+                      <h2 style="font-size: 22px">إضافة موظف</h2>
+                    </div>
                   </div>
                 </v-col>
 
               </v-row>
 
             </v-col>
-            <v-col  cols="12" md="6">
+            <v-col cols="12" md="6">
               <div class="title-section">
-                <h4>مدير الفرع</h4>
+                <span>مدير الفرع</span>
               </div>
               <v-row>
                 <v-col style="padding-left: 5px" cols="7">
                   <card-branches-details/>
                 </v-col>
                 <v-col cols="5">
-                  <div style="padding-right: 2px;padding-left: 5px;border: 1px solid black;min-width:45%;height: 100%" class="add-employee">
-
+                  <div
+                      style="padding-right: 2px;padding-left: 5px;border: 1px solid #D2D5E1;min-width:45%;height: 100%;border-radius: 5px;display: flex;align-items: center;justify-content: center"
+                      class="add-employee">
+                    <div class="icon" style="text-align: center;color: #00B5AD">
+                      <i class="fa fa-plus mb-3" style="font-size: 35px"></i>
+                      <h2 style="font-size: 22px">إضافة موظف</h2>
+                    </div>
                   </div>
                 </v-col>
 
               </v-row>
 
             </v-col>
-            <v-col  cols="12" md="6">
+            <v-col cols="12" md="6">
               <div class="title-section">
-                <h4>مدير الفرع</h4>
+                <span>مدير الفرع</span>
               </div>
               <v-row>
                 <v-col style="padding-left: 5px" cols="7">
                   <card-branches-details/>
                 </v-col>
                 <v-col cols="5">
-                  <div style="padding-right: 2px;padding-left: 5px;border: 1px solid black;min-width:45%;height: 100%" class="add-employee">
-
+                  <div
+                      style="padding-right: 2px;padding-left: 5px;border: 1px solid #D2D5E1;min-width:45%;height: 100%;border-radius: 5px;display: flex;align-items: center;justify-content: center"
+                      class="add-employee">
+                    <div class="icon" style="text-align: center;color: #00B5AD">
+                      <i class="fa fa-plus mb-3" style="font-size: 35px"></i>
+                      <h2 style="font-size: 22px">إضافة موظف</h2>
+                    </div>
                   </div>
                 </v-col>
 
               </v-row>
 
             </v-col>
-            <v-col  cols="12" md="6">
+            <v-col cols="12" md="6">
               <div class="title-section">
-                <h4>مدير الفرع</h4>
+                <span>مدير الفرع</span>
               </div>
               <v-row>
                 <v-col style="padding-left: 5px" cols="7">
                   <card-branches-details/>
                 </v-col>
                 <v-col cols="5">
-                  <div style="padding-right: 2px;padding-left: 5px;border: 1px solid black;min-width:45%;height: 100%" class="add-employee">
-
+                  <div
+                      style="padding-right: 2px;padding-left: 5px;border: 1px solid #D2D5E1;min-width:45%;height: 100%;border-radius: 5px;display: flex;align-items: center;justify-content: center"
+                      class="add-employee">
+                    <div class="icon" style="text-align: center;color: #00B5AD">
+                      <i class="fa fa-plus mb-3" style="font-size: 35px"></i>
+                      <h2 style="font-size: 22px">إضافة موظف</h2>
+                    </div>
                   </div>
                 </v-col>
 
               </v-row>
 
             </v-col>
-
           </v-row>
-          <v-row>
-            <v-col v-for="student in allInterview" :key="student.id"  cols="12" lg="4" md="6">
-              <card-branches
-                  :name="'الفرع الاول'"
-                  :class-name="student.className"
-                  :statusStudent="student.Admission"
-                  :items-path-array="student.detailsAdmission"
-                  :status="student.statusAdmission"
-                  :idCardStudent="student.id"
-                  :show-btn="false"
-                  :show-edit-delete="true"
-                />
-
-            </v-col>
-          </v-row>
+          <div class="reciters mt-10">
+            <div class="title-section">
+              <span>المقرئين</span>
+            </div>
+            <v-row>
+              <v-col v-for="item in 3" :key="item" cols="12" lg="4" md="6">
+                <card-branches-details/>
+              </v-col>
+            </v-row>
+          </div>
         </div>
         <pagination-components/>
       </div>
@@ -102,15 +113,13 @@
 <script>
 import PaginationComponents from "@/components/dashboard/paginationComponents";
 import {mapMutations, mapState} from "vuex";
-import CardBranches from "@/components/cards/card-branches";
 import CardBranchesDetails from "@/components/cards/card-branchesDetails";
 
 export default {
   name: "detailsBranches",
   components: {
     CardBranchesDetails,
-    CardBranches,
-PaginationComponents
+    PaginationComponents
   },
   data() {
     return {
@@ -125,7 +134,7 @@ PaginationComponents
       },
     }
   },
-  computed:{
+  computed: {
     ...mapState(['allInterview'])
   },
   methods: {
@@ -144,6 +153,42 @@ PaginationComponents
   background-color: $background-main-page;
   padding: 40px 15px;
 
+  .container--fluid {
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px
+  }
+  .all-card{
+    .title-section{
+      span{
+        display: block;
+        position: relative;
+        margin-bottom: 30px;
+        color: #202020;
+        font-size: 20px;
+      }
+      span:after{
+        content: '';
+        width: 100px;
+        height: 3px;
+        background-color: #00B5AD;
+        position: absolute;
+        bottom: -25%;
+        right: 0;
+        border-radius: 10px;
+      }
+      span:before{
+        content: '';
+        width: 200px;
+        height: 3px;
+        background-color: #B4B4B4;
+        position: absolute;
+        bottom: -25%;
+        right: 0;
+        border-radius: 10px;
+      }
+    }
+  }
   .top-bar-search {
     display: flex;
     justify-content: space-between;
@@ -257,9 +302,11 @@ PaginationComponents
 
 .form-modal {
   padding: 15px 0;
-  .col-12{
+
+  .col-12 {
     position: relative;
   }
+
   .v-label {
     right: 0 !important;
     left: auto !important;
@@ -268,16 +315,18 @@ PaginationComponents
   label {
     display: block;
     margin-bottom: 10px;
-    font-size: 15px ;
+    font-size: 15px;
     background-color: white;
     position: absolute;
     top: 0;
     z-index: 50;
     right: 7%;
   }
-  label.custom-label{
+
+  label.custom-label {
     font-size: 14px !important;
   }
+
   .v-input__slot {
     margin-bottom: 0 !important;
   }

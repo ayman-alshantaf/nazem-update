@@ -36,9 +36,9 @@ export default new Vuex.Store({
                 {id: 1, title: "الفروع", icon: 'fa fa-home', urlPath: "/branches"},
             ],
             other: [
-                {id: 1, title: "الفصول", icon: 'fa fa-home', urlPath: "/..5"},
-                {id: 2, title: "المسارات", icon: 'fa fa-home', urlPath: "/..6"},
-                {id: 3, title: "المقرئين", icon: 'fa fa-home', urlPath: "/..7"},
+                {id: 1, title: "الفصول", icon: 'fa fa-home', urlPath: "/classesStudent"},
+                {id: 2, title: "المسارات", icon: 'fa fa-home', urlPath: "/tracks"},
+                {id: 3, title: "المقرئين", icon: 'fa fa-home', urlPath: "/reciters"},
                 {id: 4, title: "تنبيهات التسميع", icon: 'fa fa-home', urlPath: "/..8"},
             ],
         },
@@ -209,6 +209,10 @@ export default new Vuex.Store({
                 statusAdmission:1,
                 alarm:'إيقاف مؤقت',
                 alarmStatus:0,
+                class:'فعال',
+                classStatus:1,
+                executed:'غير منفذ',
+                executedStatus:0,
                 detailsRecitation: [
                     {
                         id: 1,
@@ -394,6 +398,77 @@ export default new Vuex.Store({
                         subTitle: 'المسار الاول'
                     },
                 ],
+                detailsClasses: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'بداية اليوم الجديد',
+                        subTitle: 'الساعه (12:12) ص'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ النهاية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                ],
+                detailsTracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'تجاوز الايام',
+                        subTitle: 'لا يوجد'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Color5.png'),
+                        title: 'أيام الغياب',
+                        subTitle: 'خمسون يوما'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
+                    },
+                ],
+
             },
             {
                 id: 2,
@@ -405,6 +480,10 @@ export default new Vuex.Store({
                 statusAdmission:1,
                 alarm:'إيقاف مؤقت',
                 alarmStatus:0,
+                class:'غير فعال',
+                classStatus:0,
+                executed:' منفذ',
+                executedStatus:1,
                 detailsRecitation: [
                     {
                         id: 1,
@@ -588,6 +667,76 @@ export default new Vuex.Store({
                         icon: require('@/assets/image/icon/Color.png'),
                         title: 'المسار',
                         subTitle: 'المسار الاول'
+                    },
+                ],
+                detailsClasses: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'بداية اليوم الجديد',
+                        subTitle: 'الساعه (12:12) ص'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ النهاية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                ],
+                detailsTracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'تجاوز الايام',
+                        subTitle: 'لا يوجد'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Color5.png'),
+                        title: 'أيام الغياب',
+                        subTitle: 'خمسون يوما'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
                     },
                 ],
 
@@ -600,6 +749,10 @@ export default new Vuex.Store({
                 status:1,
                 Admission:'اونلاين',
                 statusAdmission:1,
+                class:' فعال',
+                classStatus:1,
+                executed:' منفذ',
+                executedStatus:1,
                 detailsRecitation: [
                     {
                         id: 1,
@@ -785,6 +938,77 @@ export default new Vuex.Store({
                         subTitle: 'المسار الاول'
                     },
                 ],
+                detailsClasses: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'بداية اليوم الجديد',
+                        subTitle: 'الساعه (12:12) ص'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ النهاية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                ],
+                detailsTracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'تجاوز الايام',
+                        subTitle: 'لا يوجد'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Color5.png'),
+                        title: 'أيام الغياب',
+                        subTitle: 'خمسون يوما'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
+                    },
+                ],
+
             },
             {
                 id: 4,
@@ -794,6 +1018,10 @@ export default new Vuex.Store({
                 status:0,
                 Admission:'حضوري',
                 statusAdmission:2,
+                class:'غير فعال',
+                classStatus:0,
+                executed:' منفذ',
+                executedStatus:1,
                 detailsRecitation: [
                     {
                         id: 1,
@@ -979,6 +1207,77 @@ export default new Vuex.Store({
                         subTitle: 'المسار الاول'
                     },
                 ],
+                detailsClasses: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'بداية اليوم الجديد',
+                        subTitle: 'الساعه (12:12) ص'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ النهاية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                ],
+                detailsTracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'تجاوز الايام',
+                        subTitle: 'لا يوجد'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Color5.png'),
+                        title: 'أيام الغياب',
+                        subTitle: 'خمسون يوما'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
+                    },
+                ],
+
 
             },
             {
@@ -991,6 +1290,10 @@ export default new Vuex.Store({
                 statusAdmission:1,
                 alarm:'إيقاف مؤقت',
                 alarmStatus:0,
+                class:' فعال',
+                classStatus:1,
+                executed:'غير منفذ',
+                executedStatus:0,
                 detailsRecitation: [
                     {
                         id: 1,
@@ -1176,6 +1479,77 @@ export default new Vuex.Store({
                         subTitle: 'المسار الاول'
                     },
                 ],
+                detailsClasses: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'بداية اليوم الجديد',
+                        subTitle: 'الساعه (12:12) ص'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ النهاية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                ],
+                detailsTracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'تجاوز الايام',
+                        subTitle: 'لا يوجد'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Color5.png'),
+                        title: 'أيام الغياب',
+                        subTitle: 'خمسون يوما'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
+                    },
+                ],
+
 
             },
             {
@@ -1186,6 +1560,10 @@ export default new Vuex.Store({
                 status:2,
                 Admission:'اونلاين',
                 statusAdmission:1,
+                class:' فعال',
+                classStatus:1,
+                executed:' منفذ',
+                executedStatus:1,
                 detailsRecitation: [
                     {
                         id: 1,
@@ -1369,6 +1747,76 @@ export default new Vuex.Store({
                         icon: require('@/assets/image/icon/Color.png'),
                         title: 'المسار',
                         subTitle: 'المسار الاول'
+                    },
+                ],
+                detailsClasses: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'بداية اليوم الجديد',
+                        subTitle: 'الساعه (12:12) ص'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ النهاية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                ],
+                detailsTracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'تجاوز الايام',
+                        subTitle: 'لا يوجد'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Color5.png'),
+                        title: 'أيام الغياب',
+                        subTitle: 'خمسون يوما'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
                     },
                 ],
 
@@ -1381,6 +1829,10 @@ export default new Vuex.Store({
                 status:2,
                 Admission:'حضوري',
                 statusAdmission:2,
+                class:' فعال',
+                classStatus:1,
+                executed:' منفذ',
+                executedStatus:1,
                 detailsRecitation: [
                     {
                         id: 1,
@@ -1564,6 +2016,76 @@ export default new Vuex.Store({
                         icon: require('@/assets/image/icon/Color.png'),
                         title: 'المسار',
                         subTitle: 'المسار الاول'
+                    },
+                ],
+                detailsClasses: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'بداية اليوم الجديد',
+                        subTitle: 'الساعه (12:12) ص'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ النهاية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                ],
+                detailsTracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'تجاوز الايام',
+                        subTitle: 'لا يوجد'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Color5.png'),
+                        title: 'أيام الغياب',
+                        subTitle: 'خمسون يوما'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
                     },
                 ],
 
@@ -1576,7 +2098,10 @@ export default new Vuex.Store({
                 status:1,
                 Admission:'اونلاين',
                 statusAdmission:1,
-
+                class:' فعال',
+                classStatus:1,
+                executed:'غير منفذ',
+                executedStatus:0,
                 detailsRecitation: [
                     {
                         id: 1,
@@ -1760,6 +2285,76 @@ export default new Vuex.Store({
                         icon: require('@/assets/image/icon/Color.png'),
                         title: 'المسار',
                         subTitle: 'المسار الاول'
+                    },
+                ],
+                detailsClasses: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'بداية اليوم الجديد',
+                        subTitle: 'الساعه (12:12) ص'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ النهاية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                ],
+                detailsTracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'تجاوز الايام',
+                        subTitle: 'لا يوجد'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Color5.png'),
+                        title: 'أيام الغياب',
+                        subTitle: 'خمسون يوما'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
                     },
                 ],
 
@@ -1775,6 +2370,10 @@ export default new Vuex.Store({
                 statusAdmission:1,
                 alarm:'إيقاف مؤقت',
                 alarmStatus:0,
+                class:'غير فعال',
+                classStatus:0,
+                executed:' منفذ',
+                executedStatus:1,
                 detailsRecitation: [
                     {
                         id: 1,
@@ -1960,6 +2559,77 @@ export default new Vuex.Store({
                         subTitle: 'المسار الاول'
                     },
                 ],
+                detailsClasses: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ البداية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/New folder/Color.png'),
+                        title: 'بداية اليوم الجديد',
+                        subTitle: 'الساعه (12:12) ص'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'تاريخ النهاية',
+                        subTitle: '1334-1-1 هـ'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                ],
+                detailsTracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'تجاوز الايام',
+                        subTitle: 'لا يوجد'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 78361.png'),
+                        title: 'عرض نهاية الفصل',
+                        subTitle: 'نعم'
+                    },
+                    {
+                        id: 5,
+                        icon: require('@/assets/image/icon/Color5.png'),
+                        title: 'أيام الغياب',
+                        subTitle: 'خمسون يوما'
+                    },
+                    {
+                        id: 6,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'اختبار نهاية الفصل ',
+                        subTitle: 'نعم'
+                    },
+                ],
+
             },
         ],
         recitationDetails: [
