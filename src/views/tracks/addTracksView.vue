@@ -52,6 +52,7 @@
                       :avatar-branch="false"
                       :show-edit-delete="true"
                       :check-icon-show="false"
+                      :path-line="false"
                       :path-link="'detailsBranches'"
                   />
                 </v-col>

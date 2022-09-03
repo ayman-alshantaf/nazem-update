@@ -76,7 +76,7 @@ export default {
     position: absolute;
     top: 0;
     z-index: 1;
-    right: 5%;
+    right: 25px !important;
   }
   label.main-label{
     font-weight: bold;

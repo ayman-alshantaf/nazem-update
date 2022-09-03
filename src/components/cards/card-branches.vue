@@ -33,7 +33,7 @@
             </div>
           </div>
         </v-col>
-<!--        <div class=" last-of-type" style="width: 100% "></div>-->
+        <div class=" last-of-type" style="width: 100% "></div>
       </v-row>
     </div>
     <div class="text-card">
@@ -51,7 +51,7 @@
         <btn-submit :value-btn="valueButton" :route-link="pathLink" class="mt-3 mb-4"/>
       </div>
 
-      <div class=" last-of-type" style="width: 100% "></div>
+      <div class=" last-of-type" v-show="pathLine" style="width: 100% "></div>
     </div>
     <div v-show="showEditDelete" class="edit-delete">
       <v-btn disabled class="edit">
@@ -94,6 +94,10 @@ export default {
     showEditDelete: {
       type: Boolean,
       default: false
+    },
+    pathLine: {
+      type: Boolean,
+      default: true
     },
     pathTimeSection: {
       type: Boolean,

@@ -46,8 +46,8 @@
             <v-row>
               <v-col v-for="student in allInterview" :key="student.id"  cols="12" lg="4" md="6">
                 <card-branches
-                    :name="'الفصل الدراسي الاول'"
-                    :items-path-array="student.detailsClasses"
+                    :name="'المسار الاول'"
+                    :items-path-array="student.tracks"
                     :value-button="'تفاصيل المسار'"
                     :path-link="'detailsTracks'"
                     :path-time-section="true"

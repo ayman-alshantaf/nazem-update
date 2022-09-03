@@ -32,32 +32,31 @@
             </div>
           </div>
         </v-col>
-        <div class=" last-of-type" style="width: 100% "></div>
+        <div class=" last-of-type" v-show="showLine" style="width: 100% "></div>
       </v-row>
     </div>
     <slot></slot>
     <div class="btn-done">
-      <v-btn  v-show="showBtn" :to="{name: 'recitationView' , params:{id:idCardStudent}}" class="mt-3 mb-4" block>
+      <v-btn v-show="showBtn" :to="routLink" class="mt-3 mb-4" block>
         تسميع
       </v-btn>
-      <v-btn  v-show="showBtnWarning" class="mt-3 mb-4" block>
-        {{nameBtn}}
+      <v-btn v-show="showBtnWarning" class="mt-3 mb-4" block>
+        {{ nameBtn }}
       </v-btn>
     </div>
 
+    <div v-show="showEditDelete" class="edit-delete">
+      <v-btn disabled class="edit">
+        <span>تعديل </span>
+        <i class="fa fa-pencil"></i>
+      </v-btn>
+      <div class="border"></div>
 
-        <div  v-show="showEditDelete" class="edit-delete">
-          <v-btn disabled class="edit">
-            <span>تعديل </span>
-            <i class="fa fa-pencil"></i>
-          </v-btn>
-          <div class="border"></div>
-
-          <v-btn disabled class="delete">
-            <span>حذف </span>
-            <i class="fa fa-trash-o"></i>
-          </v-btn>
-        </div>
+      <v-btn disabled class="delete">
+        <span>حذف </span>
+        <i class="fa fa-trash-o"></i>
+      </v-btn>
+    </div>
   </div>
 </template>
 
@@ -83,22 +82,30 @@ export default {
     idCardStudent: {
       type: Number
     },
-    showBtn:{
-      type:Boolean,
-      default:true
+    showBtn: {
+      type: Boolean,
+      default: true
     },
-    showEditDelete:{
-      type:Boolean,
-      default:false
+    showEditDelete: {
+      type: Boolean,
+      default: false
     },
-    showBtnWarning:{
-      type:Boolean,
-      default:false
+    showBtnWarning: {
+      type: Boolean,
+      default: false
     },
-    nameBtn:{
+    nameBtn: {
       type: String,
-      default:'تسميع'
-    }
+      default: 'تسميع'
+    },
+    showLine: {
+      type: Boolean,
+      default: true
+    },
+    routLink:{
+      type: String,
+      default: 'recitationView'
+    },
   },
   data() {
     return {
@@ -226,15 +233,17 @@ export default {
     padding-left: 5px;
     padding-right: 5px;
     cursor: pointer !important;
+
     .edit, .delete {
       padding-top: 20px;
       padding-bottom: 25px;
 
     }
-    .delete  {
-      i{
+
+    .delete {
+      i {
         padding-left: 3px;
-     }
+      }
     }
 
     .v-btn:not(.v-btn--round).v-size--default {
@@ -290,9 +299,10 @@ export default {
     color: white;
     border-radius: 5px !important;
   }
-  .btn-done{
-    .v-btn{
-      .v-btn__content{
+
+  .btn-done {
+    .v-btn {
+      .v-btn__content {
         font-size: 18px !important;
       }
     }

@@ -24,6 +24,9 @@ import detailsTracksView from "@/views/tracks/detailsTracksView";
 import detailsTracksTowView from "@/views/tracks/detailsTracksTowView";
 import addTracksView from "@/views/tracks/addTracksView";
 import recitersView from "@/views/others/recitersView";
+import recitationAlertsView from "@/views/others/recitationAlertsView";
+import detailsRecitationAlertsView from "@/views/others/detailsRecitationAlertsView";
+import officialHolidaysView from "@/views/students/officialHolidaysView";
 
 Vue.use(VueRouter)
 
@@ -60,6 +63,11 @@ const routes = [
         component: weeklyNarrativeView
     },
     {
+        path: '/officialHolidays',
+        name: 'officialHolidays',
+        component: officialHolidaysView
+    },
+    {
         path: '/studentVacations',
         name: 'studentVacations',
         component: studentVacationsView
@@ -75,7 +83,7 @@ const routes = [
         component: interviewsView
     },
     {
-        path: '/interview/recitationView/',
+        path: '/recitationView/',
         name: 'recitationView',
         component: recitationView
     },
@@ -148,7 +156,16 @@ const routes = [
         name: 'reciters',
         component: recitersView
     },
-
+    {
+        path: '/recitationAlerts',
+        name: 'recitationAlerts',
+        component: recitationAlertsView
+    },
+    {
+        path: '/detailsRecitationAlerts',
+        name: 'detailsRecitationAlerts',
+        component: detailsRecitationAlertsView
+    },
 
 ]
 

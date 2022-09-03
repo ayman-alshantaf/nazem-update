@@ -16,7 +16,7 @@ export default new Vuex.Store({
                 {id: 2, title: "المراجعة", icon: 'fa fa-check-circle-o', urlPath: "/review"},
                 {id: 3, title: "السرد الاسبوعي", icon: 'fa fa-file-text-o', urlPath: "/weeklyStudents"},
                 {id: 4, title: "اجازات الطلاب", icon: 'fa fa-pause-circle-o', urlPath: "/studentVacations"},
-                {id: 5, title: "الاجازات الرسمية", icon: 'fa fa-check-square-o', urlPath: "/."},
+                {id: 5, title: "الاجازات الرسمية", icon: 'fa fa-check-square-o', urlPath: "/officialHolidays"},
                 {id: 6, title: "الاذونات", icon: 'fa fa-stop-circle-o', urlPath: "/permissionsView"},
             ],
             interviews: [
@@ -39,7 +39,7 @@ export default new Vuex.Store({
                 {id: 1, title: "الفصول", icon: 'fa fa-home', urlPath: "/classesStudent"},
                 {id: 2, title: "المسارات", icon: 'fa fa-home', urlPath: "/tracks"},
                 {id: 3, title: "المقرئين", icon: 'fa fa-home', urlPath: "/reciters"},
-                {id: 4, title: "تنبيهات التسميع", icon: 'fa fa-home', urlPath: "/..8"},
+                {id: 4, title: "تنبيهات التسميع", icon: 'fa fa-home', urlPath: "/recitationAlerts"},
             ],
         },
         dataChartCardOne:
@@ -468,6 +468,33 @@ export default new Vuex.Store({
                         subTitle: 'نعم'
                     },
                 ],
+                tracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'عدد الفترات',
+                        subTitle: 'خمس فترات'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+
+                ],
 
             },
             {
@@ -739,6 +766,34 @@ export default new Vuex.Store({
                         subTitle: 'نعم'
                     },
                 ],
+                tracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'عدد الفترات',
+                        subTitle: 'خمس فترات'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+
+                ],
+
 
             },
             {
@@ -1008,6 +1063,33 @@ export default new Vuex.Store({
                         subTitle: 'نعم'
                     },
                 ],
+                tracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'عدد الفترات',
+                        subTitle: 'خمس فترات'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+
+                ],
 
             },
             {
@@ -1276,6 +1358,33 @@ export default new Vuex.Store({
                         title: 'اختبار نهاية الفصل ',
                         subTitle: 'نعم'
                     },
+                ],
+                tracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'عدد الفترات',
+                        subTitle: 'خمس فترات'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+
                 ],
 
 
@@ -1549,6 +1658,33 @@ export default new Vuex.Store({
                         subTitle: 'نعم'
                     },
                 ],
+                tracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'عدد الفترات',
+                        subTitle: 'خمس فترات'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+
+                ],
 
 
             },
@@ -1819,6 +1955,33 @@ export default new Vuex.Store({
                         subTitle: 'نعم'
                     },
                 ],
+                tracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'عدد الفترات',
+                        subTitle: 'خمس فترات'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+
+                ],
 
             },
             {
@@ -2088,6 +2251,33 @@ export default new Vuex.Store({
                         subTitle: 'نعم'
                     },
                 ],
+                tracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'عدد الفترات',
+                        subTitle: 'خمس فترات'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+
+                ],
 
             },
             {
@@ -2356,6 +2546,33 @@ export default new Vuex.Store({
                         title: 'اختبار نهاية الفصل ',
                         subTitle: 'نعم'
                     },
+                ],
+                tracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'عدد الفترات',
+                        subTitle: 'خمس فترات'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+
                 ],
 
 
@@ -2629,6 +2846,33 @@ export default new Vuex.Store({
                         subTitle: 'نعم'
                     },
                 ],
+                tracks: [
+                    {
+                        id: 1,
+                        icon: require('@/assets/image/icon/Group 77857.png'),
+                        title: 'مقدار الفترة',
+                        subTitle: 'عشرون وجه '
+                    },
+                    {
+                        id: 2,
+                        icon: require('@/assets/image/icon/Group 78524.png'),
+                        title: 'هدف الفترة',
+                        subTitle: 'حفظ'
+                    },
+                    {
+                        id: 3,
+                        icon: require('@/assets/image/icon/Color55.png'),
+                        title: 'عدد الفترات',
+                        subTitle: 'خمس فترات'
+                    },
+                    {
+                        id: 4,
+                        icon: require('@/assets/image/icon/Group 77770.png'),
+                        title: 'أيام التسميع',
+                        subTitle: 'السبت - الاحد- الثنين'
+                    },
+
+                ],
 
             },
         ],
@@ -2670,8 +2914,45 @@ export default new Vuex.Store({
                 title: 'وقت الاختبار',
                 subTitle: 'الساعه(12:12)ص'
             },
-        ]
-        ,
+        ],
+        ourPrograms: [
+            {
+                id: 1,
+                icon: require('@/assets/image/icon/Color.png'),
+                title: 'المسار ',
+                subTitle: 'المسار الاول'
+            },
+            {
+                id: 2,
+                icon: require('@/assets/image/icon/Group 78359.png'),
+                title: 'الفصل',
+                subTitle: 'الفصل الاول'
+            },
+            {
+                id: 3,
+                icon: require('@/assets/image/icon/Group 77857.png'),
+                title: 'مقدار الفترة',
+                subTitle: 'عشرون وجه'
+            },
+            {
+                id: 4,
+                icon: require('@/assets/image/icon/Group 78361.png'),
+                title: 'نوعه',
+                subTitle: 'عرض أو اختبار'
+            },
+            {
+                id: 5,
+                icon: require('@/assets/image/icon/Group 77770.png'),
+                title: 'تاريخ الاختبار',
+                subTitle: '12-2-1344'
+            },
+            {
+                id: 6,
+                icon: require('@/assets/image/icon/New folder/Color.png'),
+                title: 'وقت الاختبار',
+                subTitle: 'الساعه (12:12) ص'
+            },
+        ],
         showBarRight: true,
         titlePage: 'الرئيسية',
     },

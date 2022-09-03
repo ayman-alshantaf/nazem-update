@@ -22,7 +22,7 @@ export default {
 .input-text{
   position: relative;
   .v-text-field {
-    border: 1px solid rgba(6, 83, 254, 0.18);
+    border: 1px solid rgba(6, 83, 254, 0.18) !important;
     border-radius: 5px;
     padding-top: 5px !important;
   }
@@ -42,13 +42,13 @@ export default {
   label {
     display: block;
     margin-bottom: 10px;
-    font-size: 14px ;
+    font-size: 14px !important;
     background-color: white;
     position: absolute;
-    top: -25%;
-    z-index: 50;
+    top: -13px !important;
+    z-index: 1;
     padding: 0 1px;
-    right: 2%;
+    right: 11px !important;
     font-weight: bold;
   }
   label.custom-label{

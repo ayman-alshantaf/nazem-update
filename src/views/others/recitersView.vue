@@ -1,87 +1,78 @@
 <template>
-  <section class="reciters-page">
+  <section class="recitersView">
     <v-main>
-      <div class="container--fluid">
-        <!-- start section tabs interview with content tabs-->
-        <div class="section-tabs-interview">
-          <tabs-custom-interviews :items="items">
-            <!-- start   section header top tabs-->
-            <template v-slot:header-tabs>
-              <div class="header-tabs">
-                <form>
+      <div class="container--fluid" style="">
+        <div class="all-card">
+          <div class="top-bar-search">
+            <div class="search-section">
+              <form>
+                <div class="search">
                   <v-row>
-                    <v-col>
-                      <select-option-customer :items="itemsOption"/>
+                    <v-col cols="12" lg="8" style="padding-left: 4px">
+                      <search-input :style="styleSearch"/>
                     </v-col>
-                    <v-col lg="3" style="padding-right: 1px">
-                      <search-input :style="styleSearch"></search-input>
-                    </v-col>
-                    <v-col lg="2">
-                      <date-select-modal/>
-                    </v-col>
-                    <v-col lg="2">
-                      <date-select-modal/>
-                    </v-col>
-                    <v-col style="padding-left: 0px;padding-right: 5px">
-                      <div class="input-search">
-                        <btn-search/>
+                    <v-col cols="12" lg="4">
+                      <div class="main-container-date">
+                        <button>بحث</button>
                       </div>
                     </v-col>
                   </v-row>
-                </form>
+                </div>
+              </form>
+            </div>
+            <div class="import-export-file">
+              <select-option-customer class="mt-2"/>
+              <div class="export-file">
+                <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
               </div>
-            </template>
-            <!-- end   section header top tabs-->
-
-            <!-- start   section content 'card' top tabs-->
-            <template v-slot:contentTabOne>
-              <div class="all-card">
-                <v-row>
-                  <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6"
-                         style="padding: 10px 9px">
-                    <card-inter-view :name="student.name"
-                                     :class-name="student.className"
-                                     :statusStudent="student.Admission"
-                                     :status="student.statusAdmission"
-                                     :items-path-array="student.detailsRecitation"
-                                     :idCardStudent="student.id"
-
-                    />
-                  </v-col>
-                </v-row>
+              <div class="import-file">
+                <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
               </div>
-            </template>
-            <!-- end   section content 'card' top tabs-->
-            <!-- start   section content 'card' top tabs-->
-
-            <template v-slot:contentTabTow>
-              <div class="all-card">
-                <v-row>
-                  <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6"
-                         style="padding: 10px 9px">
-                    <card-inter-view :name="student.name"
-                                     :class-name="student.className"
-                                     :statusStudent="student.statusStudent"
-                                     :items-path-array="student.detailsRecitation"
-                                     :status="student.status"
-                                     :idCardStudent="student.id"
-
-                    />
-                  </v-col>
-                </v-row>
+              <div class="add-new">
+                <dialog-modal :name-input="' إضافة مقرء جديد'" :title="'إضافة مقرء جديد'">
+                  <div class="form-modal">
+                    <form>
+                      <v-row>
+                        <v-col cols="12">
+                          <select-input :label="' اسم المقرء'" :name="'أختر من هنا الموظف'" :items="items"/>
+                        </v-col>
+                        <v-col cols="12" lg="6" md="6">
+                          <input-text :label-top="'وقت التسميع'" :placeholder="'أدخل هنا وقت التسميع'" :items="items"/>
+                        </v-col>
+                        <v-col cols="12" lg="6" md="6">
+                          <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
+                        </v-col>
+                        <v-col cols="12" lg="6" md="6">
+                          <select-input :label="'كيفية التسميع'" :name="'أونلاين'" :items="items"/>
+                        </v-col>
+                        <v-col cols="12" lg="6" md="6">
+                          <select-input :label="'موقع التسميع '" :name="'موقع التسميع'" :items="['نعم','لا']"/>
+                        </v-col>
+                        <v-col cols="12">
+                          <btn-submit :value-btn="'اضافة'"/>
+                        </v-col>
+                      </v-row>
+                    </form>
+                  </div>
+                </dialog-modal>
               </div>
-            </template>
-            <!-- end   section content 'card' top tabs-->
-
-          </tabs-custom-interviews>
+            </div>
+          </div>
+          <v-row>
+            <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6">
+              <card-inter-view :name="student.name"
+                               :class-name="student.className"
+                               :statusStudent="student.Admission"
+                               :status="student.statusAdmission"
+                               :items-path-array="student.detailsRecitation"
+                               :idCardStudent="student.id"
+                                :show-btn="false"
+                               :show-edit-delete="true"
+              />
+            </v-col>
+          </v-row>
         </div>
-        <!--  end section tabs interview with content tabs-->
-
-        <!-- start section pagination-->
-        <div class="section-pagination">
-          <pagination-components/>
-        </div>
-        <!-- end section pagination-->
+        <pagination-components/>
       </div>
     </v-main>
   </section>
@@ -89,48 +80,49 @@
 
 <script>
 import PaginationComponents from "@/components/dashboard/paginationComponents";
-import {mapMutations, mapState} from "vuex";
-import TabsCustomInterviews from "@/components/tabsCustom-intervies";
 import SearchInput from "@/components/search-input";
-import DateSelectModal from "@/components/dashboard/dateSelectModal";
-import BtnSearch from "@/components/btnSearch";
-import CardInterView from "@/components/cards/card-interView";
+import ImportFile from "@/components/import-file";
+import DialogModal from "@/components/dialogModal";
+import SelectInput from "@/components/select-input";
+import {mapMutations, mapState} from "vuex";
+import DateCustomer from "@/components/date-customer";
+import BtnSubmit from "@/components/btnSubmit";
 import SelectOptionCustomer from "@/components/select-option-customer";
-
+import CardInterView from "@/components/cards/card-interView";
+import InputText from "@/components/input-text";
 
 export default {
-  name: "interviewsView",
+  name: "studentVacationsView",
   components: {
-    SelectOptionCustomer,
+    InputText,
     CardInterView,
-    BtnSearch, DateSelectModal, SearchInput, TabsCustomInterviews, PaginationComponents
+    SelectOptionCustomer,
+    BtnSubmit,
+    DateCustomer,
+    SelectInput,
+    DialogModal, ImportFile,  SearchInput, PaginationComponents
   },
   data() {
     return {
       items: [
-        'جميع المقابلات', 'نتيجه المقابلات',
-      ],
-      itemsOption: [
-        {title: 'مقبول '},
-        {title: 'مرفق '},
-        {title: 'قيد المراجهة '},
-
+        'ربط ', 'مراجعه', 'تكرار',
       ],
       styleSearch: {
         backgroundColor: 'transparent',
         border: "1px solid #E2E2EA",
         borderRadius: "10px",
+
       },
     }
   },
   computed: {
-    ...mapState(['allStudents', 'allInterview'])
+    ...mapState(['allInterview'])
   },
   methods: {
     ...mapMutations(['pageTitle'])
   },
   beforeMount() {
-    this.pageTitle('المقابلات')
+    this.pageTitle('اجازات الطلاب')
   }
 }
 </script>
@@ -138,40 +130,69 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 
-.reciters-page {
+.recitersView {
   background-color: $background-main-page;
-  padding: 30px 15px;
+  padding: 40px 15px;
 
   .container--fluid {
     border-radius: 15px;
     background-color: white;
-    padding: 30px 15px 15px 15px
+    padding: 15px
   }
 
-  .all-card {
-    padding-top: 15px;
-  }
+  .top-bar-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    @media only screen and (max-width: 880px) {
+      flex-direction: column;
+    }
 
-  .input-search {
-    width: 90%;
-  }
+    .search-section {
+      width: 35%;
+      @media only screen and (max-width: 880px) {
+        width: 100%;
+      }
 
-  .header-tabs {
-    padding-top: 5px;
+      .search {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding: 12px 0;
+        .main-container-date {
+          display: flex;
+          align-items: center
+        }
+        button {
+          border: 1px solid #00B5AD;
+          padding: 10px 40px;
+          font-size: 14px;
+          border-radius: 10px;
+          color: #00B5AD;
+          margin-right: 10px;
+        }
 
-    .row {
-      align-items: center;
-
-      .col {
-        padding-left: 5px !important;
       }
     }
+
   }
+
+  .import-export-file {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+
+    div {
+      margin: 0 5px;
+    }
+  }
+
 }
 
 </style>
 <style lang="scss">
-.reciters-page {
+.recitersView {
   .theme--light.v-input input, .theme--light.v-input textarea {
     font-size: 14px !important;
     font-weight: bold !important;
@@ -202,7 +223,7 @@ export default {
   }
 
   .theme--light.v-input {
-    margin: 0px 2px 0px 9px;
+    margin: 0 10px 0 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -226,51 +247,6 @@ export default {
     margin-right: 3px;
   }
 
-  .v-btn:not(.v-btn--round).v-size--default {
-    padding: 20px 12px !important;
-    border-radius: 10px;
-
-    i {
-      margin-right: 1px !important;
-    }
-  }
-
-  .v-slide-group.v-item-group > .v-slide-group__next, .v-slide-group.v-item-group > .v-slide-group__prev {
-    display: none !important;
-  }
-
-  .v-slide-group__content {
-    transform: translateY(0px) !important;
-    border: none !important;
-  }
-
-  .section-top-tabs {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-
-    .main-right-section {
-      min-width: 35%;
-
-      .right-section {
-        height: 100%;
-        min-width: 70%;
-        display: inline-flex;
-        border-bottom: 2px solid #B4B4B4;
-      }
-    }
-
-    .main-left-section {
-      height: 100%;
-      display: flex;
-      align-items: center;
-    }
-  }
-
-  .v-slide-group__wrapper {
-    display: block !important;
-
-  }
 
 }
 </style>

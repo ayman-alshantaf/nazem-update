@@ -1,26 +1,18 @@
 <template>
-  <section class="tracks-student">
+  <section class="recitation-alerts">
     <v-main>
-      <div class="container--fluid" style="border-radius: 15px; background-color: white; padding: 15px">
-        <!--  content tabs 'card follow student'-->
+      <div class="container--fluid" style="">
         <div class="all-card">
           <div class="top-bar-search">
             <div class="search-section">
               <form>
                 <div class="search">
                   <v-row>
-                    <v-col cols="12" lg="5" style="padding-left: 4px">
-                      <search-input :style="styleSearch">
-                      </search-input>
+                    <v-col cols="12" lg="8" style="padding-left: 4px">
+                      <search-input :style="styleSearch"/>
                     </v-col>
-                    <v-col cols="12" lg="7">
-                      <div style="display: flex;align-items: center">
-                        <div class="container-date">
-                          <date-select-modal/>
-                        </div>
-                        <div class="container-date">
-                          <date-select-modal/>
-                        </div>
+                    <v-col cols="12" lg="4">
+                      <div class="main-container-date">
                         <button>بحث</button>
                       </div>
                     </v-col>
@@ -29,6 +21,7 @@
               </form>
             </div>
             <div class="import-export-file">
+              <select-option-customer class="mt-2"/>
               <div class="export-file">
                 <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
               </div>
@@ -36,34 +29,27 @@
                 <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
               </div>
               <div class="add-new">
-                <dialog-modal :name-input="'تحديد موعد مقابلة'" :title="'تحديد موعد مقابلة'">
+                <dialog-modal :name-input="' إضافة تسميع جديد'" :title="'إضافة تسميع جديد'">
                   <div class="form-modal">
                     <form>
                       <v-row>
                         <v-col cols="12">
-                          <label>اسم الطالب</label>
-                          <select-input :name="'أختر من هنا اسم الطالب'" :items="items"/>
+                          <select-input :label="' اسم المقرء'" :name="'أختر من هنا الموظف'" :items="items"/>
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
-                          <label>وقت التسميع</label>
-                          <select-input :name="'أدخل هنا وقت التسميع'" :items="items"/>
+                          <input-text :label-top="'وقت التسميع'" :placeholder="'أدخل هنا وقت التسميع'" :items="items"/>
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
                           <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
-                          <label>كيفية التسميع</label>
-                          <select-input :name="'أونلاين'" :items="['نعم','لا']"/>
-
+                          <select-input :label="'كيفية التسميع'" :name="'أونلاين'" :items="items"/>
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
-                          <label>موقع التسميع</label>
-                          <select-input :name="'موقع التسميع'" :items="['نعم','لا']"/>
-
+                          <select-input :label="'موقع التسميع '" :name="'موقع التسميع'" :items="['نعم','لا']"/>
                         </v-col>
-
                         <v-col cols="12">
-                          <v-btn block color="#00B5AD" style="color: white;font-size: 15px;height: 45px">اضافة</v-btn>
+                          <btn-submit :value-btn="'اضافة'"/>
                         </v-col>
                       </v-row>
                     </form>
@@ -74,18 +60,29 @@
           </div>
           <v-row>
             <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6">
-              <card-branches
-                  :name="'الفترة الاولي'"
-                  :items-path-array="student.detailsTracks"
-                  :value-button="'تفاصيل الفترة'"
-                  :path-link="'detailsTracksTow'"
-                  :path-time-section="true"
-                  :show-edit-delete="true"
-              />
+              <card-inter-view :name="student.name"
+                               :class-name="student.className"
+                               :statusStudent="student.Admission"
+                               :status="student.statusAdmission"
+                               :items-path-array="student.ourPrograms"
+                               :idCardStudent="student.id"
+                                :show-btn="true"
+                               :show-edit-delete="false"
+                               :show-line="false"
+                               :rout-link="'detailsRecitationAlerts'"
+              >
+                <div class="degree">
+                  <div class="all-degree">
+                    <span>الدرجة الكلية:100</span>
+                  </div>
+                  <div class="success-degree">
+                    <span>الدرجة النجاح:50</span>
+                  </div>
+                </div>
+              </card-inter-view>
             </v-col>
           </v-row>
         </div>
-
         <pagination-components/>
       </div>
     </v-main>
@@ -95,26 +92,31 @@
 <script>
 import PaginationComponents from "@/components/dashboard/paginationComponents";
 import SearchInput from "@/components/search-input";
-import DateSelectModal from "@/components/dashboard/dateSelectModal";
 import ImportFile from "@/components/import-file";
 import DialogModal from "@/components/dialogModal";
 import SelectInput from "@/components/select-input";
 import {mapMutations, mapState} from "vuex";
 import DateCustomer from "@/components/date-customer";
-import CardBranches from "@/components/cards/card-branches";
+import BtnSubmit from "@/components/btnSubmit";
+import SelectOptionCustomer from "@/components/select-option-customer";
+import CardInterView from "@/components/cards/card-interView";
+import InputText from "@/components/input-text";
 
 export default {
-  name: "detailsTracksView",
+  name: "recitationAlertsView",
   components: {
-    CardBranches,
+    InputText,
+    CardInterView,
+    SelectOptionCustomer,
+    BtnSubmit,
     DateCustomer,
     SelectInput,
-    DialogModal, ImportFile, DateSelectModal, SearchInput, PaginationComponents
+    DialogModal, ImportFile,  SearchInput, PaginationComponents
   },
   data() {
     return {
       items: [
-        'الحفظ', 'اتقان', 'سماع', 'تكرار', 'ربط', 'مراجعه', 'تسميع', 'اختبار', 'تلاوة', 'سرد اسبوعي',
+        'ربط ', 'مراجعه', 'تكرار',
       ],
       styleSearch: {
         backgroundColor: 'transparent',
@@ -131,7 +133,7 @@ export default {
     ...mapMutations(['pageTitle'])
   },
   beforeMount() {
-    this.pageTitle('الاذونات')
+    this.pageTitle('اجازات الطلاب')
   }
 }
 </script>
@@ -139,9 +141,15 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 
-.tracks-student {
+.recitation-alerts {
   background-color: $background-main-page;
   padding: 40px 15px;
+
+  .container--fluid {
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px
+  }
 
   .top-bar-search {
     display: flex;
@@ -153,16 +161,20 @@ export default {
     }
 
     .search-section {
-      width: 55%;
+      width: 35%;
       @media only screen and (max-width: 880px) {
         width: 100%;
       }
 
       .search {
+        width: 100%;
         display: flex;
         align-items: center;
         padding: 12px 0;
-
+        .main-container-date {
+          display: flex;
+          align-items: center
+        }
         button {
           border: 1px solid #00B5AD;
           padding: 10px 40px;
@@ -186,17 +198,23 @@ export default {
       margin: 0 5px;
     }
   }
+  .degree {
+    display: flex;
+    justify-content: space-between;
+    color: #202020;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
 
+    span {
+      font-size: 17px !important;
+    }
+  }
 }
 
 </style>
 <style lang="scss">
-.theme--light.v-text-field > .v-input__control > .v-input__slot:before {
-  display: none !important;
-  border: none !important;
-}
-
-.tracks-student {
+.recitation-alerts {
   .theme--light.v-input input, .theme--light.v-input textarea {
     font-size: 14px !important;
     font-weight: bold !important;
@@ -227,7 +245,7 @@ export default {
   }
 
   .theme--light.v-input {
-    margin: 0px 10px 0px 16px;
+    margin: 0 10px 0 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -253,58 +271,4 @@ export default {
 
 
 }
-
-.form-modal {
-  padding: 15px 0;
-
-  .col-12 {
-    position: relative;
-  }
-
-  .v-label {
-    right: 0 !important;
-    left: auto !important;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 15px;
-    background-color: white;
-    position: absolute;
-    top: 0;
-    z-index: 50;
-    right: 7%;
-  }
-
-  label.custom-label {
-    font-size: 14px !important;
-  }
-
-  .v-input__slot {
-    margin-bottom: 0 !important;
-  }
-
-  .custom-input {
-    .v-text-field {
-      border: 1px solid rgba(21, 57, 135, 0.28);
-      border-radius: 5px;
-    }
-
-    .v-text-field__details {
-      display: none;
-    }
-
-    label {
-      padding-right: 10px;
-      margin-bottom: 10px;
-    }
-
-    .v-text-field .v-label {
-      top: 3px !important;
-    }
-  }
-
-}
-
 </style>
