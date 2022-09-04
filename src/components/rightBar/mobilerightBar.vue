@@ -1,8 +1,6 @@
 <template>
   <div>
-    <v-system-bar color="deep-purple darken-3"></v-system-bar>
-    <v-app-bar     dark
-                   prominent>
+    <v-app-bar >
       <section class="main-bar-top">
         <v-container>
           <v-row>
