@@ -12,14 +12,16 @@
                       <search-input :style="styleSearch"/>
                     </v-col>
                     <v-col cols="12" lg="7">
-                      <div class="main-container-date">
-                        <div>
+                      <div class="date-top">
+                        <div class="container-date">
                           <date-select-modal/>
                         </div>
-                        <div>
+                        <div class="container-date">
                           <date-select-modal/>
                         </div>
-                        <button>بحث</button>
+                        <div class="input-search">
+                          <btn-search/>
+                        </div>
                       </div>
                     </v-col>
                   </v-row>
@@ -101,10 +103,12 @@ import CardFollow from "@/components/cards/cardFollow";
 import DateCustomer from "@/components/date-customer";
 import BtnSubmit from "@/components/btnSubmit";
 import TextArea from "@/components/textArea";
+import BtnSearch from "@/components/btnSearch";
 
 export default {
   name: "studentVacationsView",
   components: {
+    BtnSearch,
     TextArea,
     BtnSubmit,
     DateCustomer,
@@ -164,15 +168,28 @@ export default {
       @media only screen and (max-width: 880px) {
         width: 100%;
       }
+      .date-top {
+        display: flex;
+        align-items: center;
+        @media only screen and (max-width: 1200px) {
+          .container-date {
+            width: 33%;
+
+            .theme--light.v-input {
+              width: 100%;
+            }
+          }
+          .input-search {
+            width: 33%;
+          }
+        }
+      }
 
       .search {
         display: flex;
         align-items: center;
         padding: 12px 0;
-        .main-container-date {
-          display: flex;
-          align-items: center
-        }
+
         button {
           border: 1px solid #00B5AD;
           padding: 10px 40px;
@@ -191,7 +208,27 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
-
+    @media only screen and (max-width: 1200px) {
+      justify-content: space-around;
+      width: 100%;
+      div {
+        width: 33%;
+        label {
+          width: 100%;
+          display: inline-block;
+        }
+      }
+      .add-new{
+        width: 35%;
+      }
+      .export-file, .import-file {
+        margin-top: 8px;
+        text-align: center;
+      }
+      .text-center{
+        width: 100%;
+      }
+    }
     div {
       margin: 0 5px;
     }

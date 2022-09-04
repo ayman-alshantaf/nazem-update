@@ -32,7 +32,7 @@ export default {
   }
 
   label {
-    padding-right: 10px;
+    padding-right: 0px !important;
     margin-bottom: 10px;
   }
 

@@ -1,7 +1,7 @@
 <template>
   <section class="weekly-narrative">
     <v-main>
-      <div class="container--fluid" style="border-radius: 15px; background-color: white; padding: 15px">
+      <div class="container--fluid">
         <tabs-custom :items="items">
           <div class="all-card">
             <div class="top-bar-search">
@@ -43,32 +43,26 @@
                       <form>
                         <v-row>
                           <v-col cols="12" lg="6" md="6">
-                            <label class="custom-label">أختر الفترة</label>
-                            <select-input :name="'أختر الفترة'" :items="items"/>
+                            <select-input :label="'أختر الفترة'" :name="'أختر الفترة'" :items="items"/>
                           </v-col>
                           <v-col cols="12" lg="6" md="6">
                             <date-customer :label="'أختر يوم السرد'" :name-placeholder="'أختر يوم السرد'"/>
                           </v-col>
                           <v-col cols="12" lg="6" md="6">
-                            <label class="custom-label"> أختر من بنود السرد</label>
-                            <select-input :name="'أختر من بنود السرد'" :items="items"/>
+                            <select-input :label="'أختر من بنود السرد'" :name="'أختر من بنود السرد'" :items="items"/>
                           </v-col>
                           <v-col cols="12" lg="6" md="6">
-                            <label class="custom-label">اتمام السرد</label>
-                            <select-input :name="'نعم'" :items="['نعم','لا']"/>
+                            <select-input :label="'اتمام السرد'" :name="'نعم'" :items="['نعم','لا']"/>
 
                           </v-col>
                           <v-col cols="12" class="custom-input">
-                            <label style="right: 4%">مقدار البند</label>
-                            <input-text :placeholder="'مقدار البند'"/>
+                            <input-text :label-top="'مقدار البند'" :placeholder="'مقدار البند'"/>
                           </v-col>
                           <v-col cols="12" lg="6" md="6" class="custom-input">
-                            <label style="right: 7%">من الوجه</label>
-                            <input-text :placeholder="'من الوجه'"/>
+                            <input-text :label-top="'من الوجه'" :placeholder="'من الوجه'"/>
                           </v-col>
                           <v-col cols="12" lg="6" md="6" class="custom-input">
-                            <label style="right: 7%">الى الوجه</label>
-                            <input-text :placeholder="'الى الوجه'"/>
+                            <input-text :label-top="'الى الوجه'" :placeholder="'الى الوجه'"/>
                           </v-col>
                           <v-col cols="12">
                             <v-btn block color="#00B5AD" style="color: white;font-size: 15px;height: 45px">اضافة</v-btn>
@@ -147,6 +141,12 @@ export default {
 .weekly-narrative {
   background-color: $background-main-page;
   padding: 40px 15px;
+
+  .container--fluid {
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px
+  }
 
   .top-bar-search {
     display: flex;
@@ -270,7 +270,7 @@ export default {
   }
 
   .theme--light.v-input {
-    margin: 0px 10px 0px 16px;
+    margin: 0 10px 0 16px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -340,8 +340,8 @@ export default {
       }
 
       label {
-        padding-right: 0px !important;
-        margin-bottom: 0px !important;
+        padding-right: 0 !important;
+        margin-bottom: 0 !important;
       }
 
       .v-text-field .v-label {

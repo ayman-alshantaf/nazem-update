@@ -46,7 +46,7 @@ export default {
   .theme--light.v-text-field--solo > .v-input__control > .v-input__slot {
     background-color: transparent !important;
     width: 100%;
-    border: 1px solid #D2D5E1;
+    border: 1px solid rgba(6, 83, 254, 0.13);
     font-size: 14px;
   }
 

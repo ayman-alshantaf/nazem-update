@@ -69,7 +69,7 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #D2D5E1;
+    border: 1px solid rgba(6, 83, 254, 0.13);
     border-radius: 5px;
   }
 
