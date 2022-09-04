@@ -425,7 +425,7 @@ export default {
     margin-bottom: 0;
     width: 100% !important;
     position: absolute !important;
-    z-index: 55;
+    z-index: 1;
   }
 
   .v-input--selection-controls.v-input {
