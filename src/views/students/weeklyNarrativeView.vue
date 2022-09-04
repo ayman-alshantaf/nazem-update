@@ -204,19 +204,24 @@ export default {
     align-items: center;
     margin-bottom: 8px;
     @media only screen and (max-width: 1200px) {
+      justify-content: space-around;
       width: 100%;
       div {
-        width: 28%;
-
+        width: 33%;
         label {
           width: 100%;
           display: inline-block;
         }
       }
-      .export-file, .import-file {
+      .add-new{
         width: 35%;
+      }
+      .export-file, .import-file {
         margin-top: 8px;
         text-align: center;
+      }
+      .text-center{
+        width: 100%;
       }
     }
 
