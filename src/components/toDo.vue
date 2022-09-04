@@ -192,6 +192,10 @@ export default {
             font-size: 22px !important;
             color: #272727;
             margin-left: 10px;
+
+            @media only screen and (max-width: 700px) {
+              font-size: 18px !important;
+            }
           }
 
           input.number {
@@ -230,7 +234,9 @@ export default {
 
     .content-question {
       padding: 30px 50px;
-
+      @media only screen and (max-width: 700px) {
+        padding: 30px 15px !important;
+      }
       .question {
         display: flex;
         justify-content: space-between;
@@ -240,6 +246,9 @@ export default {
           color: #272727;
           font-size: 18px;
           margin-bottom: 20px;
+          @media only screen and (max-width: 700px) {
+            font-size: 16px;
+          }
         }
 
         span {
@@ -279,6 +288,7 @@ export default {
             margin-right: 10px;
             margin-bottom: 7px;
 
+
             span {
               font-size: 15px !important;
             }
@@ -309,6 +319,11 @@ export default {
               text-align: right;
               position: absolute;
               right: 2%;
+              @media only screen and (max-width: 700px) {
+                font-size: 14px;
+
+              }
+
             }
           }
         }

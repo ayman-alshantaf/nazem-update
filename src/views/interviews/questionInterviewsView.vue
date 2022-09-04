@@ -411,6 +411,9 @@ export default {
   .v-input--selection-controls .v-input__slot > .v-label, .v-input--selection-controls .v-radio > .v-label {
     color: #00B5AD !important;
     margin-bottom: 7px;
+    @media only screen and (max-width: 700px) {
+      font-size: 13px;
+    }
   }
 
   .v-application .primary--text {
