@@ -1,26 +1,25 @@
 <template>
   <div class="mobile-bar">
     <v-app-bar >
-      <section class="mobile-bar-top">
+      <section class="mobile-bar-top" style="width: 100%">
         <v-container>
-          <v-row>
-            <v-col cols="1" class="ml-4">
+          <div style="display: flex;justify-content: space-between;align-items: center">
+            <div style="min-width: 40%;display: flex;align-items: center">
               <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-            </v-col>
-            <v-col cols="3" class="pt-4">
-              <div class="title-page">
+              <div class="title-page" style="margin-bottom: 7px">
                 <span style="font-size: 17px">{{ titlePage }}</span>
               </div>
-            </v-col>
-            <v-col cols="3" class="pt-4">
-              <div class="search-page">
-                <search-input :placeholder="'ادخل الاسم'"/>
-              </div>
-            </v-col>
-            <v-col cols="4" class="pt-4" style="padding-right: 0">
+            </div>
+            <div>
               <dropdown-menu/>
-            </v-col>
-          </v-row>
+            </div>
+          </div>
+
+<!--            <v-col cols="3" class="pt-4">-->
+<!--              <div class="search-page">-->
+<!--                <search-input :placeholder="'ادخل الاسم'"/>-->
+<!--              </div>-->
+<!--            </v-col>-->
         </v-container>
 
       </section>
@@ -109,12 +108,11 @@
 </template>
 <script>
 import {mapState} from 'vuex'
-import SearchInput from "@/components/search-input";
 import DropdownMenu from "@/components/topBar/component/dropdownMenu";
 
 export default {
   name: "mobilerightBar",
-  components: {DropdownMenu, SearchInput},
+  components: {DropdownMenu},
   data() {
     return {
       images: {
