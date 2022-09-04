@@ -206,7 +206,7 @@ export default {
     @media only screen and (max-width: 1200px) {
       width: 100%;
       div {
-        width: 20%;
+        width: 28%;
 
         label {
           width: 100%;
@@ -214,7 +214,7 @@ export default {
         }
       }
       .export-file, .import-file {
-        width: 40%;
+        width: 35%;
         margin-top: 8px;
         text-align: center;
       }
