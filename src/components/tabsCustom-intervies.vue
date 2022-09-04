@@ -1,5 +1,5 @@
 <template>
-  <v-tabs color="deep-purple accent-4">
+  <v-tabs color="section-top-tabs-interview deep-purple accent-4">
     <div class="section-top-tabs">
       <div class="main-right-section">
         <div class="right-section">
@@ -50,8 +50,14 @@ export default {
 }
 </style>
 <style lang="scss">
-.interviews {
+  @media only screen and (max-width: 1140px) {
+ .section-top-tabs{
+      display: block !important;
 
+    }
+    .interviews .v-tabs-bar{
+      min-height: 100px !important;
+    }
 }
 
 .theme--light.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) {

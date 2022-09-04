@@ -31,7 +31,7 @@
                 </div>
               </form>
             </div>
-            <div class="import-export-file pr-10">
+            <div class="import-export-file">
               <div class="export-file">
                 <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
               </div>
