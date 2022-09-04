@@ -262,7 +262,9 @@ export default {
           display: flex;
           align-items: center;
           margin-bottom: 19px;
-
+          @media only screen and (max-width: 700px) {
+            display: none !important;
+          }
 
           .image {
             width: 22px;
@@ -294,6 +296,12 @@ export default {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            @media only screen and (max-width: 700px) {
+              .v-label{
+                display: none !important;
+              }
+            }
+
 
             p {
               margin-bottom: 0;
