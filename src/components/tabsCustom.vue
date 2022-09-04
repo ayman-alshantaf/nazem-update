@@ -1,7 +1,7 @@
 <template>
   <!--  tabs top with slide section to replace section-->
   <div class="tabs-top">
-    <v-tabs color="deep-purple accent-4">
+    <v-tabs  color="deep-purple accent-4">
       <v-tab v-for="item in items" :key="item">{{ item }}</v-tab>
       <v-tabs-slider color="#00B5AD"></v-tabs-slider>
       <v-tab-item v-for="item in items" :key="item">
@@ -45,5 +45,8 @@ export default {
     color: #707070 !important;
     font-size: 16px;
   }
+}
+.v-slide-group__content{
+  transform: translateX(0px) !important;
 }
 </style>
