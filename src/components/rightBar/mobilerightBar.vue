@@ -29,7 +29,7 @@
         right
         class="main-bar-right"
         v-model="drawer"
-        absolute
+        fixed
         temporary
     >
       <v-list-item class="px-2">
@@ -169,54 +169,6 @@ export default {
       }
     }
 
-  }
-
-  .main-bar-top {
-    width: 100%;
-    max-height: 70px;
-    background-color: white;
-    box-shadow: 1px -5px 6px 4px rgba(0, 0, 0, 0.2);
-    z-index: 999;
-    position: relative;
-    @media (min-width: 960px) {
-      .container {
-        max-width: 98% !important;
-      }
-    }
-
-
-    .title-page {
-      color: #354052;
-      font-size: 20px;
-      font-weight: 500;
-    }
-
-    .v-col {
-      display: flex;
-      align-items: center;
-    }
-
-    .search-page {
-      width: 100%;
-      min-height: 40px;
-      display: flex;
-
-      .notification-message {
-        display: flex;
-        align-items: center;
-        margin-right: 8px;
-        border-left: 1px solid rgba(157, 154, 154, 0.6);
-        padding-left: 10px;
-        padding-bottom: 5px;
-
-        i {
-          margin: 0 4px;
-          color: #3F3F44;
-          font-size: 17px;
-          cursor: pointer;
-        }
-      }
-    }
   }
 }
 
