@@ -1,19 +1,21 @@
 <template>
   <v-app dir="rtl">
-    <main-bar-right v-if="showBarRight"/>
+<!--    <main-bar-right v-if="showBarRight"/>-->
     <main-bar-top v-if="showBarRight"/>
+    <mobileright-bar v-if="showBarRight"/>
     <router-view />
   </v-app>
 </template>
 
 <script>
-import MainBarRight from "@/components/rightBar/mainBarRight";
+// import MainBarRight from "@/components/rightBar/mainBarRight";
 import MainBarTop from "@/components/topBar/mainBarTop";
 import {mapState} from "vuex";
+import MobilerightBar from "@/components/rightBar/mobilerightBar";
 
 export default {
   name: 'App',
-  components: { MainBarTop, MainBarRight},
+  components: {MobilerightBar, MainBarTop},
   data: () => ({
     //
   }),
