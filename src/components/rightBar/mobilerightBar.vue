@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="mobile-bar">
     <v-app-bar >
-      <section class="main-bar-top">
+      <section class="mobile-bar-top">
         <v-container>
           <v-row>
             <v-col cols="1" class="ml-4">
@@ -30,7 +30,6 @@
         class="main-bar-right"
         v-model="drawer"
         absolute
-        bottom
         temporary
     >
       <v-list-item class="px-2">
@@ -133,145 +132,152 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.main-bar-right {
+.mobile-bar{
+  .main-bar-right {
 
-  .logo-bar {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-
-    img {
-      width: 40%;
-    }
-  }
-
-  .section-link {
-    i {
-      color: white;
-    }
-
-    small {
-      color: white;
-    }
-
-    small.title-section {
-      color: #B4B4B4;
-      font-size: 14px;
-      margin-bottom: 15px;
-      margin-top: 20px;
-      display: inline-block;
-      padding-right: 10px;
-    }
-
-    i {
-      font-size: 22px;
-      margin-left: 13px;
-    }
-  }
-
-}
-
-.main-bar-top {
-  width: 100%;
-  max-height: 70px;
-  background-color: white;
-  box-shadow: 1px -5px 6px 4px rgba(0, 0, 0, 0.2);
-  z-index: 999;
-  position: relative;
-  @media (min-width: 960px) {
-    .container {
-      max-width: 98% !important;
-    }
-  }
-
-
-  .title-page {
-    color: #354052;
-    font-size: 20px;
-    font-weight: 500;
-  }
-
-  .v-col {
-    display: flex;
-    align-items: center;
-  }
-
-  .search-page {
-    width: 100%;
-    min-height: 40px;
-    display: flex;
-
-    .notification-message {
+    .logo-bar {
+      width: 100%;
       display: flex;
-      align-items: center;
-      margin-right: 8px;
-      border-left: 1px solid rgba(157, 154, 154, 0.6);
-      padding-left: 10px;
-      padding-bottom: 5px;
+      justify-content: space-between;
+
+      img {
+        width: 40%;
+      }
+    }
+
+    .section-link {
+      i {
+        color: white;
+      }
+
+      small {
+        color: white;
+      }
+
+      small.title-section {
+        color: #B4B4B4;
+        font-size: 14px;
+        margin-bottom: 15px;
+        margin-top: 20px;
+        display: inline-block;
+        padding-right: 10px;
+      }
 
       i {
-        margin: 0 4px;
-        color: #3F3F44;
-        font-size: 17px;
-        cursor: pointer;
+        font-size: 22px;
+        margin-left: 13px;
+      }
+    }
+
+  }
+
+  .main-bar-top {
+    width: 100%;
+    max-height: 70px;
+    background-color: white;
+    box-shadow: 1px -5px 6px 4px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    position: relative;
+    @media (min-width: 960px) {
+      .container {
+        max-width: 98% !important;
+      }
+    }
+
+
+    .title-page {
+      color: #354052;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .v-col {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-page {
+      width: 100%;
+      min-height: 40px;
+      display: flex;
+
+      .notification-message {
+        display: flex;
+        align-items: center;
+        margin-right: 8px;
+        border-left: 1px solid rgba(157, 154, 154, 0.6);
+        padding-left: 10px;
+        padding-bottom: 5px;
+
+        i {
+          margin: 0 4px;
+          color: #3F3F44;
+          font-size: 17px;
+          cursor: pointer;
+        }
       }
     }
   }
 }
+
 </style>
 
 <style lang="scss">
+.mobile-bar{
+  .v-toolbar__content{
+    padding: 0 !important;
+  }
+  .main-bar-right {
 
-.main-bar-right {
-
-
-  .v-navigation-drawer__content {
-    background-color: #385B72 !important;
-    color: white;
-
-    a {
+    .v-navigation-drawer__content {
+      background-color: #385B72 !important;
       color: white;
-      text-decoration: none;
-      font-size: 19px;
-    }
 
-    .link {
-      padding: 10px 0;
+      a {
+        color: white;
+        text-decoration: none;
+        font-size: 19px;
+      }
 
-      i {
-        font-size: 5px;
+      .link {
+        padding: 10px 0;
+
+        i {
+          font-size: 5px;
+        }
       }
     }
-  }
 
-  .v-navigation-drawer__content::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px #5d5d5d;
-    background-color: #5d5d5d;
-  }
+    .v-navigation-drawer__content::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px #5d5d5d;
+      background-color: #5d5d5d;
+    }
 
-  .v-navigation-drawer__content::-webkit-scrollbar {
-    width: 0px;
-  }
+    .v-navigation-drawer__content::-webkit-scrollbar {
+      width: 0px;
+    }
 
-  .v-navigation-drawer__content::-webkit-scrollbar-thumb {
-    -webkit-box-shadow: inset 0 0 6px #424242;
-    background-color: #424242;
-  }
+    .v-navigation-drawer__content::-webkit-scrollbar-thumb {
+      -webkit-box-shadow: inset 0 0 6px #424242;
+      background-color: #424242;
+    }
 
-  .v-list-item-title {
-    font-size: 14px !important;
-  }
+    .v-list-item-title {
+      font-size: 14px !important;
+    }
 
-  .v-list-item__prepend > .v-icon {
-    margin-inline-end: 10px !important;
-    font-size: 23px;
-  }
+    .v-list-item__prepend > .v-icon {
+      margin-inline-end: 10px !important;
+      font-size: 23px;
+    }
 
-  .v-list {
-    padding: 0;
-  }
+    .v-list {
+      padding: 0;
+    }
 
+  }
 }
+
 
 
 </style>
