@@ -20,7 +20,6 @@ import listPlugin from '@fullcalendar/list'
 export default {
   name: "calenderStudent",
   components: {
-
     FullCalendar
   },
   data() {
@@ -31,12 +30,12 @@ export default {
         dayMinWidth: '50px',
         eventBackgroundColor: '#00B5AD',
         headerToolbar: {
-          start: '', // will normally be on the left. if RTL, will be on the right
+          start: '',
           center: '',
-          end: 'prev,title,next' // will normally be on the right. if RTL, will be on the left
+          end: 'prev,title,next'
         },
         daysOfWeek: [3, 7],
-        aspectRatio: 1.6,
+        aspectRatio: 1.2,
         firstDay: 6,
         allDayMaintainDuration: false,
         events: [
@@ -130,6 +129,17 @@ export default {
     position: absolute;
     top: 59px;
     display: flex;
+    margin-top: 8px;
+    margin-bottom: 10px;
+    @media only screen and (max-width: 1150px) {
+      left: 15px;
+      justify-content: left;
+    }
+    @media only screen and (max-width: 600px) {
+      position:unset;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
   }
   .fc-toolbar-chunk div{
     display: flex;
@@ -165,7 +175,6 @@ export default {
     color: black;
     outline: none !important;
   }
-
 }
 
 </style>

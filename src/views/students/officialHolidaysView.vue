@@ -37,20 +37,16 @@
           <form>
             <div class="search">
               <v-row>
-                <v-col cols="12" lg="8" style="padding-left: 4px">
+                <v-col cols="12" style="padding-left: 4px;display: flex">
                   <search-input :placeholder="'بحث في الفروع'" :style="styleSearch"/>
-                </v-col>
-                <v-col cols="12" lg="4">
-                  <div style="display: flex;align-items: center">
-                    <button>بحث</button>
-                  </div>
+                  <button>بحث</button>
                 </v-col>
               </v-row>
             </div>
 
           </form>
         </div>
-        <div style="position: absolute;   left: 30px; top: 66px;z-index: 2">
+        <div class="select-calender-holiday">
           <select-input :name="'شهر'" :items="[ 'شهر','يوم','سنة']"/>
         </div>
         <v-row>
@@ -184,160 +180,9 @@ export default {
   }
 
 
-  .section-statistics {
-    padding: 20px 0;
-    margin: 20px 0;
-    min-height: 500px;
-
-    .v-progress-circular {
-      margin: 1rem;
-    }
-
-    .all-Progress {
-      background-color: white;
-      padding: 0 20px;
-      border-radius: 10px;
-
-      .progress {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 0;
-        @media only screen and (max-width: 960px) {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          h5 {
-            text-align: center !important;
-            font-size: 24px;
-          }
-        }
-
-        &:first-of-type {
-          border-bottom: 2px solid #F1F1F5;
-          border-radius: 5px;
-        }
-
-
-        .number {
-          padding: 0px 10px 0px 20px;
-
-          h5 {
-            text-align: left;
-            font-size: 24px;
-          }
-
-          small {
-            font-size: 14px;
-          }
-        }
-
-      }
-
-
-    }
-
-    .profit-stats {
-      margin: 10px 0;
-      padding: 20px;
-      background-color: white;
-      border-radius: 10px;
-
-      small {
-        color: #091B3D;
-      }
-    }
-
-    .content-stats {
-      display: flex;
-
-      .percent-stats {
-        padding-left: 10px;
-        width: 60%;
-
-        small {
-          text-align: center;
-          font-size: 16px;
-          font-weight: bold;
-          display: block;
-          color: #FC5A5A;
-
-          i {
-            margin-left: 8px;
-          }
-        }
-
-        p {
-          font-size: 15px;
-          color: #777777;
-        }
-      }
-
-      .cost-stats {
-        text-align: center;
-
-        h5 {
-          font-size: 27px;
-          color: #171725;
-        }
-
-        h6 {
-          font-size: 14px;
-          margin-top: 5px;
-          color: #171725;
-        }
-
-      }
-    }
-
-    .chart-left {
-      padding: 10px 30px 30px 30px;
-      background-color: white;
-      height: 100%;
-
-      .container-title {
-        margin-top: 20px;
-        margin-bottom: 80px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-
-        h6 {
-          font-size: 18px;
-          font-weight: 500;
-        }
-
-        .date-chart {
-          @media only screen and (max-width: 960px) {
-            display: none;
-          }
-          width: 18%;
-          margin-bottom: 20px;
-          display: flex;
-          justify-content: space-between;
-
-          span {
-            font-size: 16px;
-
-            i {
-              font-size: 13px;
-              margin-right: 10px;
-              color: #1D7AB4;
-
-            }
-
-
-          }
-        }
-      }
-    }
-  }
-
   .search-section {
     width: 55%;
-    @media only screen and (max-width: 880px) {
+    @media only screen and (max-width: 600px) {
       width: 100%;
     }
 
@@ -365,6 +210,16 @@ export default {
     }
   }
 
+  .select-calender-holiday {
+    position: absolute;
+    left: 30px;
+    top: 66px;
+    z-index: 2;
+    @media only screen and (max-width: 1150px) {
+      position: unset;
+      margin-bottom: 10px;
+    }
+  }
 }
 
 </style>
@@ -433,7 +288,7 @@ export default {
     }
   }
 
- .v-input__control {
+  .v-input__control {
     height: 43px !important;
   }
 }
