@@ -1,5 +1,5 @@
 <template>
-<!--start page reviewup student-->
+  <!--start page reviewup student-->
   <section class="review-up-student">
     <v-main>
       <div class="container--fluid">
@@ -20,7 +20,7 @@
         </div>
         <div class="all-card">
           <v-row>
-            <v-col v-for="student in allStudents" :key="student.id" cols="12" lg="4" md="6" >
+            <v-col v-for="student in allStudents" :key="student.id" cols="12" lg="4" md="6">
               <card-follow
                   :name="student.name"
                   :class-name="student.className"
@@ -63,13 +63,13 @@ export default {
       items: ['foo', 'bar', 'fizz', 'buzz'],
       value: ['foo', 'bar', 'fizz', 'buzz'],
       itemsSelected: [
-        { title: 'الكل' },
-        { title: 'تم المراجعه' },
-        { title: 'لم يتم المراجعه' },
+        {title: 'الكل'},
+        {title: 'تم المراجعه'},
+        {title: 'لم يتم المراجعه'},
       ],
     }
   },
-  computed:{
+  computed: {
     ...mapState(['allStudents'])
   },
   methods: {
@@ -83,12 +83,17 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
+
 .review-up-student {
   background-color: $background-main-page;
   padding: 40px 20px;
-  .container--fluid{
-    border-radius: 15px; background-color: white; padding: 15px
+
+  .container--fluid {
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px
   }
+
   .top-bar-search {
     display: flex;
     justify-content: space-between;
@@ -108,18 +113,19 @@ export default {
         align-items: center;
         padding: 12px 0;
 
-        button {
-          border: 1px solid #00B5AD;
-          padding: 12px 50px;
-          font-size: 14px;
-          border-radius: 10px;
-          color: #00B5AD;
-          margin-right: 20px;
+        .input-search {
+          padding-right: 15px;
         }
+
       }
     }
 
   }
-
+  @media only screen and (max-width: 880px) {
+   .select-way{
+     width: 100%;
+     margin-bottom: 10px;
+   }
+  }
 }
 </style>

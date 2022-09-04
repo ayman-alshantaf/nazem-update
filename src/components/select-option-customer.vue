@@ -43,6 +43,7 @@ export default {
     color: #ADB2BE !important;
     box-shadow: none !important;
     padding: 20px 20px !important;
+    width: 100%;
     i{
       font-size: 18px;
       margin-top: 5px;
