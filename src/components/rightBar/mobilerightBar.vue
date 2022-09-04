@@ -7,12 +7,12 @@
             <v-col cols="1" class="ml-4">
               <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
             </v-col>
-            <v-col cols="2" class="pt-4">
+            <v-col cols="3" class="pt-4">
               <div class="title-page">
-                <span style="font-size: 17px">الرئيسية</span>
+                <span style="font-size: 17px">{{ titlePage }}</span>
               </div>
             </v-col>
-            <v-col cols="4" class="pt-4">
+            <v-col cols="3" class="pt-4">
               <div class="search-page">
                 <search-input :placeholder="'ادخل الاسم'"/>
               </div>
@@ -125,7 +125,8 @@ export default {
 
   },
   computed: {
-    ...mapState(['linkBarRight', 'showBarRight'])
+    ...mapState(['linkBarRight', 'showBarRight','titlePage'])
+
   },
 
 }
