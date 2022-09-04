@@ -10,20 +10,12 @@
             </v-col>
             <v-col cols="2" class="pt-4">
               <div class="title-page">
-                <span>الرئيسية</span>
+                <span style="font-size: 17px">الرئيسية</span>
               </div>
             </v-col>
             <v-col cols="4" class="pt-4">
               <div class="search-page">
                 <search-input :placeholder="'ادخل الاسم'"/>
-<!--                <div class="notification-message">-->
-<!--                  <div class="notification">-->
-<!--                    <i class="fa fa-bell-o" aria-hidden="true"></i>-->
-<!--                  </div>-->
-<!--                  <div class="message">-->
-<!--                    <i class="fa fa-commenting-o" aria-hidden="true"></i>-->
-<!--                  </div>-->
-<!--                </div>-->
               </div>
             </v-col>
             <v-col cols="4" class="pt-4" style="padding-right: 0">
@@ -35,6 +27,7 @@
       </section>
     </v-app-bar>
     <v-navigation-drawer
+        permanent
         right
         class="main-bar-right"
         v-model="drawer"
