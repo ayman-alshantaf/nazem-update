@@ -1,27 +1,50 @@
 <template>
   <v-app dir="rtl">
-<!--    <main-bar-right v-if="showBarRight"/>-->
-<!--    <main-bar-top v-if="showBarRight"/>-->
-    <mobileright-bar v-if="showBarRight"/>
+    <div v-if="showDesk">
+      <main-bar-right  v-if="showBarRight "/>
+    </div>
+    <div v-if="showDesk">
+    <main-bar-top v-if="showBarRight"/>
+    </div>
+    <div v-if="showMobile">
+      <mobileright-bar v-if="showBarRight"/>
+    </div>
     <router-view />
   </v-app>
 </template>
 
 <script>
-// import MainBarRight from "@/components/rightBar/mainBarRight";
-// import MainBarTop from "@/components/topBar/mainBarTop";
 import {mapState} from "vuex";
 import MobilerightBar from "@/components/rightBar/mobilerightBar";
+import MainBarRight from "@/components/rightBar/mainBarRight";
+import MainBarTop from "@/components/topBar/mainBarTop";
 
 export default {
   name: 'App',
-  components: {MobilerightBar},
+  components: {MainBarTop, MainBarRight, MobilerightBar},
   data: () => ({
-    //
+    showDesk:true,
+    showMobile:false,
   }),
   computed: {
     ...mapState(['showBarRight'])
   },
+  methods:{
+    showBar(){
+      console.log("s");
+      if (window.innerWidth < 998){
+        this.showDesk = false
+        this.showMobile = true
+      }else {
+        this.showDesk = true
+        this.showMobile = false
+      }
+    }
+  },
+  beforeMount() {
+  this.showBar();
+    window.addEventListener('resize', this.showBar)
+  }
 
 };
 </script>
