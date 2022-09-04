@@ -135,14 +135,13 @@ export default {
     this.$el.querySelector('td').addEventListener('click', this.onClick);
   },
   beforeMount() {
-    this.pageTitle(' الرئيسية')
+    this.pageTitle(' الاجازات الرسمية')
   }
 }
 
 </script>
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
-
 .official-holidays {
   background-color: $background-main-page;
   padding: 50px 20px 0px 20px;
@@ -221,12 +220,8 @@ export default {
     }
   }
 }
-
 </style>
 <style lang="scss">
-//review code
-
-
 .official-holidays {
   .section-calendar {
     .theme--light.v-text-field > .v-input__control > .v-input__slot:before {
