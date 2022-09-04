@@ -93,8 +93,8 @@ export default {
       images: {
         logo: require('@/assets/image/logo/Group 75643.png'),
       },
-      drawer: true,
-      mini: false,
+      drawer: false,
+      mini: true,
 
     }
 

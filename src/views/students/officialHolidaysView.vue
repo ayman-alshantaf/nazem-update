@@ -1,38 +1,78 @@
 <template>
-<!--  start page dashboard-->
+  <!--  start page dashboard-->
   <section class="official-holidays">
     <v-main>
       <div class="section-calendar">
-<!--        <div class="event-date">-->
-<!--          <div class="selectAction">-->
-<!--            <v-select-->
-<!--                class="dashboard-select"-->
-<!--                :items="['Foo', 'Bar', 'Fizz', 'Buzz']"-->
-<!--                placeholder="الاجازات القادمة"-->
-<!--                dense-->
-<!--            ></v-select>-->
-<!--          </div>-->
-<!--          <div class="date-select">-->
-<!--            <date-select-modal/>-->
-<!--          </div>-->
-<!--        </div>-->
+        <template>
+          <div class="text-center modal-custom">
+            <v-dialog v-model="dialog" width="800">
+              <v-card>
+                <v-card-title class=" grey lighten-2 py-9" style="background-color: #385B72 ">
+                  <div class="btn-close-modal" @click="dialog = false">
+                    <i class="fa fa-close"></i>
+                  </div>
+                  إستثناء طالب من الاجازة
+                </v-card-title>
+
+                <v-card-text>
+                  <v-row>
+                    <v-col cols="12" style="position: relative">
+                      <select-input :label="'أختر من هنا الطالب'" :name="'أختر من هنا الطالب'"/>
+                    </v-col>
+                    <v-col cols="12">
+                      <btn-submit value-btn="إستثناء"/>
+                    </v-col>
+                  </v-row>
+                </v-card-text>
+
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+
+                </v-card-actions>
+              </v-card>
+            </v-dialog>
+          </div>
+        </template>
+        <div class="search-section">
+          <form>
+            <div class="search">
+              <v-row>
+                <v-col cols="12" lg="8" style="padding-left: 4px">
+                  <search-input :placeholder="'بحث في الفروع'" :style="styleSearch"/>
+                </v-col>
+                <v-col cols="12" lg="4">
+                  <div style="display: flex;align-items: center">
+                    <button>بحث</button>
+                  </div>
+                </v-col>
+              </v-row>
+            </div>
+
+          </form>
+        </div>
+        <div style="position: absolute;   left: 30px; top: 66px;z-index: 2">
+          <select-input :name="'شهر'" :items="[ 'شهر','يوم','سنة']"/>
+        </div>
         <v-row>
           <v-col cols="12">
-
             <div class="calender-right">
               <calender-student/>
             </div>
           </v-col>
         </v-row>
+
       </div>
     </v-main>
   </section>
-<!--  start page dashboard-->
+  <!--  start page dashboard-->
 </template>
 
 <script>
 import {mapMutations, mapState} from "vuex";
 import CalenderStudent from "@/components/calenderStudent";
+import SelectInput from "@/components/select-input";
+import BtnSubmit from "@/components/btnSubmit";
+import SearchInput from "@/components/search-input";
 
 
 const gradients = [
@@ -40,9 +80,15 @@ const gradients = [
 ]
 export default {
   name: "officialHolidaysView",
-  components: { CalenderStudent},
+  components: {SearchInput, BtnSubmit, SelectInput, CalenderStudent},
   data() {
     return {
+      styleSearch: {
+        backgroundColor: 'transparent',
+        border: "1px solid #E2E2EA",
+        borderRadius: "10px",
+        color: "red !important"
+      },
       events: [
         {
           name: 'Event 1',
@@ -73,19 +119,20 @@ export default {
       fill: false,
       type: 'trend',
       autoLineWidth: false,
-      styleIcon:{
-        color:'red'
-      }
+      styleIcon: {
+        color: 'red'
+      },
+      dialog: false,
     }
 
   },
   computed: {
-    ...mapState(['titlePage', 'dataChartCardOne', 'dataChartCardTwo' , 'allStudents'])
+    ...mapState(['titlePage', 'dataChartCardOne', 'dataChartCardTwo', 'allStudents'])
   },
   methods: {
     ...mapMutations(['pageTitle']),
     onClick() {
-      console.log('a phone number was clicked');
+      this.dialog = true;
     }
   },
   mounted() {
@@ -103,6 +150,7 @@ export default {
 .official-holidays {
   background-color: $background-main-page;
   padding: 50px 20px 0px 20px;
+
   .section-calendar {
     background-color: white;
     margin: 40px 0;
@@ -135,10 +183,12 @@ export default {
 
   }
 
+
   .section-statistics {
     padding: 20px 0;
     margin: 20px 0;
     min-height: 500px;
+
     .v-progress-circular {
       margin: 1rem;
     }
@@ -199,33 +249,41 @@ export default {
         color: #091B3D;
       }
     }
-    .content-stats{
+
+    .content-stats {
       display: flex;
-      .percent-stats{
+
+      .percent-stats {
         padding-left: 10px;
         width: 60%;
-        small{
+
+        small {
           text-align: center;
           font-size: 16px;
           font-weight: bold;
           display: block;
           color: #FC5A5A;
-          i{
+
+          i {
             margin-left: 8px;
           }
         }
-        p{
+
+        p {
           font-size: 15px;
-          color:#777777 ;
+          color: #777777;
         }
       }
-      .cost-stats{
+
+      .cost-stats {
         text-align: center;
-        h5{
+
+        h5 {
           font-size: 27px;
           color: #171725;
         }
-        h6{
+
+        h6 {
           font-size: 14px;
           margin-top: 5px;
           color: #171725;
@@ -233,23 +291,25 @@ export default {
 
       }
     }
-    .chart-left{
-      padding:10px 30px 30px 30px ;
+
+    .chart-left {
+      padding: 10px 30px 30px 30px;
       background-color: white;
       height: 100%;
-      .container-title{
+
+      .container-title {
         margin-top: 20px;
         margin-bottom: 80px;
         display: flex;
         justify-content: space-between;
         align-items: center;
 
-        h6{
+        h6 {
           font-size: 18px;
           font-weight: 500;
         }
 
-        .date-chart{
+        .date-chart {
           @media only screen and (max-width: 960px) {
             display: none;
           }
@@ -258,9 +318,10 @@ export default {
           display: flex;
           justify-content: space-between;
 
-          span{
-           font-size:16px ;
-            i{
+          span {
+            font-size: 16px;
+
+            i {
               font-size: 13px;
               margin-right: 10px;
               color: #1D7AB4;
@@ -273,18 +334,44 @@ export default {
       }
     }
   }
+
+  .search-section {
+    width: 55%;
+    @media only screen and (max-width: 880px) {
+      width: 100%;
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      padding: 12px 0;
+      margin-bottom: 20px;
+
+      button {
+        border: 1px solid #00B5AD;
+        padding: 10px 40px;
+        font-size: 14px;
+        border-radius: 10px;
+        color: #00B5AD;
+        margin-right: 10px;
+      }
+
+      ::placeholder {
+        font-size: 12px;
+        color: rgba(37, 38, 52, 0.63) !important;
+        font-weight: normal;
+
+      }
+    }
+  }
+
 }
 
 </style>
 <style lang="scss">
 //review code
 
-//.section-calendar{
-//  div.v-menu__content {
-//    left: 625px !important;
-//    background-color: red !important;
-//  }
-//}
+
 .official-holidays {
   .section-calendar {
     .theme--light.v-text-field > .v-input__control > .v-input__slot:before {
@@ -327,6 +414,27 @@ export default {
 
   .v-text-field .v-input__append-inner {
     padding-top: 8px !important;
+  }
+
+  .theme--light.v-text-field--solo > .v-input__control > .v-input__slot {
+    background-color: #00B5AD !important;
+    border-radius: 15px;
+    overflow: hidden;
+
+    .v-label {
+      color: white !important;
+      background-color: #00B5AD !important;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .v-icon.v-icon {
+      color: white;
+    }
+  }
+
+ .v-input__control {
+    height: 43px !important;
   }
 }
 </style>
