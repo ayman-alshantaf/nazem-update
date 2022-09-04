@@ -159,13 +159,13 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    @media only screen and (max-width: 880px) {
+    @media only screen and (max-width: 1200px) {
       flex-direction: column;
     }
 
     .search-section {
       width: 55%;
-      @media only screen and (max-width: 880px) {
+      @media only screen and (max-width: 1200px) {
         width: 100%;
       }
       .date-top {
