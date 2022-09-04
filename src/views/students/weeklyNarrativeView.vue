@@ -169,11 +169,12 @@ export default {
         @media only screen and (max-width: 1200px) {
           .container-date {
             width: 33%;
+
             .theme--light.v-input {
               width: 100%;
             }
           }
-          .input-search{
+          .input-search {
             width: 33%;
           }
         }
@@ -202,6 +203,22 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
+    @media only screen and (max-width: 1200px) {
+      width: 100%;
+      div {
+        width: 20%;
+
+        label {
+          width: 100%;
+          display: inline-block;
+        }
+      }
+      .export-file, .import-file {
+        width: 40%;
+        margin-top: 8px;
+        text-align: center;
+      }
+    }
 
     div {
       margin: 0 5px;
