@@ -50,14 +50,23 @@ export default {
 }
 </style>
 <style lang="scss">
-  @media only screen and (max-width: 1140px) {
- .section-top-tabs{
-      display: block !important;
+@media only screen and (max-width: 1140px) {
+  .section-top-tabs {
+    display: block !important;
 
-    }
-    .interviews .v-tabs-bar{
-      min-height: 100px !important;
-    }
+  }
+  .interviews .v-tabs-bar {
+    min-height: 120px !important;
+  }
+  .interviews .section-top-tabs .main-right-section .right-section {
+    min-width: unset !important;
+  }
+  .interviews  .v-tabs-slider-wrapper {
+      bottom: 54% !important;
+  }
+  .interviews .v-tab{
+    padding-bottom: 10px !important;
+  }
 }
 
 .theme--light.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active) {

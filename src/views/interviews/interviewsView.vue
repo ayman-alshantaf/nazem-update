@@ -16,10 +16,10 @@
                     <v-col lg="3" style="padding-right: 1px">
                       <search-input :style="styleSearch"></search-input>
                     </v-col>
-                    <v-col lg="2">
+                    <v-col lg="2" class="hide-mobile">
                       <date-select-modal/>
                     </v-col>
-                    <v-col lg="2">
+                    <v-col lg="2" class="hide-mobile">
                       <date-select-modal/>
                     </v-col>
                     <v-col style="padding-left: 0px;padding-right: 5px">
@@ -164,6 +164,11 @@ export default {
 
       .col {
         padding-left: 5px !important;
+      }
+      @media only screen and (max-width: 1140px) {
+        .hide-mobile{
+          display: none;
+        }
       }
     }
   }
