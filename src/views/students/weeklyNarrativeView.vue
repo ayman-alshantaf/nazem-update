@@ -14,10 +14,10 @@
                         </search-input>
                       </v-col>
                       <v-col cols="12" lg="7">
-                        <div style="display: flex;align-items: center">
+                        <div class="date-top">
                           <div class="container-date">
                             <date-select-modal/>
-                          </div >
+                          </div>
                           <div class="container-date">
                             <date-select-modal/>
                           </div>
@@ -49,11 +49,11 @@
                           <v-col cols="12" lg="6" md="6">
                             <date-customer :label="'أختر يوم السرد'" :name-placeholder="'أختر يوم السرد'"/>
                           </v-col>
-                          <v-col  cols="12" lg="6" md="6">
+                          <v-col cols="12" lg="6" md="6">
                             <label class="custom-label"> أختر من بنود السرد</label>
                             <select-input :name="'أختر من بنود السرد'" :items="items"/>
                           </v-col>
-                          <v-col  cols="12" lg="6" md="6">
+                          <v-col cols="12" lg="6" md="6">
                             <label class="custom-label">اتمام السرد</label>
                             <select-input :name="'نعم'" :items="['نعم','لا']"/>
 
@@ -82,7 +82,7 @@
               </div>
             </div>
             <v-row>
-              <v-col v-for="n in 8" :key="n" cols="12" lg="4" md="6"  >
+              <v-col v-for="n in 8" :key="n" cols="12" lg="4" md="6">
                 <card-narrative/>
               </v-col>
             </v-row>
@@ -153,14 +153,30 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    @media only screen and (max-width: 880px) {
+    @media only screen and (max-width: 1200px) {
       flex-direction: column;
     }
 
     .search-section {
       width: 55%;
-      @media only screen and (max-width: 880px) {
+      @media only screen and (max-width: 1200px) {
         width: 100%;
+      }
+
+      .date-top {
+        display: flex;
+        align-items: center;
+        @media only screen and (max-width: 1200px) {
+          .container-date {
+            width: 33%;
+            .theme--light.v-input {
+              width: 100%;
+            }
+          }
+          .input-search{
+            width: 33%;
+          }
+        }
       }
 
       .search {
@@ -196,12 +212,12 @@ export default {
 
 </style>
 <style lang="scss">
-.theme--light.v-text-field > .v-input__control > .v-input__slot:before {
-  display: none !important;
-  border: none !important;
-}
-
 .weekly-narrative {
+  .theme--light.v-text-field > .v-input__control > .v-input__slot:before {
+    display: none !important;
+    border: none !important;
+  }
+
   .theme--light.v-input input, .theme--light.v-input textarea {
     font-size: 14px !important;
     font-weight: bold !important;
@@ -258,9 +274,11 @@ export default {
 
   .form-modal {
     padding: 15px 0;
-    .col-12{
+
+    .col-12 {
       position: relative;
     }
+
     .v-label {
       right: 0 !important;
       left: auto !important;
@@ -269,22 +287,24 @@ export default {
     label {
       display: block;
       margin-bottom: 10px;
-      font-size: 15px ;
+      font-size: 15px;
       background-color: white;
       position: absolute;
       top: 0;
       z-index: 50;
       right: 7%;
     }
-    label.custom-label{
+
+    label.custom-label {
       font-size: 14px !important;
     }
 
     .v-input__slot {
       margin-bottom: 0 !important;
-       input{
-         font-size: 14px !important;
-       }
+
+      input {
+        font-size: 14px !important;
+      }
     }
 
     .custom-input {
@@ -310,34 +330,37 @@ export default {
   }
 
 }
-.form-modal {
-  .custom-input {
-    .v-text-field {
-      border: 1px solid rgba(21, 57, 135, 0.28);
-      border-radius: 5px;
-    }
 
-    .v-text-field__details {
-      display: none;
-    }
-
-    label {
-      padding-right: 0px !important;
-      margin-bottom: 0px !important;
-    }
-
-    .v-text-field .v-label {
-      top: 3px !important;
-    }
-  }
-  .v-input__slot {
-    margin-bottom: 0 !important;
-    input{
-      font-size: 14px !important;
-      padding-right: 9px;
-    }
-  }
-}
+//.form-modal {
+//  .custom-input {
+//    .v-text-field {
+//      border: 1px solid rgba(21, 57, 135, 0.28);
+//      border-radius: 5px;
+//    }
+//
+//    .v-text-field__details {
+//      display: none;
+//    }
+//
+//    label {
+//      padding-right: 0px !important;
+//      margin-bottom: 0px !important;
+//    }
+//
+//    .v-text-field .v-label {
+//      top: 3px !important;
+//    }
+//  }
+//
+//  .v-input__slot {
+//    margin-bottom: 0 !important;
+//
+//    input {
+//      font-size: 14px !important;
+//      padding-right: 9px;
+//    }
+//  }
+//}
 
 
 </style>
