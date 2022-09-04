@@ -288,7 +288,11 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-
+        .type-question{
+          @media only screen and (max-width: 700px) {
+            display: none;
+          }
+        }
         h5 {
           color: #272727;
           font-size: 18px;
@@ -488,7 +492,11 @@ label.custom-label-recitation-interview {
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+      .type-question{
+        @media only screen and (max-width: 700px) {
+          display: none;
+        }
+      }
       h5 {
         color: #272727;
         font-size: 18px;

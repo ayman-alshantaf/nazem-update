@@ -242,6 +242,11 @@ export default {
         justify-content: space-between;
         align-items: center;
 
+        .type-question{
+          @media only screen and (max-width: 700px) {
+            display: none;
+          }
+        }
         h5 {
           color: #272727;
           font-size: 18px;
