@@ -1,7 +1,8 @@
 <template>
   <div>
     <v-system-bar color="deep-purple darken-3"></v-system-bar>
-    <v-app-bar fixed app elevate-on-scroll>
+    <v-app-bar     dark
+                   prominent>
       <section class="main-bar-top">
         <v-container>
           <v-row>
@@ -27,11 +28,11 @@
       </section>
     </v-app-bar>
     <v-navigation-drawer
-        permanent
         right
         class="main-bar-right"
         v-model="drawer"
         absolute
+        bottom
         temporary
     >
       <v-list-item class="px-2">

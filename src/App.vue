@@ -1,7 +1,7 @@
 <template>
   <v-app dir="rtl">
 <!--    <main-bar-right v-if="showBarRight"/>-->
-    <main-bar-top v-if="showBarRight"/>
+<!--    <main-bar-top v-if="showBarRight"/>-->
     <mobileright-bar v-if="showBarRight"/>
     <router-view />
   </v-app>
@@ -9,13 +9,13 @@
 
 <script>
 // import MainBarRight from "@/components/rightBar/mainBarRight";
-import MainBarTop from "@/components/topBar/mainBarTop";
+// import MainBarTop from "@/components/topBar/mainBarTop";
 import {mapState} from "vuex";
 import MobilerightBar from "@/components/rightBar/mobilerightBar";
 
 export default {
   name: 'App',
-  components: {MobilerightBar, MainBarTop},
+  components: {MobilerightBar},
   data: () => ({
     //
   }),
