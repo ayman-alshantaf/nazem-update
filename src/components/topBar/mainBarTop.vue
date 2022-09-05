@@ -6,6 +6,12 @@
           <v-col cols="4">
             <div class="title-page">
               <span>{{ titlePage }}</span>
+              <span v-if="showRouteTop">
+                <span v-for="item in subTitle" :key="item">
+                     <i class="fa fa-angle-left mx-3"></i>
+                      <small>{{ item }}</small>
+                </span>
+              </span>
             </div>
           </v-col>
           <v-col cols="6">
@@ -41,6 +47,7 @@ export default {
   name: "mainBarTop",
   components: {DropdownMenu, SearchInput},
   // components: {SearchInput, DropdownMenu},
+  props: ['itemRoutTitle'],
   data() {
     return {
       items: [
@@ -49,12 +56,12 @@ export default {
         {title: 'Click Me'},
         {title: 'Click Me 2'},
       ],
-
     }
   },
   computed: {
-    ...mapState(['titlePage'])
-  }
+    ...mapState(['titlePage', 'showRouteTop', 'subTitle'])
+  },
+
 }
 </script>
 
@@ -77,6 +84,7 @@ export default {
     color: #354052;
     font-size: 20px;
     font-weight: 500;
+    cursor: pointer;
   }
 
   .v-col {

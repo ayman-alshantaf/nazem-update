@@ -1,7 +1,7 @@
 <template>
   <v-app dir="rtl">
     <div v-if="showDesk">
-      <main-bar-right  v-if="showBarRight "/>
+      <main-bar-right  v-if="showBarRight"/>
     </div>
     <div v-if="showDesk">
     <main-bar-top v-if="showBarRight"/>
@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import {mapState} from "vuex";
+import {mapMutations, mapState} from "vuex";
 import MobilerightBar from "@/components/rightBar/mobilerightBar";
 import MainBarRight from "@/components/rightBar/mainBarRight";
 import MainBarTop from "@/components/topBar/mainBarTop";
@@ -30,8 +30,9 @@ export default {
     ...mapState(['showBarRight'])
   },
   methods:{
+
+    ...mapMutations(['resetData']),
     showBar(){
-      console.log("s");
       if (window.innerWidth < 998){
         this.showDesk = false
         this.showMobile = true
@@ -44,6 +45,9 @@ export default {
   beforeMount() {
   this.showBar();
     window.addEventListener('resize', this.showBar)
+  },
+  beforeUpdate() {
+      this.resetData();
   }
 
 };

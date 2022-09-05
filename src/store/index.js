@@ -2955,6 +2955,8 @@ export default new Vuex.Store({
         ],
         showBarRight: true,
         titlePage: 'الرئيسية',
+        showRouteTop:false,
+        subTitle:[],
     },
     mutations: {
         showRightBar(state) {
@@ -2962,10 +2964,25 @@ export default new Vuex.Store({
         },
         pageTitle(state, title) {
             state.titlePage = title
-        }
-    },
-    getters: {},
+        },
+        subTitleTop(state, title) {
+            state.subTitle = title
+        },
+        showTopTitle(state) {
+            state.showRouteTop = true;
+        },
+        resetData(state ) {
+            state.showRouteTop = false;
+        },
 
-    actions: {},
-    modules: {}
+    },
+    getters: {
+
+    },
+
+    actions: {
+
+    },
+    modules: {},
+
 })

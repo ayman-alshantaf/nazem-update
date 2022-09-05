@@ -106,22 +106,16 @@ export default {
     ...mapState(['recitationDetails'])
   },
   methods: {
-    ...mapMutations(['pageTitle']),
-    // currentFilterStudent(){
-    //   let id = this.idStudent;
-    //   let thisDoc = this;
-    //   this.allInterview.forEach(function (e){
-    //     if (e.id === id){
-    //       thisDoc.currentStudent = e;
-    //     }
-    //   })
-    // }
+    ...mapMutations(['pageTitle','showTopTitle','subTitleTop']),
   },
   beforeMount() {
     this.pageTitle(' المقابلات ');
-    // this.currentFilterStudent();
+    this.subTitleTop(['إبراهيم علي المالكي']);
+    this.showTopTitle();
   },
-
+  beforeUpdate() {
+    this.showTopTitle();
+  }
 
 }
 </script>
