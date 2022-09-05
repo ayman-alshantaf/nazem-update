@@ -233,6 +233,9 @@ export default {
         border-left: 2px solid #D7E4FF;
         padding-left: 50px;
         padding-right: 10px;
+        @media only screen and (max-width: 960px) {
+          border-left: none;
+        }
         .name-image {
           display: flex;
           align-items: center;
@@ -240,7 +243,7 @@ export default {
           margin-bottom: 15px;
 
           .image {
-            width: 24%;
+            width: 70px;
 
             img {
               width: 100%;
