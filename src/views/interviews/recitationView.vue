@@ -159,7 +159,10 @@ export default {
         position: absolute;
         left: 5%;
         bottom: 5%;
-
+        @media only screen and (max-width: 800px) {
+          right: 2%;
+          top: 2%;
+        }
         img {
           width: 100%;
         }
