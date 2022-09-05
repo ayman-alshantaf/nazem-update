@@ -554,8 +554,9 @@ label.custom-label-recitation-interview {
         align-items: center;
         margin-bottom: 19px;
         margin-left: 10px;
-
-
+        @media only screen and (max-width: 700px) {
+          display: none !important;
+        }
         .image {
           width: 22px;
           margin-top: 5px;
@@ -578,7 +579,9 @@ label.custom-label-recitation-interview {
 
       .answer {
         width: 77%;
-
+        @media only screen and (max-width: 700px) {
+          width: 100%;
+        }
         .container-radio {
           border: 1px solid rgba(6, 83, 254, 0.21);
           border-radius: 5px;

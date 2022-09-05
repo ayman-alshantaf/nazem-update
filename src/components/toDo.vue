@@ -303,7 +303,9 @@ export default {
 
         .answer {
           width: 80%;
-
+          @media only screen and (max-width: 700px) {
+            width: 100% !important;
+          }
           .container-radio {
             border: 1px solid rgba(6, 83, 254, 0.21);
             border-radius: 5px;
