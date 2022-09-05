@@ -184,10 +184,10 @@ export default {
           width: 35%;
           @media only screen and (max-width: 800px) {
             position: absolute;
-            right: 0;
+            right: 1%;
             margin-left: 50px;
             display: unset;
-            bottom: 0;
+            bottom: 50%;
           }
           span {
             margin: 0 5px;
