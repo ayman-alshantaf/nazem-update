@@ -176,7 +176,9 @@ export default {
         bottom: 2%;
         height: 50px;
         padding: 0 30px;
-
+        @media only screen and (max-width: 800px) {
+            justify-content: center;
+        }
         .setting-video {
           display: flex;
           width: 35%;
