@@ -147,7 +147,9 @@ export default {
       background-repeat: no-repeat;
       position: relative;
       border-radius: 20px;
-
+      @media only screen and (max-width: 800px) {
+        height: 50vh;
+      }
       img {
         width: 100%;
       }
