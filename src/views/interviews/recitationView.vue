@@ -40,7 +40,7 @@
                 </div>
                 <div class="details-call-student">
                   <v-row>
-                    <v-col cols="4" lg="4" md="6" v-for="details in recitationDetails" :key="details.id" style="padding-left: 5px;padding-right: 5px">
+                    <v-col cols="6" lg="4" md="6" v-for="details in recitationDetails" :key="details.id" style="padding-left: 5px;padding-right: 5px">
                       <div class="path">
                         <div class="image">
                           <img :src="details.icon" alt="image">
