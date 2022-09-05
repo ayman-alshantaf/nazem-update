@@ -7,3 +7,121 @@
 }
 //part student
 
+.weekly-narrative , .vacations-student , .permission-student , .interviews{
+  .theme--light.v-text-field > .v-input__control > .v-input__slot:before {
+    display: none !important;
+    border: none !important;
+  }
+
+  .theme--light.v-input input, .theme--light.v-input textarea {
+    font-size: 13px !important;
+    color: #707070 !important;
+    margin-top: 5px;
+  }
+
+  .v-input__icon i {
+    font-size: 13px !important;
+    font-weight: normal !important;
+    color: #707070 !important;
+  }
+
+  .v-text-field__details {
+    display: none;
+  }
+
+  .v-input__slot:focus .v-text-field__details {
+    border: none !important;
+    display: none;
+
+  }
+
+  .v-input__slot:active .v-text-field__details {
+    border: none !important;
+    display: none;
+
+  }
+
+  .theme--light.v-input {
+    margin: 0 10px 0 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #D2D5E1;
+    border-radius: 5px;
+  }
+
+  .v-calendar-daily__interval-text {
+    color: transparent !important
+  }
+
+  .v-text-field {
+    padding: 0;
+  }
+
+  .v-text-field__slot input {
+    padding: 2px 0 !important;
+  }
+
+  .v-input__prepend-outer {
+    margin-right: 3px;
+  }
+
+  .form-modal {
+    padding: 15px 0;
+
+    .col-12 {
+      position: relative;
+    }
+
+    .v-label {
+      right: 0 !important;
+      left: auto !important;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 15px;
+      background-color: white;
+      position: absolute;
+      top: 0;
+      z-index: 50;
+      right: 7%;
+    }
+
+    label.custom-label {
+      font-size: 14px !important;
+    }
+
+    .v-input__slot {
+      margin-bottom: 0 !important;
+
+      input {
+        font-size: 14px !important;
+      }
+    }
+
+    .custom-input {
+      .v-text-field {
+        border: 1px solid rgba(21, 57, 135, 0.28);
+        border-radius: 5px;
+      }
+
+      .v-text-field__details {
+        display: none;
+      }
+
+      label {
+        padding-right: 0 !important;
+        margin-bottom: 0 !important;
+      }
+
+      .v-text-field .v-label {
+        top: 3px !important;
+      }
+    }
+
+  }
+
+}
+

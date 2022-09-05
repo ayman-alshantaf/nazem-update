@@ -168,6 +168,7 @@ import StepBystep from "@/components/stepBystep";
 import SelectInput from "@/components/select-input";
 import InputText from "@/components/input-text";
 import ToDo from "@/components/toDo";
+import {mapMutations} from "vuex";
 
 export default {
   name: "questionInterviewsView",
@@ -185,9 +186,13 @@ export default {
     }
   },
   methods:{
+    ...mapMutations(['pageTitle']),
     hideQuestion(){
       this.displayShow='none'
     }
+  },
+  beforeMount() {
+    this.pageTitle('أسئلة المقابلات')
   }
 }
 </script>

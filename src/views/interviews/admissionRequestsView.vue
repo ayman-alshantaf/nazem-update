@@ -1,5 +1,5 @@
 <template>
-  <section class="weekly-narrative">
+  <section class="admission-requests">
     <v-main>
       <div class="container--fluid" style="border-radius: 15px; background-color: white; padding: 15px">
         <div class="all-card">
@@ -139,7 +139,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 
-.weekly-narrative {
+.admission-requests {
   background-color: $background-main-page;
   padding: 40px 15px;
 
@@ -191,12 +191,13 @@ export default {
 
 </style>
 <style lang="scss">
-.theme--light.v-text-field > .v-input__control > .v-input__slot:before {
-  display: none !important;
-  border: none !important;
-}
 
-.weekly-narrative {
+.admission-requests {
+  .theme--light.v-text-field > .v-input__control > .v-input__slot:before {
+    display: none !important;
+    border: none !important;
+  }
+
   .theme--light.v-input input, .theme--light.v-input textarea {
     font-size: 14px !important;
     font-weight: bold !important;
@@ -254,53 +255,5 @@ export default {
 
 }
 
-.form-modal {
-  padding: 15px 0;
-  .col-12{
-    position: relative;
-  }
-  .v-label {
-    right: 0 !important;
-    left: auto !important;
-  }
-
-  label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 15px ;
-    background-color: white;
-    position: absolute;
-    top: 0;
-    z-index: 50;
-    right: 7%;
-  }
-  label.custom-label{
-    font-size: 14px !important;
-  }
-  .v-input__slot {
-    margin-bottom: 0 !important;
-  }
-
-  .custom-input {
-    .v-text-field {
-      border: 1px solid rgba(21, 57, 135, 0.28);
-      border-radius: 5px;
-    }
-
-    .v-text-field__details {
-      display: none;
-    }
-
-    label {
-      padding-right: 10px;
-      margin-bottom: 10px;
-    }
-
-    .v-text-field .v-label {
-      top: 3px !important;
-    }
-  }
-
-}
 
 </style>

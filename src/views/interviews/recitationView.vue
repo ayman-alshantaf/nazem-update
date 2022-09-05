@@ -6,20 +6,20 @@
         <div class="section-video-call">
           <div class="image-video" :style="{ backgroundImage: 'url(' + imageVideoCall + ')' }">
             <div class="image2-video">
-              <img :src="imageVideoCall2">
+              <img :src="imageVideoCall2" alt="image">
             </div>
             <div class="btn-video">
               <div class="setting-video">
-                <span> <img :src="iconBtnVideo.videoSetting"></span>
-                <span> <img :src="iconBtnVideo.chat"></span>
-                <span class="btn-close"> <img :src="iconBtnVideo.usersAdd"></span>
+                <span> <img :src="iconBtnVideo.videoSetting" alt="image"></span>
+                <span> <img :src="iconBtnVideo.chat" alt="image"></span>
+                <span class="btn-close"> <img :src="iconBtnVideo.usersAdd" alt="image"></span>
               </div>
               <div class="close-video">
-                <span> <img :src="iconBtnVideo.replaceScreen"></span>
-                <span> <img :src="iconBtnVideo.video"></span>
-                <span class="btn-close"> <img :src="iconBtnVideo.closeVideo"></span>
-                <span> <img :src="iconBtnVideo.mute"></span>
-                <span> <img :src="iconBtnVideo.fullScreen" style="margin-top: 1px"></span>
+                <span> <img :src="iconBtnVideo.replaceScreen" alt="image"></span>
+                <span> <img :src="iconBtnVideo.video" alt="image"></span>
+                <span class="btn-close"> <img :src="iconBtnVideo.closeVideo" alt="image"></span>
+                <span> <img :src="iconBtnVideo.mute" alt="image"></span>
+                <span> <img :src="iconBtnVideo.fullScreen" alt="image" style="margin-top: 1px"></span>
 
               </div>
             </div>
@@ -27,7 +27,7 @@
         </div>
         <div class="details-video">
           <v-row>
-            <v-col lg="5">
+            <v-col cols="12" lg="5" md="5" >
               <div class="information-student">
                 <div class="name-image">
                   <div class="image">
@@ -40,10 +40,10 @@
                 </div>
                 <div class="details-call-student">
                   <v-row>
-                    <v-col cols="12" lg="4" v-for="details in recitationDetails" :key="details.id" style="padding-left: 5px;padding-right: 5px">
+                    <v-col cols="4" lg="4" md="6" v-for="details in recitationDetails" :key="details.id" style="padding-left: 5px;padding-right: 5px">
                       <div class="path">
                         <div class="image">
-                          <img :src="details.icon">
+                          <img :src="details.icon" alt="image">
                         </div>
                         <div class="text-path">
                           <p> {{ details.title }}</p>
@@ -55,7 +55,7 @@
                 </div>
               </div>
             </v-col>
-            <v-col lg="7">
+            <v-col cols="12" lg="7" md="7">
               <div class="form-recitation">
                 <form>
                   <v-row>
@@ -67,6 +67,7 @@
                 </form>
               </div>
             </v-col>
+
           </v-row>
         </div>
       </div>

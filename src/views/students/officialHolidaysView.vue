@@ -71,9 +71,6 @@ import BtnSubmit from "@/components/btnSubmit";
 import SearchInput from "@/components/search-input";
 
 
-const gradients = [
-  ['#42b3f4'],
-]
 export default {
   name: "officialHolidaysView",
   components: {SearchInput, BtnSubmit, SelectInput, CalenderStudent},
@@ -103,15 +100,12 @@ export default {
           timed: true,
         },
       ],
-      iconTarget: require('@/assets/image/avatar/target (1).png'),
       width: 2,
       radius: 10,
       padding: 8,
       lineCap: 'round',
-      gradient: gradients[5],
       value: [4, 5, 9, 5, 10, 7, 6, 9],
       gradientDirection: 'top',
-      gradients,
       fill: false,
       type: 'trend',
       autoLineWidth: false,

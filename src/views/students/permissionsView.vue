@@ -153,6 +153,12 @@ export default {
   background-color: $background-main-page;
   padding: 40px 15px;
 
+  .container--fluid {
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px
+  }
+
   .top-bar-search {
     display: flex;
     justify-content: space-between;
@@ -214,22 +220,24 @@ export default {
       width: 100%;
       div {
         width: 33%;
+
         label {
           width: 100%;
           display: inline-block;
         }
       }
-      .add-new{
+      .add-new {
         width: 35%;
       }
       .export-file, .import-file {
         margin-top: 8px;
         text-align: center;
       }
-      .text-center{
+      .text-center {
         width: 100%;
       }
     }
+
     div {
       margin: 0 5px;
     }
@@ -238,67 +246,4 @@ export default {
 }
 
 </style>
-<style lang="scss">
-.permission-student {
-  .container--fluid {
-    border-radius: 15px;
-    background-color: white;
-    padding: 15px
-  }
 
-  .theme--light.v-input input, .theme--light.v-input textarea {
-    font-size: 14px !important;
-    font-weight: bold !important;
-    color: #707070 !important;
-    margin-top: 5px;
-  }
-
-  .v-input__icon i {
-    font-size: 14px !important;
-    font-weight: normal !important;
-    color: #707070 !important;
-  }
-
-  .v-text-field__details {
-    display: none;
-  }
-
-  .v-input__slot:focus .v-text-field__details {
-    border: none !important;
-    display: none;
-
-  }
-
-  .v-input__slot:active .v-text-field__details {
-    border: none !important;
-    display: none;
-
-  }
-
-  .theme--light.v-input {
-    margin: 0px 10px 0px 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #D2D5E1;
-    border-radius: 5px;
-  }
-
-  .v-calendar-daily__interval-text {
-    color: transparent !important
-  }
-
-  .v-text-field {
-    padding: 0;
-  }
-
-  .v-text-field__slot input {
-    padding: 2px 0 !important;
-  }
-
-  .v-input__prepend-outer {
-    margin-right: 3px;
-  }
-
-}
-</style>
