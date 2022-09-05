@@ -184,7 +184,7 @@ export default {
           width: 35%;
           @media only screen and (max-width: 800px) {
             position: absolute;
-            right: 1%;
+            right: 0;
             margin-left: 50px;
             display: unset;
             bottom: 50%;

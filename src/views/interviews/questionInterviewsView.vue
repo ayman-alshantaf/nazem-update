@@ -4,7 +4,7 @@
       <div class="container--fluid">
         <to-do/>
 
-        <div class="container-question" >
+        <div class="container-question">
           <div class="number-question">
             <div class="right-section">
               <div class="icon">
@@ -181,14 +181,14 @@ export default {
         blockIcon: require('@/assets/image/icon/Icon ionic-md-remove-circle-outline.png'),
       },
       radioGroup: 1,
-      displayShow:'block'
+      displayShow: 'block'
 
     }
   },
-  methods:{
+  methods: {
     ...mapMutations(['pageTitle']),
-    hideQuestion(){
-      this.displayShow='none'
+    hideQuestion() {
+      this.displayShow = 'none'
     }
   },
   beforeMount() {
@@ -203,6 +203,9 @@ export default {
 .question-interviews {
   background-color: $background-main-page;
   padding: 20px 15px 40px 15px;
+  @media only screen and (max-width: 700px) {
+    padding: 20px 8px 40px 8px;
+  }
 
   .container--fluid {
     border-radius: 15px;
@@ -294,15 +297,18 @@ export default {
       @media only screen and (max-width: 700px) {
         padding: 30px 15px !important;
       }
+
       .question {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .type-question{
+
+        .type-question {
           @media only screen and (max-width: 700px) {
             display: none;
           }
         }
+
         h5 {
           color: #272727;
           font-size: 18px;
@@ -371,6 +377,7 @@ export default {
                 display: none !important;
               }
             }
+
             p {
               margin-bottom: 0;
               font-size: 16px;
@@ -429,10 +436,11 @@ export default {
 </style>
 <style lang="scss">
 .question-interviews {
- .v-size--default {
+  .v-size--default {
     padding-top: 22px !important;
     padding-bottom: 24px !important;
   }
+
   .v-input--selection-controls .v-input__slot > .v-label, .v-input--selection-controls .v-radio > .v-label {
     color: #00B5AD !important;
     margin-bottom: 7px;
@@ -513,11 +521,13 @@ label.custom-label-recitation-interview {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .type-question{
+
+      .type-question {
         @media only screen and (max-width: 700px) {
           display: none;
         }
       }
+
       h5 {
         color: #272727;
         font-size: 18px;
@@ -632,12 +642,14 @@ label.custom-label-recitation-interview {
   .container-question-modal .all-answer .content-answer .answer .container-radio {
     padding: 10px !important;
   }
+
   .v-size--default {
     padding-top: 22px !important;
     padding-bottom: 24px !important;
   }
 }
-.v-btn__content{
+
+.v-btn__content {
   font-size: 18px;
 }
 </style>
