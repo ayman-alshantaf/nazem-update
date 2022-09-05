@@ -1,7 +1,7 @@
 <template>
   <section class="admission-requests">
     <v-main>
-      <div class="container--fluid" style="border-radius: 15px; background-color: white; padding: 15px">
+      <div class="container--fluid" >
         <div class="all-card">
           <div class="top-bar-search">
             <div class="search-section">
@@ -13,7 +13,7 @@
                       </search-input>
                     </v-col>
                     <v-col cols="12" lg="7">
-                      <div style="display: flex;align-items: center">
+                      <div class="date-top" >
                         <div class="container-date">
                           <date-select-modal/>
                         </div>
@@ -40,25 +40,19 @@
                     <form>
                       <v-row>
                         <v-col cols="12"  >
-                          <label>اسم الطالب</label>
-                          <select-input :name="'أختر من هنا اسم الطالب'" :items="items"/>
+                          <select-input :label="'اسم الطالب'" :name="'أختر من هنا اسم الطالب'" :items="items"/>
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
-                          <label>وقت التسميع</label>
-                          <select-input :name="'أدخل هنا وقت التسميع'" :items="items"/>
+                          <select-input :label="'وقت التسميع'" :name="'أدخل هنا وقت التسميع'" :items="items"/>
                         </v-col>
                         <v-col  cols="12" lg="6" md="6">
                             <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
                         </v-col>
                         <v-col  cols="12" lg="6" md="6">
-                          <label>كيفية التسميع</label>
-                          <select-input :name="'أونلاين'" :items="['نعم','لا']"/>
-
+                          <select-input :label="'كيفية التسميع'" :name="'أونلاين'" :items="['نعم','لا']"/>
                         </v-col>
                         <v-col  cols="12" lg="6" md="6">
-                          <label>موقع التسميع</label>
-                          <select-input :name="'موقع التسميع'" :items="['نعم','لا']"/>
-
+                          <select-input :label="'موقع التسميع'" :name="'موقع التسميع'" :items="['نعم','لا']"/>
                         </v-col>
 
                         <v-col cols="12">
@@ -131,7 +125,7 @@ export default {
     ...mapMutations(['pageTitle'])
   },
   beforeMount() {
-    this.pageTitle('الاذونات')
+    this.pageTitle('طلبات القبول')
   }
 }
 </script>
@@ -143,21 +137,42 @@ export default {
   background-color: $background-main-page;
   padding: 40px 15px;
 
+  .container--fluid {
+    border-radius: 15px;
+    background-color: white;
+    padding: 15px
+  }
   .top-bar-search {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    @media only screen and (max-width: 880px) {
+    @media only screen and (max-width: 1300px) {
       flex-direction: column;
     }
 
+
     .search-section {
       width: 55%;
-      @media only screen and (max-width: 880px) {
+      @media only screen and (max-width: 1300px) {
         width: 100%;
       }
+      .date-top {
+        display: flex;
+        align-items: center;
+        @media only screen and (max-width: 1200px) {
+          .container-date {
+            width: 33%;
 
+            .theme--light.v-input {
+              width: 100%;
+            }
+          }
+          .input-search {
+            width: 33%;
+          }
+        }
+      }
       .search {
         display: flex;
         align-items: center;
@@ -182,78 +197,33 @@ export default {
     align-items: center;
     margin-bottom: 8px;
 
+    @media only screen and (max-width: 1300px) {
+      justify-content: space-around;
+      width: 100%;
+      div {
+        width: 33%;
+
+        label {
+          width: 100%;
+          display: inline-block;
+        }
+      }
+      .add-new {
+        width: 35%;
+      }
+      .export-file, .import-file {
+        margin-top: 8px;
+        text-align: center;
+      }
+      .text-center {
+        width: 100%;
+      }
+    }
     div {
       margin: 0 5px;
     }
   }
 
 }
-
-</style>
-<style lang="scss">
-
-.admission-requests {
-  .theme--light.v-text-field > .v-input__control > .v-input__slot:before {
-    display: none !important;
-    border: none !important;
-  }
-
-  .theme--light.v-input input, .theme--light.v-input textarea {
-    font-size: 14px !important;
-    font-weight: bold !important;
-    color: #707070 !important;
-    margin-top: 5px;
-  }
-
-  .v-input__icon i {
-    font-size: 14px !important;
-    font-weight: normal !important;
-    color: #707070 !important;
-  }
-
-  .v-text-field__details {
-    display: none;
-  }
-
-  .v-input__slot:focus .v-text-field__details {
-    border: none !important;
-    display: none;
-
-  }
-
-  .v-input__slot:active .v-text-field__details {
-    border: none !important;
-    display: none;
-
-  }
-
-  .theme--light.v-input {
-    margin: 0px 10px 0px 16px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #D2D5E1;
-    border-radius: 5px;
-  }
-
-  .v-calendar-daily__interval-text {
-    color: transparent !important
-  }
-
-  .v-text-field {
-    padding: 0;
-  }
-
-  .v-text-field__slot input {
-    padding: 2px 0 !important;
-  }
-
-  .v-input__prepend-outer {
-    margin-right: 3px;
-  }
-
-
-}
-
 
 </style>
