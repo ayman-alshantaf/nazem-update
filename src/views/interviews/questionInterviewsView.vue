@@ -247,7 +247,7 @@ export default {
           font-weight: bold !important;
           color: #354052;
           @media only screen and (max-width: 700px) {
-            font-size: 18px !important;
+            font-size: 16px !important;
           }
         }
       }
@@ -255,11 +255,14 @@ export default {
       .left-section {
         .degree {
           display: flex;
-
+          align-items: center;
           h3 {
             font-size: 22px !important;
             color: #272727;
             margin-left: 10px;
+            @media only screen and (max-width: 700px) {
+              font-size: 16px !important;
+            }
           }
 
           input.number {
@@ -273,6 +276,7 @@ export default {
             margin-right: 5px;
             font-size: 18px;
             display: inline-block;
+
           }
 
           span.close-icon {
@@ -287,6 +291,10 @@ export default {
             font-weight: 300 !important;
             font-size: 15px;
             color: rgba(231, 29, 54, 0.76);
+            @media only screen and (max-width: 700px) {
+              width: 30px;
+              height: 30px;
+            }
           }
         }
       }
