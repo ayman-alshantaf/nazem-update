@@ -4,69 +4,7 @@
       <div class="container--fluid">
         <!-- start section tabs interview with content tabs-->
         <div class="section-tabs-interview">
-          <tabs-custom-interviews :items="items">
-
-            <!-- start   section header top tabs-->
-            <template v-slot:header-tabs>
-              <div class="header-tabs">
-                <div class="import-export-file">
-                  <div class="search pt-2" style="display: flex">
-                    <search-input :style="styleSearch"/>
-                    <btn-search style="width: 100px"/>
-                  </div>
-                  <div class="export-file">
-                    <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
-                  </div>
-                  <div class="import-file">
-                    <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
-                  </div>
-                  <div class="add-new">
-                    <dialog-modal :name-input="'إضافة فترة جديد'" :title="'إضافة فترة جديد'">
-                      <div class="form-modal">
-                        <form>
-                          <v-row>
-                            <v-col cols="12">
-                              <label style="right: 4%">اسم الطالب</label>
-                              <select-input :name="'أختر من هنا اسم الطالب'" :items="items"/>
-                            </v-col>
-                            <v-col cols="12" lg="6">
-                              <label style="right: 7%">اسم المسار</label>
-                              <select-input :name="'أختر المسار'" :items="items"/>
-                            </v-col>
-                            <v-col cols="12" lg="6">
-                              <label style="right: 7%">الفصل</label>
-                              <select-input :name="'أختر  الفصل'" :items="items"/>
-                            </v-col>
-                            <v-col cols="12" lg="6" md="6">
-                              <label style="right: 7%">مقدار الفترة</label>
-                              <input-text :placeholder="'مقدار الفترة'"/>
-                            </v-col>
-                            <v-col cols="12" lg="6" md="6">
-                              <label>نوعه</label>
-                              <select-input :name="'عرض'" :items="['نعم','لا']"/>
-                            </v-col>
-                            <v-col cols="12" lg="6" md="6">
-                                <date-customer :label="'تاريخ الاختبار'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
-                            </v-col>
-
-                            <v-col cols="12" lg="6" md="6">
-                              <label>وقت الاختبار</label>
-                              <select-input :name="'وقت الاختبار'" :items="['شهري','اسبوعي','سنوي']"/>
-                            </v-col>
-                            <v-col cols="12">
-                              <v-btn block color="#00B5AD" style="color: white;font-size: 15px;height: 45px">اضافة
-                              </v-btn>
-                            </v-col>
-                          </v-row>
-                        </form>
-                      </div>
-                    </dialog-modal>
-                  </div>
-                </div>
-              </div>
-            </template>
-            <!-- end   section header top tabs-->
-
+          <tabs-custom-our-programs >
             <!-- start   section content 'card' top tabs-->
             <template v-slot:contentTabOne>
               <div class="all-card">
@@ -116,7 +54,7 @@
             </template>
             <!-- end   section content 'card' top tabs-->
 
-          </tabs-custom-interviews>
+          </tabs-custom-our-programs>
         </div>
         <!--  end section tabs interview with content tabs-->
 
@@ -133,36 +71,22 @@
 <script>
 import PaginationComponents from "@/components/dashboard/paginationComponents";
 import {mapMutations, mapState} from "vuex";
-import TabsCustomInterviews from "@/components/tabsCustom-intervies";
 import CardInterView from "@/components/cards/card-interView";
-import ImportFile from "@/components/import-file";
-import DialogModal from "@/components/dialogModal";
-import SelectInput from "@/components/select-input";
-import InputText from "@/components/input-text";
-import SearchInput from "@/components/search-input";
-import BtnSearch from "@/components/btnSearch";
 import CardTest from "@/components/cards/cardTest";
-import DateCustomer from "@/components/date-customer";
+import TabsCustomOurPrograms from "@/components/tabsCustom-ourPrograms";
 
 
 export default {
   name: "ourPrograms",
   components: {
-    DateCustomer,
+    TabsCustomOurPrograms,
     CardTest,
-    BtnSearch,
-    SearchInput,
-    InputText,
-    SelectInput,
-    DialogModal,
-    ImportFile,
-    CardInterView, TabsCustomInterviews, PaginationComponents
+
+    CardInterView,  PaginationComponents
   },
   data() {
     return {
-      items: [
-        'الأختبارات', 'العرض',
-      ],
+
       itemsOption: [
         {title: 'الفصل '},
         {title: 'المسار '},
@@ -182,7 +106,7 @@ export default {
     ...mapMutations(['pageTitle'])
   },
   beforeMount() {
-    this.pageTitle('المقابلات')
+    this.pageTitle('الاختبار والعرض')
   }
 }
 </script>
@@ -207,27 +131,6 @@ export default {
     width: 90%;
   }
 
-  .header-tabs {
-    padding-top: 5px;
-
-    .row {
-      align-items: center;
-
-      .col {
-        padding-left: 5px !important;
-      }
-    }
-
-    .import-export-file {
-      display: flex;
-      align-items: center;
-      margin-bottom: 8px;
-
-      div {
-        margin: 0 5px;
-      }
-    }
-  }
 
 
 }
@@ -324,11 +227,11 @@ export default {
       margin-right: 1px !important;
     }
   }
-
-  .theme--light.v-tabs > .v-tabs-bar {
-    min-height: 65px !important;
+  @media only screen and (min-width: 1140px) {
+    .theme--light.v-tabs > .v-tabs-bar {
+      min-height: 65px !important;
+    }
   }
-
   .main-right-section {
     min-width: 28% !important;
   }
