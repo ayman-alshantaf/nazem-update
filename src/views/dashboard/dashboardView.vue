@@ -5,7 +5,7 @@
       <!--section counter animation number-->
       <div class="section-number">
         <v-row>
-          <v-col v-for="card in dataChartCardOne" :key="card.id" style="padding: 5px">
+          <v-col sm="6" v-for="card in dataChartCardOne" :key="card.id" style="padding: 5px">
             <card-number  :title="card.title" :number="card.number" :percent="card.percent">
               <percent-chart :gradients-value="card.gradients" />
             </card-number>
