@@ -133,7 +133,7 @@
             </div>
           </div>
         </div>
-        <div class="container-question">
+        <div class="container-question" style="margin-bottom: 0">
           <div class="number-question">
             <div class="right-section">
               <div class="icon">
@@ -401,7 +401,7 @@ export default {
     display: v-bind('displayShow');
     background-color: white;
     border-radius: 20px;
-    padding-bottom: 30px;
+    padding-bottom: 20px;
     overflow: hidden;
     margin-bottom: 30px;
 
