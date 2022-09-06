@@ -28,6 +28,7 @@ import recitationAlertsView from "@/views/others/recitationAlertsView";
 import detailsRecitationAlertsView from "@/views/others/detailsRecitationAlertsView";
 import officialHolidaysView from "@/views/students/officialHolidaysView";
 import executeDutiesView from "@/views/executeDuties/executeDutiesView";
+import registrationStudentView from "@/views/loginSignup/registrationStudentView";
 
 Vue.use(VueRouter)
 
@@ -51,6 +52,11 @@ const routes = [
         path: '/signup',
         name: 'signup',
         component: signupView
+    },
+    {
+        path: '/registrationStudent',
+        name: 'registrationStudent',
+        component: registrationStudentView
     },
     {
         path: '/followStudent',
