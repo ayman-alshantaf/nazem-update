@@ -125,7 +125,7 @@ export default {
     color: #411FD0;
   }
   .fc .fc-toolbar.fc-header-toolbar{
-    min-width: 40%;
+    min-width: 37%;
     position: absolute;
     top: 59px;
     display: flex;

@@ -74,11 +74,13 @@ import {mapMutations, mapState} from "vuex";
 import CardInterView from "@/components/cards/card-interView";
 import CardTest from "@/components/cards/cardTest";
 import TabsCustomOurPrograms from "@/components/tabsCustom-ourPrograms";
+import InputText from "@/components/input-text";
 
 
 export default {
   name: "ourPrograms",
   components: {
+    InputText,
     TabsCustomOurPrograms,
     CardTest,
 
@@ -141,7 +143,6 @@ export default {
 
   .theme--light.v-input input, .theme--light.v-input textarea {
     font-size: 14px !important;
-    font-weight: bold !important;
     color: #707070 !important;
     margin-top: 5px;
   }

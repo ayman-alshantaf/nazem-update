@@ -157,6 +157,8 @@ PaginationComponents
       margin: 0 5px;
       @media only screen and (max-width: 800px) {
         margin: 0 0px;
+        padding: 0 5px;
+
       }
     }
   }

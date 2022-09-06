@@ -40,7 +40,6 @@ export default new Vuex.Store({
                 {id: 2, title: "المسارات", icon: 'fa fa-exchange', urlPath: "/tracks"},
                 {id: 3, title: "المقرئين", icon: 'fa fa-users', urlPath: "/reciters"},
                 {id: 4, title: "تنبيهات التسميع", icon: 'fa fa-bell-o', urlPath: "/recitationAlerts"},
-                {id: 4, title: "تنبيهات التسميع", icon: 'fa fa-bell-o', urlPath: "/recitationAlerts"},
             ],
 
         },
