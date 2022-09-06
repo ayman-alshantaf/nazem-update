@@ -7,15 +7,6 @@
       <div class="name">
         <p>{{ name }}</p>
         <span>{{ className }}</span>
-        <!--        <div v-if="status === 1" class="status-student">-->
-        <!--          {{ statusStudent }}-->
-        <!--        </div>-->
-        <!--        <div v-if="status === 0" style="background-color: rgba(209,26,42,0.23);color: #D11A2A" class="status-student">-->
-        <!--          {{ statusStudent }}-->
-        <!--        </div>-->
-        <!--        <div v-if="status === 2" style="background-color: rgba(56,91,114,0.26);color: #385B72" class="status-student">-->
-        <!--          {{ statusStudent }}-->
-        <!--        </div>-->
       </div>
     </div>
     <div class="information-student">
@@ -139,7 +130,7 @@ export default {
     border-bottom: 1px solid rgba(143, 146, 161, 0.26);
 
     .image {
-      width: 22%;
+      width: 70px;
       padding-top: 6px;
 
       img {
@@ -196,7 +187,7 @@ export default {
 
       .image {
         border-radius: 50%;
-        min-width: 18%;
+        min-width: 30px;
         display: flex;
         justify-content: center;
         align-items: center;

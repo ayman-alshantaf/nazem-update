@@ -7,8 +7,10 @@
 }
 //part student
 
-.weekly-narrative , .vacations-student , .permission-student ,
-.interviews,.admission-requests, .alarm-view{
+.weekly-narrative , .vacations-student ,
+.permission-student , .interviews,
+.admission-requests, .alarm-view,
+.registration-program{
   .theme--light.v-text-field > .v-input__control > .v-input__slot:before {
     display: none !important;
     border: none !important;
@@ -24,6 +26,15 @@
     font-size: 13px !important;
     font-weight: normal !important;
     color: #707070 !important;
+  }
+
+  .v-btn:not(.v-btn--round).v-size--default {
+    padding: 20px 12px !important;
+    border-radius: 10px;
+
+    i {
+      margin-right: 1px !important;
+    }
   }
 
   .v-text-field__details {

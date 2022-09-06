@@ -11,13 +11,13 @@
               <div class="header-tabs">
                 <form>
                   <v-row>
-                    <v-col >
+                    <v-col cols="4" lg="3">
                       <select-option-customer :items="itemsOption"/>
                     </v-col>
-                    <v-col lg="6" style="padding-right: 1px">
+                    <v-col cols="4" lg="6" style="padding-right: 1px">
                       <search-input :style="styleSearch"></search-input>
                     </v-col>
-                    <v-col   style="padding-left: 0px;padding-right: 5px">
+                    <v-col cols="4" lg="3" style="padding-left: 0px;padding-right: 5px">
                       <div class="input-search">
                         <btn-search/>
                       </div>
@@ -100,7 +100,7 @@ export default {
   components: {
     CardRegistrationProgram,
     SelectOptionCustomer,
-    BtnSearch,  SearchInput, TabsCustomInterviews, PaginationComponents
+    BtnSearch, SearchInput, TabsCustomInterviews, PaginationComponents
   },
   data() {
     return {
@@ -127,7 +127,7 @@ export default {
     ...mapMutations(['pageTitle'])
   },
   beforeMount() {
-    this.pageTitle('المقابلات')
+    this.pageTitle('تسجيل في البرامج')
   }
 }
 </script>
@@ -170,78 +170,6 @@ export default {
 </style>
 <style lang="scss">
 .registration-program {
-  .theme--light.v-input input, .theme--light.v-input textarea {
-    font-size: 14px !important;
-    font-weight: bold !important;
-    color: #707070 !important;
-    margin-top: 5px;
-  }
-
-  .v-input__icon i {
-    font-size: 14px !important;
-    font-weight: normal !important;
-    color: #707070 !important;
-  }
-
-  .v-text-field__details {
-    display: none;
-  }
-
-  .v-input__slot:focus .v-text-field__details {
-    border: none !important;
-    display: none;
-
-  }
-
-  .v-input__slot:active .v-text-field__details {
-    border: none !important;
-    display: none;
-
-  }
-
-  .theme--light.v-input {
-    margin: 0px 2px 0px 9px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #D2D5E1;
-    border-radius: 5px;
-  }
-
-  .v-calendar-daily__interval-text {
-    color: transparent !important
-  }
-
-  .v-text-field {
-    padding: 0;
-  }
-
-  .v-text-field__slot input {
-    padding: 2px 0 !important;
-  }
-
-  .v-input__prepend-outer {
-    margin-right: 3px;
-  }
-
-  .v-btn:not(.v-btn--round).v-size--default {
-    padding: 20px 12px !important;
-    border-radius: 10px;
-
-    i {
-      margin-right: 1px !important;
-    }
-  }
-
-  .v-slide-group.v-item-group > .v-slide-group__next, .v-slide-group.v-item-group > .v-slide-group__prev {
-    display: none !important;
-  }
-
-  .v-slide-group__content {
-    transform: translateY(0px) !important;
-    border: none !important;
-  }
-
   .section-top-tabs {
     display: flex;
     justify-content: space-between;
@@ -263,6 +191,9 @@ export default {
       width: 60%;
       display: flex;
       align-items: center;
+      @media only screen and (max-width: 1140px) {
+        width: 100%;
+      }
     }
   }
 

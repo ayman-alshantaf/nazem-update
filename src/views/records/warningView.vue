@@ -22,38 +22,32 @@
                     </div>
                   </div>
                   <div class="add-new">
-                    <dialog-modal :name-input="'إضافة إنذار جديد'" :title="'إضافة إنذار جديد'">
+                    <dialog-modal :name-input="'إضافة تحذير جديد'" :title="'إضافة تحذير جديد'">
                       <div class="form-modal">
                         <form>
                           <v-row>
                             <v-col cols="12">
-                              <label style="right: 4%">اسم الطالب</label>
-                              <select-input :name="'أختر من هنا اسم الطالب'" :items="items"/>
+                              <select-input :label="'اسم الطالب'" :name="'أختر من هنا اسم الطالب'" :items="items"/>
                             </v-col>
                             <v-col cols="12">
-                              <label style="right: 4%">اسم المسار</label>
-                              <select-input :name="'اسم المسار'" :items="items"/>
+                              <select-input :label="'اسم المسار'" :name="'اسم المسار'" :items="items"/>
                             </v-col>
                             <v-col cols="12">
-                              <label style="right: 4%">اسم التحذير</label>
-                              <input-text :placeholder="'اسم التحذير'"/>
+                              <input-text :label-top="'اسم التحذير'" :placeholder="'اسم التحذير'"/>
                             </v-col>
                             <v-col cols="12" lg="6" md="6">
-                              <label>تحويل التحذير لانذار</label>
-                              <select-input :name="'نعم/لا'" :items="['نعم','لا']"/>
+                              <select-input :label="'تحويل التحذير لانذار'" :name="'نعم/لا'" :items="['نعم','لا']"/>
                             </v-col>
                             <v-col cols="12" lg="6" md="6">
-                              <label>استبعاد من البرنامج</label>
-                              <select-input :name="'نعم/لا/ايقاف مؤقت'" :items="['ايقاف مؤقت','نعم','لا']"/>
+                              <select-input :label="'استبعاد من البرنامج'" :name="'نعم/لا/ايقاف مؤقت'"
+                                            :items="['ايقاف مؤقت','نعم','لا']"/>
                             </v-col>
 
                             <v-col cols="12" lg="6" md="6">
-                              <label>تحديد المده</label>
-                              <select-input :name="'شهري'" :items="['شهري','اسبوعي','سنوي']"/>
+                              <select-input :label="'تحديد المده'" :name="'شهري'" :items="['شهري','اسبوعي','سنوي']"/>
                             </v-col>
                             <v-col cols="12" lg="6" md="6">
-                              <label>عدد الانذرات</label>
-                              <input-text :placeholder="'عدد الانذرات'"/>
+                              <input-text :label-top="'عدد الانذرات'" :placeholder="'عدد الانذرات'"/>
                             </v-col>
                             <v-col cols="12">
                               <v-btn block color="#00B5AD" style="color: white;font-size: 15px;height: 45px">اضافة
@@ -174,7 +168,7 @@ export default {
     ...mapMutations(['pageTitle'])
   },
   beforeMount() {
-    this.pageTitle('المقابلات')
+    this.pageTitle('سجل التحذيرات')
   }
 }
 </script>

@@ -158,7 +158,9 @@ export default {
 
   .header-tabs {
     padding-top: 5px;
-
+    @media only screen and (max-width: 1140px) {
+      width: 100%;
+    }
     .row {
       align-items: center;
 

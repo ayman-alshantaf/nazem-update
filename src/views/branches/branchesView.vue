@@ -8,11 +8,11 @@
               <form>
                 <div class="search">
                   <v-row>
-                    <v-col cols="12" lg="8" style="padding-left: 4px">
+                    <v-col cols="8"  style="padding-left: 4px">
                       <search-input :style="styleSearch">
                       </search-input>
                     </v-col>
-                    <v-col cols="12" lg="4">
+                    <v-col cols="4" >
                       <div style="display: flex;align-items: center">
                         <button>بحث</button>
                       </div>
@@ -22,18 +22,20 @@
               </form>
             </div>
             <div class="import-export-file">
-              <div class="export-file">
-                <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
-              </div>
-              <div class="import-file">
-                <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+              <div style="display: flex">
+                <div class="export-file">
+                  <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
+                </div>
+                <div class="import-file">
+                  <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+                </div>
               </div>
               <div class="add-new">
                 <dialog-modal :name-input="'اضافة فرع جديد'" :title="'اضافة فرع جديد'">
                   <div class="form-modal">
                     <form>
                       <v-row>
-                        <v-col cols="12"  >
+                        <v-col cols="12">
                           <label>اسم الطالب</label>
                           <select-input :name="'أختر من هنا اسم الطالب'" :items="items"/>
                         </v-col>
@@ -41,15 +43,15 @@
                           <label>وقت التسميع</label>
                           <select-input :name="'أدخل هنا وقت التسميع'" :items="items"/>
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
-                            <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
+                        <v-col cols="12" lg="6" md="6">
+                          <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
+                        <v-col cols="12" lg="6" md="6">
                           <label>كيفية التسميع</label>
                           <select-input :name="'أونلاين'" :items="['نعم','لا']"/>
 
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
+                        <v-col cols="12" lg="6" md="6">
                           <label>موقع التسميع</label>
                           <select-input :name="'موقع التسميع'" :items="['نعم','لا']"/>
 
@@ -66,14 +68,14 @@
             </div>
           </div>
           <v-row>
-            <v-col v-for="student in allInterview" :key="student.id"  cols="12" lg="4" md="6">
+            <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6">
               <card-branches
                   :name="'الفرع الاول'"
                   :items-path-array="student.detailsAdmission"
                   :show-btn="true"
                   :show-edit-delete="true"
                   :path-link="'detailsBranches'"
-                />
+              />
             </v-col>
           </v-row>
         </div>
@@ -114,14 +116,14 @@ export default {
       },
     }
   },
-  computed:{
+  computed: {
     ...mapState(['allInterview'])
   },
   methods: {
     ...mapMutations(['pageTitle'])
   },
   beforeMount() {
-    this.pageTitle('الاذونات')
+    this.pageTitle('الفروع')
   }
 }
 </script>
@@ -138,15 +140,16 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    @media only screen and (max-width: 880px) {
+    @media only screen and (max-width: 1250px) {
       flex-direction: column;
     }
 
     .search-section {
       width: 55%;
-      @media only screen and (max-width: 880px) {
+      @media only screen and (max-width: 1250px) {
         width: 100%;
       }
+
 
       .search {
         display: flex;
@@ -160,6 +163,9 @@ export default {
           border-radius: 10px;
           color: #00B5AD;
           margin-right: 10px;
+          @media only screen and (max-width: 1250px) {
+            width: 100%;
+          }
         }
 
       }
@@ -171,9 +177,35 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
-
+    @media only screen and (max-width: 1250px) {
+      width: 100%;
+      div {
+        width: 50%;
+        label {
+          width: 100%;
+          display: inline-block;
+        }
+      }
+      .export-file, .import-file {
+        margin-top: 8px;
+        text-align: center;
+      }
+      .text-center{
+        width: 100%;
+      }
+    }
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+      display: unset;
+      div {
+        width: 100%;
+      }
+    }
     div {
       margin: 0 5px;
+      @media only screen and (max-width: 800px) {
+        margin: 0 0px;
+      }
     }
   }
 
@@ -246,9 +278,11 @@ export default {
 
 .form-modal {
   padding: 15px 0;
-  .col-12{
+
+  .col-12 {
     position: relative;
   }
+
   .v-label {
     right: 0 !important;
     left: auto !important;
@@ -257,16 +291,18 @@ export default {
   label {
     display: block;
     margin-bottom: 10px;
-    font-size: 15px ;
+    font-size: 15px;
     background-color: white;
     position: absolute;
     top: 0;
     z-index: 50;
     right: 7%;
   }
-  label.custom-label{
+
+  label.custom-label {
     font-size: 14px !important;
   }
+
   .v-input__slot {
     margin-bottom: 0 !important;
   }

@@ -56,25 +56,35 @@ export default {
   }
   .interviews .v-tabs-bar,
   .alarm-view .v-tabs-bar,
-  .warning-view .v-tabs-bar {
+  .warning-view .v-tabs-bar, {
     min-height: 140px !important;
+  }
+  .registration-program .v-tabs-bar{
+    min-height: 115px !important;
   }
   .interviews .section-top-tabs .main-right-section .right-section,
   .alarm-view .section-top-tabs .main-right-section .right-section,
-  .warning-view .section-top-tabs .main-right-section .right-section {
+  .warning-view .section-top-tabs .main-right-section .right-section,
+  .registration-program .section-top-tabs .main-right-section .right-section, {
     min-width: unset !important;
   }
 
-  .interviews .v-tabs-slider-wrapper {
-    bottom: 54% !important;
+  .interviews .v-tabs-slider-wrapper ,
+  .registration-program .v-tabs-slider-wrapper{
+    bottom: 53.5% !important;
   }
   .interviews .v-tab, .alarm-view .v-tab {
     padding-bottom: 10px !important;
   }
   .interviews .v-tab,
   .alarm-view .v-tab,
-  .warning-view .v-tab{
+  .warning-view .v-tab,
+  .registration-program .v-tab{
     padding-bottom: 10px !important;
+  }
+  .alarm-view .v-tabs-slider-wrapper,
+  .warning-view .v-tabs-slider-wrapper{
+    bottom: 71% !important;
   }
 }
 
@@ -89,13 +99,7 @@ export default {
 
 @media only screen and (max-width: 1140px) {
 
-  .alarm-view .v-tabs-slider-wrapper {
-    bottom: 71% !important;
-  }
 
-  .warning-view .v-tabs-slider-wrapper {
-    bottom: 71% !important;
-  }
 }
 
 @media only screen and (max-width: 900px) {

@@ -138,10 +138,12 @@ export default {
     ...mapState(['allInterview'])
   },
   methods: {
-    ...mapMutations(['pageTitle'])
+    ...mapMutations(['pageTitle','showTopTitle','subTitleTop'])
   },
   beforeMount() {
-    this.pageTitle('الاذونات')
+    this.pageTitle('الفروع')
+    this.subTitleTop(['الفرع الاول']);
+    this.showTopTitle()
   }
 }
 </script>

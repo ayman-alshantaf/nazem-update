@@ -168,7 +168,7 @@ export default {
     ...mapMutations(['pageTitle'])
   },
   beforeMount() {
-    this.pageTitle('المقابلات')
+    this.pageTitle('سجل الانذرات')
   }
 }
 </script>

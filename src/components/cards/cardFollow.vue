@@ -82,13 +82,13 @@
       <p>{{ description }}</p>
     </div>
     <div class="edit-delete">
-      <v-btn disabled class="edit">
-        <span>تعديل </span>
+      <v-btn disabled class="edit mb-1">
+        <span class="ml-1">تعديل </span>
         <i class="fa fa-pencil"></i>
       </v-btn>
       <div class="border"></div>
-      <v-btn disabled class="delete">
-        <span>حذف </span>
+      <v-btn disabled class="delete mb-1">
+        <span class="ml-1">حذف </span>
         <i class="fa fa-trash-o"></i>
       </v-btn>
     </div>
