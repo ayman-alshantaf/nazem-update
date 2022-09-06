@@ -57,7 +57,7 @@ export default {
   .interviews .v-tabs-bar,
   .alarm-view .v-tabs-bar,
   .warning-view .v-tabs-bar, {
-    min-height: 140px !important;
+    min-height: 160px !important;
   }
   .registration-program .v-tabs-bar{
     min-height: 115px !important;
@@ -84,7 +84,7 @@ export default {
   }
   .alarm-view .v-tabs-slider-wrapper,
   .warning-view .v-tabs-slider-wrapper{
-    bottom: 71% !important;
+    bottom: 74.5% !important;
   }
 }
 

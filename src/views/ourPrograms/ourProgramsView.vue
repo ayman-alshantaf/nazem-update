@@ -254,5 +254,10 @@ export default {
  .edit-delete{
   cursor: pointer !important;
 }
+@media only screen and (max-width: 800px) {
+ .add-new{
+   margin-top: 15px !important;
+ }
+}
 
 </style>

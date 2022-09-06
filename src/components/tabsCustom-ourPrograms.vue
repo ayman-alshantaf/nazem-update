@@ -245,10 +245,10 @@ export default {
 }
 @media only screen and (max-width: 800px) {
   .ourProgramsView .v-tabs-bar {
-    min-height: 160px !important;
+    min-height: 180px !important;
   }
   .ourProgramsView .v-tabs-slider-wrapper {
-    bottom: 70% !important;
+    bottom: 72% !important;
   }
 
 }

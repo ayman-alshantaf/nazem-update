@@ -22,7 +22,9 @@
             </div>
             <div class="import-export-file">
               <div style="display: flex;align-items: center">
-                <select-option-customer class="mt-2"/>
+                <div class="select-way-reciters">
+                  <select-option-customer class="mt-2"/>
+                </div>
                 <div class="export-file">
                   <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
                 </div>
