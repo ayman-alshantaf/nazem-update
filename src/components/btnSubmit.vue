@@ -27,7 +27,9 @@ export default {
 
 <style lang="scss" scoped>
 .btn-submit-component {
+  width: 100%;
   .btn-submit {
+    width: 100%;
     color: white;
     height: 45px
   }

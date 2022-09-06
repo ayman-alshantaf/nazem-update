@@ -128,7 +128,7 @@ export default {
       padding-right: 25px;
 
       .image {
-        width: 18%;
+        width: 70px;
         padding-top: 6px;
 
         img {

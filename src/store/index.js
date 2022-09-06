@@ -30,16 +30,16 @@ export default new Vuex.Store({
             ],
             ourPrograms: [
                 {id: 1, title: "الاختبار والعرض", icon: 'fa fa-map-o', urlPath: "/ourPrograms"},
-                {id: 2, title: "تسجيل في البرامج", icon: 'fa fa-home', urlPath: "/registrationProgram"},
+                {id: 2, title: "تسجيل في البرامج", icon: 'fa fa-columns', urlPath: "/registrationProgram"},
             ],
             branches: [
-                {id: 1, title: "الفروع", icon: 'fa fa-home', urlPath: "/branches"},
+                {id: 1, title: "الفروع", icon: 'fa fa-map-marker', urlPath: "/branches"},
             ],
             other: [
-                {id: 1, title: "الفصول", icon: 'fa fa-home', urlPath: "/classesStudent"},
-                {id: 2, title: "المسارات", icon: 'fa fa-home', urlPath: "/tracks"},
-                {id: 3, title: "المقرئين", icon: 'fa fa-home', urlPath: "/reciters"},
-                {id: 4, title: "تنبيهات التسميع", icon: 'fa fa-home', urlPath: "/recitationAlerts"},
+                {id: 1, title: "الفصول", icon: 'fa fa-university', urlPath: "/classesStudent"},
+                {id: 2, title: "المسارات", icon: 'fa fa-exchange', urlPath: "/tracks"},
+                {id: 3, title: "المقرئين", icon: 'fa fa-users', urlPath: "/reciters"},
+                {id: 4, title: "تنبيهات التسميع", icon: 'fa fa-bell-o', urlPath: "/recitationAlerts"},
             ],
         },
         dataChartCardOne:

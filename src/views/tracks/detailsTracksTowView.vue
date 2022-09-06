@@ -10,11 +10,11 @@
               <form>
                 <div class="search">
                   <v-row>
-                    <v-col cols="12" lg="10" style="padding-left: 4px">
+                    <v-col cols="8"  style="padding-left: 0px">
                       <search-input :style="styleSearch">
                       </search-input>
                     </v-col>
-                    <v-col cols="12" lg="2">
+                    <v-col cols="4">
                       <div style="display: flex;align-items: center">
                         <button>بحث</button>
                       </div>
@@ -71,10 +71,12 @@ export default {
     ...mapState(['allInterview'])
   },
   methods: {
-    ...mapMutations(['pageTitle'])
+    ...mapMutations(['pageTitle','showTopTitle', 'subTitleTop'])
   },
   beforeMount() {
-    this.pageTitle('الاذونات')
+    this.pageTitle('المسارات')
+    this.subTitleTop(['المسار الاول' , 'الفترة الاولي'])
+    this.showTopTitle()
   }
 }
 </script>
@@ -93,7 +95,7 @@ export default {
     border-bottom: 1px solid rgba(143, 146, 161, 0.26);
 
     .image {
-      width: 22%;
+      width: 70px;
       padding-top: 6px;
 
       img {

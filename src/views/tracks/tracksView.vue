@@ -12,14 +12,16 @@
                     </search-input>
                   </v-col>
                   <v-col cols="12" lg="7">
-                    <div style="display: flex;align-items: center">
+                    <div class="date-top">
                       <div class="container-date">
                         <date-select-modal/>
                       </div>
                       <div class="container-date">
                         <date-select-modal/>
                       </div>
-                      <button>بحث</button>
+                      <div class="input-search">
+                        <btn-search/>
+                      </div>
                     </div>
                   </v-col>
                 </v-row>
@@ -27,11 +29,13 @@
             </form>
           </div>
           <div class="import-export-file">
-            <div class="export-file">
-              <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
-            </div>
-            <div class="import-file">
-              <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+            <div style="display: flex">
+              <div class="export-file">
+                <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
+              </div>
+              <div class="import-file">
+                <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+              </div>
             </div>
             <div class="add-new">
               <btn-submit style="height: 35px" :value-btn="'إضافة مسار جديد'" :route-link="'/addTracks'">
@@ -44,7 +48,7 @@
           <!--  content tabs 'card follow student'-->
           <div class="all-card mt-5">
             <v-row>
-              <v-col v-for="student in allInterview" :key="student.id"  cols="12" lg="4" md="6">
+              <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6">
                 <card-branches
                     :name="'المسار الاول'"
                     :items-path-array="student.tracks"
@@ -73,14 +77,16 @@ import {mapMutations, mapState} from "vuex";
 import CardBranches from "@/components/cards/card-branches";
 import TabsCustom from "@/components/tabsCustom";
 import BtnSubmit from "@/components/btnSubmit";
+import BtnSearch from "@/components/btnSearch";
 
 export default {
   name: "tracksView",
   components: {
+    BtnSearch,
     BtnSubmit,
     TabsCustom,
     CardBranches,
-  ImportFile, DateSelectModal, SearchInput, PaginationComponents
+    ImportFile, DateSelectModal, SearchInput, PaginationComponents
   },
   data() {
     return {
@@ -95,14 +101,14 @@ export default {
       },
     }
   },
-  computed:{
+  computed: {
     ...mapState(['allInterview'])
   },
   methods: {
     ...mapMutations(['pageTitle'])
   },
   beforeMount() {
-    this.pageTitle('الاذونات')
+    this.pageTitle('المسارات')
   }
 }
 </script>
@@ -119,16 +125,31 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    @media only screen and (max-width: 880px) {
+    @media only screen and (max-width: 1300px) {
       flex-direction: column;
     }
 
     .search-section {
       width: 55%;
-      @media only screen and (max-width: 880px) {
+      @media only screen and (max-width: 1300px) {
         width: 100%;
       }
+      .date-top {
+        display: flex;
+        align-items: center;
+        @media only screen and (max-width: 1300px) {
+          .container-date {
+            width: 33%;
 
+            .theme--light.v-input {
+              width: 100%;
+            }
+          }
+          .input-search {
+            width: 33%;
+          }
+        }
+      }
       .search {
         display: flex;
         align-items: center;
@@ -152,9 +173,38 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
-
+    @media only screen and (max-width: 1300px) {
+      width: 100%;
+      div {
+        width: 50%;
+        label {
+          width: 100%;
+          display: inline-block;
+        }
+        .btn-submit-component{
+          width: 100%;
+        }
+      }
+      .export-file, .import-file {
+        margin-top: 8px;
+        text-align: center;
+      }
+      .text-center{
+        width: 100%;
+      }
+    }
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+      display: unset;
+      div {
+        width: 100%;
+      }
+    }
     div {
       margin: 0 5px;
+      @media only screen and (max-width: 800px) {
+        margin: 0 0px;
+      }
     }
   }
 
@@ -222,20 +272,22 @@ export default {
     margin-right: 3px;
   }
 
-    .add-new{
-      .btn-submit-component .btn-submit{
-        height: 38px !important;
-        margin-top: 2px;
-      }
+  .add-new {
+    .btn-submit-component .btn-submit {
+      height: 38px !important;
+      margin-top: 2px;
     }
+  }
 
 }
 
 .form-modal {
   padding: 15px 0;
-  .col-12{
+
+  .col-12 {
     position: relative;
   }
+
   .v-label {
     right: 0 !important;
     left: auto !important;
@@ -244,16 +296,18 @@ export default {
   label {
     display: block;
     margin-bottom: 10px;
-    font-size: 15px ;
+    font-size: 15px;
     background-color: white;
     position: absolute;
     top: 0;
     z-index: 50;
     right: 7%;
   }
-  label.custom-label{
+
+  label.custom-label {
     font-size: 14px !important;
   }
+
   .v-input__slot {
     margin-bottom: 0 !important;
   }

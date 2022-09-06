@@ -111,7 +111,7 @@ export default {
     border-bottom: 1px solid rgba(143, 146, 161, 0.26);
 
     .image {
-      width: 22%;
+      width: 70px;
       padding-top: 6px;
 
       img {

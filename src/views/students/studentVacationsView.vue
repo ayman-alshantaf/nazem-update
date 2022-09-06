@@ -61,7 +61,7 @@
                           <date-customer :label="'اختر نهاية الاجازة'" :name-placeholder="'اختر نهاية الاجازة'"/>
                         </v-col>
                         <v-col cols="12" class="custom-input">
-                          <text-area :value-label="'اضافة الملاحظات'"/>
+                          <text-area :label="'إضافة ملاحظات'" :placeholder="'ملاحظات'"/>
                         </v-col>
                         <v-col cols="12">
                           <btn-submit :value-btn="'اضافة'"/>
@@ -248,5 +248,9 @@ export default {
 
 </style>
 <style lang="scss">
-
+  .form-modal .custom-input label {
+    padding-right: 10px;
+    margin-bottom: 10px;
+    top: -13px;
+  }
 </style>

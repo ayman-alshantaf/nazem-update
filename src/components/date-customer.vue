@@ -49,7 +49,7 @@ export default {
     position: absolute;
     top: -25%;
     z-index: 50;
-    right: 4%;
+    right: 12px !important;
   }
 
   label.main-label {

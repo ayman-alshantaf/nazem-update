@@ -64,7 +64,7 @@
                           <date-customer :label="'اختر نهاية الاجازة'" :name-placeholder="'اختر نهاية الاجازة'"/>
                         </v-col>
                         <v-col cols="12">
-                          <text-area :value-label="'اضافة الملاحظات'"/>
+                          <text-area :label="'إضافة ملاحظات'" :placeholder="' الملاحظات'"/>
                         </v-col>
                         <v-col cols="12">
                           <btn-submit :value-btn="'اضافة'"/>
@@ -251,6 +251,12 @@ export default {
     }
   }
 
+}
+
+</style>
+<style lang="scss">
+.text-area-component label.main-label {
+  top: -13px;
 }
 
 </style>

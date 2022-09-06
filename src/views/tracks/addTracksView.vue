@@ -22,7 +22,7 @@
                 <select-input :label="'عدد الفترات'" :name="'عدد الفترات'" :items="['نعم','لا']"/>
               </div>
               <div>
-                <text-area :value-label="'أكتب هنا نص التعهد'"/>
+                <text-area :label="'نص التعهد'" :placeholder="'أكتب هنا نص التعهد'"/>
               </div>
             </div>
           </template>
@@ -191,6 +191,12 @@ export default {
   }
   .date-customer-component .v-text-field__slot{
     padding-bottom: 0 !important;
+  }
+  .v-slide-group__content{
+    transform: initial !important;
+  }
+   .select-component label {
+    right: 12px !important;
   }
 }
 </style>

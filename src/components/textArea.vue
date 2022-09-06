@@ -1,9 +1,9 @@
 <template>
   <div class="text-area-component">
-    <label></label>
+    <label class="main-label">{{ label }}</label>
     <v-textarea
         rows="3"
-        :label="valueLabel"
+        :placeholder="placeholder"
         required
     ></v-textarea>
   </div>
@@ -12,12 +12,13 @@
 <script>
 export default {
   name: "textArea",
-  props:['valueLabel']
+  props:['placeholder','label']
 }
 </script>
 
 <style lang="scss" scoped>
 .text-area-component {
+  position: relative;
   .v-textarea {
     font-size: 15px !important;
   }
@@ -45,9 +46,32 @@ export default {
 </style>
 <style lang="scss">
 .text-area-component {
+  margin-top: 15px;
 
  textarea {
     font-size: 15px !important;
+   padding-top: 5px;
+  }
+  textarea::placeholder {
+    font-size: 14px !important;
+    color: #CBCACA !important;
+    padding-top: 5px;
+  }
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 15px ;
+    background-color: white;
+    position: absolute;
+    top: -12px;
+    z-index: 1;
+    right: 14px !important;
+    padding: 0 !important;
+  }
+  label.main-label{
+    font-weight: bold;
+    font-size: 14px !important;
+    color: rgba(0,0,0,0.6) !important;
   }
 
 }
