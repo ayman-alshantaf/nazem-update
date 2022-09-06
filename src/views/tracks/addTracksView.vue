@@ -24,6 +24,9 @@
               <div>
                 <text-area :label="'نص التعهد'" :placeholder="'أكتب هنا نص التعهد'"/>
               </div>
+              <div class="uploadFile mt-7">
+                <drag-and-drop-uploader/>
+              </div>
             </div>
           </template>
           <template v-slot:section-tow>
@@ -106,11 +109,13 @@ import InputText from "@/components/input-text";
 import DateCustomer from "@/components/date-customer";
 import TextArea from "@/components/textArea";
 import CardBranches from "@/components/cards/card-branches";
+import DragAndDropUploader from "@/components/DragAndDropUploader";
 
 
 export default {
   name: "addTracksView",
   components: {
+    DragAndDropUploader,
     CardBranches,
     TextArea,
     DateCustomer,
@@ -136,10 +141,12 @@ export default {
     ...mapState(['allInterview'])
   },
   methods: {
-    ...mapMutations(['pageTitle'])
+    ...mapMutations(['pageTitle','showTopTitle', 'subTitleTop'])
   },
   beforeMount() {
-    this.pageTitle('الاذونات')
+    this.pageTitle('المسارات')
+    this.subTitleTop(['إضافة مسار'])
+    this.showTopTitle()
   }
 }
 </script>
@@ -155,7 +162,21 @@ export default {
     right: 15%;
   }
 }
+.uploadFile{
+  input {
+    display: none;
+  }
 
+  label {
+    cursor: pointer;
+    padding: 8px 8px;
+    color: #00B5AD;
+    font-size: 14px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.15);
+  }
+}
 </style>
 <style lang="scss">
 
