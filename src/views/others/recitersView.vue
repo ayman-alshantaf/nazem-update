@@ -8,10 +8,10 @@
               <form>
                 <div class="search">
                   <v-row>
-                    <v-col cols="12" lg="8" style="padding-left: 4px">
+                    <v-col cols="8" style="padding-left: 4px">
                       <search-input :style="styleSearch"/>
                     </v-col>
-                    <v-col cols="12" lg="4">
+                    <v-col cols="4">
                       <div class="main-container-date">
                         <button>بحث</button>
                       </div>
@@ -21,12 +21,14 @@
               </form>
             </div>
             <div class="import-export-file">
-              <select-option-customer class="mt-2"/>
-              <div class="export-file">
-                <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
-              </div>
-              <div class="import-file">
-                <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+              <div style="display: flex;align-items: center">
+                <select-option-customer class="mt-2"/>
+                <div class="export-file">
+                  <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
+                </div>
+                <div class="import-file">
+                  <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+                </div>
               </div>
               <div class="add-new">
                 <dialog-modal :name-input="' إضافة مقرء جديد'" :title="'إضافة مقرء جديد'">
@@ -66,7 +68,7 @@
                                :status="student.statusAdmission"
                                :items-path-array="student.detailsRecitation"
                                :idCardStudent="student.id"
-                                :show-btn="false"
+                               :show-btn="false"
                                :show-edit-delete="true"
               />
             </v-col>
@@ -100,7 +102,7 @@ export default {
     BtnSubmit,
     DateCustomer,
     SelectInput,
-    DialogModal, ImportFile,  SearchInput, PaginationComponents
+    DialogModal, ImportFile, SearchInput, PaginationComponents
   },
   data() {
     return {
@@ -122,7 +124,7 @@ export default {
     ...mapMutations(['pageTitle'])
   },
   beforeMount() {
-    this.pageTitle('اجازات الطلاب')
+    this.pageTitle('المقرئين')
   }
 }
 </script>
@@ -145,13 +147,13 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    @media only screen and (max-width: 880px) {
+    @media only screen and (max-width: 1300px) {
       flex-direction: column;
     }
 
     .search-section {
       width: 35%;
-      @media only screen and (max-width: 880px) {
+      @media only screen and (max-width: 1300px) {
         width: 100%;
       }
 
@@ -160,10 +162,12 @@ export default {
         display: flex;
         align-items: center;
         padding: 12px 0;
+
         .main-container-date {
           display: flex;
           align-items: center
         }
+
         button {
           border: 1px solid #00B5AD;
           padding: 10px 40px;
@@ -171,6 +175,9 @@ export default {
           border-radius: 10px;
           color: #00B5AD;
           margin-right: 10px;
+          @media only screen and (max-width: 1300px) {
+            width: 100%;
+          }
         }
 
       }
@@ -182,9 +189,35 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
-
+    @media only screen and (max-width: 1300px) {
+      width: 100%;
+      div {
+        width: 50%;
+        label {
+          width: 100%;
+          display: inline-block;
+        }
+      }
+      .export-file, .import-file {
+        margin-top: 8px;
+        text-align: center;
+      }
+      .text-center{
+        width: 100%;
+      }
+    }
+    @media only screen and (max-width: 1300px) {
+      width: 100%;
+      display: unset;
+      div {
+        width: 100%;
+      }
+    }
     div {
       margin: 0 5px;
+      @media only screen and (max-width: 800px) {
+        margin: 0 0px;
+      }
     }
   }
 
