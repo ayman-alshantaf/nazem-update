@@ -55,11 +55,13 @@ export default {
     display: block !important;
   }
   .interviews .v-tabs-bar,
-  .alarm-view .v-tabs-bar {
+  .alarm-view .v-tabs-bar,
+  .warning-view .v-tabs-bar {
     min-height: 140px !important;
   }
   .interviews .section-top-tabs .main-right-section .right-section,
-  .alarm-view .section-top-tabs .main-right-section .right-section {
+  .alarm-view .section-top-tabs .main-right-section .right-section,
+  .warning-view .section-top-tabs .main-right-section .right-section {
     min-width: unset !important;
   }
 
@@ -69,10 +71,18 @@ export default {
   .interviews .v-tab, .alarm-view .v-tab {
     padding-bottom: 10px !important;
   }
+  .interviews .v-tab,
+  .alarm-view .v-tab,
+  .warning-view .v-tab{
+    padding-bottom: 10px !important;
+  }
 }
 
 @media only screen and (max-width: 1300px) {
   .alarm-view .section-top-tabs .main-left-section {
+    display: unset !important;
+  }
+  .warning-view .section-top-tabs .main-left-section {
     display: unset !important;
   }
 }
@@ -82,10 +92,17 @@ export default {
   .alarm-view .v-tabs-slider-wrapper {
     bottom: 71% !important;
   }
+
+  .warning-view .v-tabs-slider-wrapper {
+    bottom: 71% !important;
+  }
 }
 
 @media only screen and (max-width: 900px) {
   .alarm-view .way-option {
+    display: none;
+  }
+  .warning-view .way-option {
     display: none;
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <section class="alarm-view interviews">
+  <section class="warning-view ">
     <v-main>
       <div class="container--fluid">
         <!-- start section tabs interview with content tabs-->
@@ -10,14 +10,16 @@
             <template v-slot:header-tabs>
               <div class="header-tabs">
                 <div class="import-export-file">
-                  <div class="way-option pt-2">
-                    <select-option-customer :items="itemsOption"/>
-                  </div>
-                  <div class="export-file">
-                    <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
-                  </div>
-                  <div class="import-file">
-                    <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+                  <div style="display: flex;align-items: center">
+                    <div class="way-option pt-2">
+                      <select-option-customer :items="itemsOption"/>
+                    </div>
+                    <div class="export-file">
+                      <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
+                    </div>
+                    <div class="import-file">
+                      <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+                    </div>
                   </div>
                   <div class="add-new">
                     <dialog-modal :name-input="'إضافة إنذار جديد'" :title="'إضافة إنذار جديد'">
@@ -180,7 +182,7 @@ export default {
 <style lang="scss" scoped>
 @import "@/assets/css/variable.scss";
 
-.alarm-view {
+.warning-view {
   background-color: $background-main-page;
   padding: 30px 15px;
 
@@ -213,9 +215,38 @@ export default {
       display: flex;
       align-items: center;
       margin-bottom: 8px;
+      @media only screen and (max-width: 1140px) {
+        width: 100%;
+        div {
+          width: 50%;
+
+          label {
+            width: 100%;
+            display: inline-block;
+          }
+        }
+        .export-file, .import-file {
+          margin-top: 8px;
+          text-align: center;
+        }
+        .text-center {
+          width: 100%;
+        }
+      }
+      @media only screen and (max-width: 800px) {
+        width: 100%;
+        display: unset;
+        div {
+          width: 100%;
+        }
+      }
 
       div {
         margin: 0 5px;
+        @media only screen and (max-width: 800px) {
+          margin: 0 0px;
+          padding: 0 5px;
+        }
       }
     }
   }
@@ -225,60 +256,7 @@ export default {
 
 </style>
 <style lang="scss">
-.alarm-view {
-  .theme--light.v-input input, .theme--light.v-input textarea {
-    font-size: 14px !important;
-    font-weight: bold !important;
-    color: #707070 !important;
-    margin-top: 5px;
-  }
-
-  .v-input__icon i {
-    font-size: 14px !important;
-    font-weight: normal !important;
-    color: #707070 !important;
-  }
-
-  .v-text-field__details {
-    display: none;
-  }
-
-  .v-input__slot:focus .v-text-field__details {
-    border: none !important;
-    display: none;
-
-  }
-
-  .v-input__slot:active .v-text-field__details {
-    border: none !important;
-    display: none;
-
-  }
-
-  .theme--light.v-input {
-    margin: 0px 2px 0px 9px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #D2D5E1;
-    border-radius: 5px;
-  }
-
-  .v-calendar-daily__interval-text {
-    color: transparent !important
-  }
-
-  .v-text-field {
-    padding: 0;
-  }
-
-  .v-text-field__slot input {
-    padding: 2px 0 !important;
-  }
-
-  .v-input__prepend-outer {
-    margin-right: 3px;
-  }
+.warning-view {
 
   .v-btn:not(.v-btn--round).v-size--default {
     padding: 20px 12px !important;
@@ -287,6 +265,48 @@ export default {
     i {
       margin-right: 1px !important;
     }
+  }
+
+  @media only screen and (min-width: 1140px) {
+    .theme--light.v-tabs > .v-tabs-bar {
+      min-height: 65px !important;
+    }
+  }
+
+  .section-top-tabs {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .main-right-section {
+      min-width: 35%;
+
+      .right-section {
+        height: 100%;
+        min-width: 70%;
+        display: inline-flex;
+        border-bottom: 2px solid #B4B4B4;
+      }
+    }
+
+    .main-left-section {
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  .theme--light.v-input {
+    margin: 0px 2px 0px 9px !important;
+  }
+
+  .v-slide-group.v-item-group > .v-slide-group__next, .v-slide-group.v-item-group > .v-slide-group__prev {
+    display: none !important;
+  }
+
+  .v-slide-group__content {
+    transform: translateY(0px) !important;
+    border: none !important;
   }
 
 }
