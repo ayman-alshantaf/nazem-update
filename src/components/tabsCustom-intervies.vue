@@ -99,7 +99,7 @@ export default {
 
 @media only screen and (max-width: 450px) {
   .registration-program .v-tabs-slider-wrapper{
-    bottom: 43.5% !important;
+    bottom: 42% !important;
   }
 
 }
