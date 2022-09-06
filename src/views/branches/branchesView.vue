@@ -36,25 +36,20 @@
                     <form>
                       <v-row>
                         <v-col cols="12">
-                          <label>اسم الطالب</label>
-                          <select-input :name="'أختر من هنا اسم الطالب'" :items="items"/>
+                          <select-input :label="'اسم الفرع'" :name="'اسم الفرع'" :items="items"/>
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
-                          <label>وقت التسميع</label>
-                          <select-input :name="'أدخل هنا وقت التسميع'" :items="items"/>
+                          <select-input :label="'مكان الفرع'" :name="'أدخل هنا مكان الفرع'" :items="items"/>
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
-                          <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
+                          <date-customer :label="'أيام دوام الفرع'" :name-placeholder="'أدخل هنا أيام دوام الفرع'"/>
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
-                          <label>كيفية التسميع</label>
-                          <select-input :name="'أونلاين'" :items="['نعم','لا']"/>
+                          <select-input :label="'التواصل مع الفرع'" :name="'أونلاين'" :items="['نعم','لا']"/>
 
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
-                          <label>موقع التسميع</label>
-                          <select-input :name="'موقع التسميع'" :items="['نعم','لا']"/>
-
+                          <select-input :label="'موقع الفرع'" :name="'موقع الفرع'" :items="['نعم','لا']"/>
                         </v-col>
 
                         <v-col cols="12">

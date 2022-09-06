@@ -13,14 +13,16 @@
                       </search-input>
                     </v-col>
                     <v-col cols="12" lg="7">
-                      <div style="display: flex;align-items: center">
+                      <div class="date-top" >
                         <div class="container-date">
                           <date-select-modal/>
                         </div>
                         <div class="container-date">
                           <date-select-modal/>
                         </div>
-                        <button>بحث</button>
+                        <div class="input-search">
+                          <btn-search/>
+                        </div>
                       </div>
                     </v-col>
                   </v-row>
@@ -28,39 +30,41 @@
               </form>
             </div>
             <div class="import-export-file">
-              <div class="export-file">
-                <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
-              </div>
-              <div class="import-file">
-                <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+              <div style="display: flex">
+                <div class="export-file">
+                  <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
+                </div>
+                <div class="import-file">
+                  <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+                </div>
               </div>
               <div class="add-new">
-                <dialog-modal :name-input="'تحديد موعد مقابلة'" :title="'تحديد موعد مقابلة'">
+                <dialog-modal :name-input="'إضافة فصل جديدة'" :title="'إضافة فصل جديدة'">
                   <div class="form-modal">
                     <form>
                       <v-row>
-                        <v-col cols="12"  >
-                          <label>اسم الطالب</label>
-                          <select-input :name="'أختر من هنا اسم الطالب'" :items="items"/>
+                        <v-col cols="12">
+                          <input-text :label-top="'أكتب هنا إسم الفصل'" :placeholder="'أكتب هنا إسم الفصل'"
+                                      :items="items"/>
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
-                          <label>وقت التسميع</label>
-                          <select-input :name="'أدخل هنا وقت التسميع'" :items="items"/>
+                          <date-customer :label="'تاريخ البداية'" :name-placeholder="'تاريخ البداية'"/>
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
-                            <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
+                        <v-col cols="12" lg="6" md="6">
+                          <date-customer :label="'تاريخ النهاية'" :name-placeholder="'تاريخ النهاية'"/>
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
-                          <label>كيفية التسميع</label>
-                          <select-input :name="'أونلاين'" :items="['نعم','لا']"/>
-
+                        <v-col cols="12" lg="6" md="6">
+                          <input-text :label-top="'بداية اليوم '" :placeholder="'بداية اليوم '" :items="items"/>
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
-                          <label>موقع التسميع</label>
-                          <select-input :name="'موقع التسميع'" :items="['نعم','لا']"/>
-
+                        <v-col cols="12" lg="6" md="6">
+                          <select-input :label="'اختبار نهاية الفصل '" :name="'نعم/لا'" :items="['نعم','لا']"/>
                         </v-col>
-
+                        <v-col cols="12" lg="6" md="6">
+                          <select-input :label="'عرض نهاية الفصل'" :name="'نعم/لا'" :items="['نعم','لا']"/>
+                        </v-col>
+                        <v-col cols="12" lg="6" md="6">
+                          <select-input :label="'حالة الفصل'" :name="'فعال / غير فعال'" :items="['نعم','لا']"/>
+                        </v-col>
                         <v-col cols="12">
                           <v-btn block color="#00B5AD" style="color: white;font-size: 15px;height: 45px">اضافة</v-btn>
                         </v-col>
@@ -72,7 +76,7 @@
             </div>
           </div>
           <v-row>
-            <v-col v-for="student in allInterview" :key="student.id"  cols="12" lg="4" md="6">
+            <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6">
               <card-branches
                   :name="'الفصل الدراسي الاول'"
                   :statusStudent="student.class"
@@ -84,7 +88,8 @@
                   :path-time-section="true"
                   :show-btn="false"
                   :show-edit-delete="true"
-                />
+                  :path-line="false"
+              />
             </v-col>
           </v-row>
         </div>
@@ -104,10 +109,14 @@ import SelectInput from "@/components/select-input";
 import {mapMutations, mapState} from "vuex";
 import DateCustomer from "@/components/date-customer";
 import CardBranches from "@/components/cards/card-branches";
+import InputText from "@/components/input-text";
+import BtnSearch from "@/components/btnSearch";
 
 export default {
   name: "classesStudentView",
   components: {
+    BtnSearch,
+    InputText,
     CardBranches,
     DateCustomer,
     SelectInput,
@@ -126,14 +135,14 @@ export default {
       },
     }
   },
-  computed:{
+  computed: {
     ...mapState(['allInterview'])
   },
   methods: {
     ...mapMutations(['pageTitle'])
   },
   beforeMount() {
-    this.pageTitle('الاذونات')
+    this.pageTitle('الفصول')
   }
 }
 </script>
@@ -150,16 +159,31 @@ export default {
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
-    @media only screen and (max-width: 880px) {
+    @media only screen and (max-width: 1250px) {
       flex-direction: column;
     }
 
     .search-section {
       width: 55%;
-      @media only screen and (max-width: 880px) {
+      @media only screen and (max-width: 1250px) {
         width: 100%;
       }
+      .date-top {
+        display: flex;
+        align-items: center;
+        @media only screen and (max-width: 1250px) {
+          .container-date {
+            width: 33%;
 
+            .theme--light.v-input {
+              width: 100%;
+            }
+          }
+          .input-search {
+            width: 33%;
+          }
+        }
+      }
       .search {
         display: flex;
         align-items: center;
@@ -183,9 +207,37 @@ export default {
     display: flex;
     align-items: center;
     margin-bottom: 8px;
+    @media only screen and (max-width: 1250px) {
+      width: 100%;
+      div {
+        width: 50%;
+
+        label {
+          width: 100%;
+          display: inline-block;
+        }
+      }
+      .export-file, .import-file {
+        margin-top: 8px;
+        text-align: center;
+      }
+      .text-center {
+        width: 100%;
+      }
+    }
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+      display: unset;
+      div {
+        width: 100%;
+      }
+    }
 
     div {
       margin: 0 5px;
+      @media only screen and (max-width: 800px) {
+        margin: 0 0px;
+      }
     }
   }
 
@@ -258,9 +310,11 @@ export default {
 
 .form-modal {
   padding: 15px 0;
-  .col-12{
+
+  .col-12 {
     position: relative;
   }
+
   .v-label {
     right: 0 !important;
     left: auto !important;
@@ -269,16 +323,18 @@ export default {
   label {
     display: block;
     margin-bottom: 10px;
-    font-size: 15px ;
+    font-size: 15px;
     background-color: white;
     position: absolute;
     top: 0;
     z-index: 50;
     right: 7%;
   }
-  label.custom-label{
+
+  label.custom-label {
     font-size: 14px !important;
   }
+
   .v-input__slot {
     margin-bottom: 0 !important;
   }
