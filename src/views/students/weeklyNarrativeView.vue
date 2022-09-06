@@ -227,21 +227,13 @@ export default {
       display: unset;
       div {
         width: 100%;
-        label {
-          width: 100%;
-          display: inline-block;
-        }
-      }
-      .export-file, .import-file {
-        margin-top: 8px;
-        text-align: center;
-      }
-      .text-center{
-        width: 100%;
       }
     }
     div {
       margin: 0 5px;
+      @media only screen and (max-width: 800px) {
+        margin: 0 0px;
+      }
     }
   }
 

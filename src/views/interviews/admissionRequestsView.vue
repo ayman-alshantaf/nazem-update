@@ -1,7 +1,7 @@
 <template>
   <section class="admission-requests">
     <v-main>
-      <div class="container--fluid" >
+      <div class="container--fluid">
         <div class="all-card">
           <div class="top-bar-search">
             <div class="search-section">
@@ -13,14 +13,16 @@
                       </search-input>
                     </v-col>
                     <v-col cols="12" lg="7">
-                      <div class="date-top" >
+                      <div class="date-top">
                         <div class="container-date">
                           <date-select-modal/>
                         </div>
                         <div class="container-date">
                           <date-select-modal/>
                         </div>
-                        <button>بحث</button>
+                        <div class="button-search">
+                          <button style="width: 100%">بحث</button>
+                        </div>
                       </div>
                     </v-col>
                   </v-row>
@@ -28,30 +30,32 @@
               </form>
             </div>
             <div class="import-export-file">
-              <div class="export-file">
-                <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
-              </div>
-              <div class="import-file">
-                <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+              <div style="display: flex">
+                <div class="export-file">
+                  <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
+                </div>
+                <div class="import-file">
+                  <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+                </div>
               </div>
               <div class="add-new">
                 <dialog-modal :name-input="'تحديد موعد مقابلة'" :title="'تحديد موعد مقابلة'">
                   <div class="form-modal">
                     <form>
                       <v-row>
-                        <v-col cols="12"  >
+                        <v-col cols="12">
                           <select-input :label="'اسم الطالب'" :name="'أختر من هنا اسم الطالب'" :items="items"/>
                         </v-col>
                         <v-col cols="12" lg="6" md="6">
                           <select-input :label="'وقت التسميع'" :name="'أدخل هنا وقت التسميع'" :items="items"/>
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
-                            <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
+                        <v-col cols="12" lg="6" md="6">
+                          <date-customer :label="'أيام التسميع'" :name-placeholder="'أدخل هنا أيام التسميع'"/>
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
+                        <v-col cols="12" lg="6" md="6">
                           <select-input :label="'كيفية التسميع'" :name="'أونلاين'" :items="['نعم','لا']"/>
                         </v-col>
-                        <v-col  cols="12" lg="6" md="6">
+                        <v-col cols="12" lg="6" md="6">
                           <select-input :label="'موقع التسميع'" :name="'موقع التسميع'" :items="['نعم','لا']"/>
                         </v-col>
 
@@ -66,7 +70,7 @@
             </div>
           </div>
           <v-row>
-            <v-col v-for="student in allInterview" :key="student.id"  cols="12" lg="4" md="6">
+            <v-col v-for="student in allInterview" :key="student.id" cols="12" lg="4" md="6">
               <card-inter-view
                   :name="student.name"
                   :class-name="student.className"
@@ -76,7 +80,7 @@
                   :idCardStudent="student.id"
                   :show-btn="false"
                   :show-edit-delete="true"
-                />
+              />
             </v-col>
           </v-row>
         </div>
@@ -118,7 +122,7 @@ export default {
       },
     }
   },
-  computed:{
+  computed: {
     ...mapState(['allInterview'])
   },
   methods: {
@@ -142,6 +146,7 @@ export default {
     background-color: white;
     padding: 15px
   }
+
   .top-bar-search {
     display: flex;
     justify-content: space-between;
@@ -157,10 +162,14 @@ export default {
       @media only screen and (max-width: 1300px) {
         width: 100%;
       }
+
       .date-top {
         display: flex;
         align-items: center;
-        @media only screen and (max-width: 1200px) {
+        @media only screen and (max-width: 1300px) {
+          .button-search{
+            width: 33%;
+          }
           .container-date {
             width: 33%;
 
@@ -173,6 +182,7 @@ export default {
           }
         }
       }
+
       .search {
         display: flex;
         align-items: center;
@@ -198,29 +208,36 @@ export default {
     margin-bottom: 8px;
 
     @media only screen and (max-width: 1300px) {
-      justify-content: space-around;
       width: 100%;
       div {
-        width: 33%;
-
+        width: 50%;
         label {
           width: 100%;
           display: inline-block;
         }
       }
-      .add-new {
-        width: 35%;
-      }
       .export-file, .import-file {
         margin-top: 8px;
         text-align: center;
       }
-      .text-center {
+      .text-center{
         width: 100%;
       }
     }
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+      display: unset;
+      div {
+        width: 100%;
+      }
+    }
+
+
     div {
       margin: 0 5px;
+      @media only screen and (max-width: 800px) {
+        margin: 0 0px;
+      }
     }
   }
 

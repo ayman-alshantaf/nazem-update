@@ -32,11 +32,13 @@
               </form>
             </div>
             <div class="import-export-file">
-              <div class="export-file">
-                <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
-              </div>
-              <div class="import-file">
-                <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+              <div style="display: flex">
+                <div class="export-file">
+                  <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
+                </div>
+                <div class="import-file">
+                  <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+                </div>
               </div>
               <div class="add-new">
                 <dialog-modal :name-input="'إضافة اذن'" :title="'إضافة اذن جديد'">
@@ -216,30 +218,36 @@ export default {
     margin-bottom: 8px;
 
     @media only screen and (max-width: 1200px) {
-      justify-content: space-around;
       width: 100%;
       div {
-        width: 33%;
-
+        width: 50%;
         label {
           width: 100%;
           display: inline-block;
         }
       }
-      .add-new {
-        width: 35%;
-      }
       .export-file, .import-file {
         margin-top: 8px;
         text-align: center;
       }
-      .text-center {
+      .text-center{
+        width: 100%;
+      }
+    }
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+      display: unset;
+      div {
         width: 100%;
       }
     }
 
+
     div {
       margin: 0 5px;
+      @media only screen and (max-width: 800px) {
+        margin: 0 0px;
+      }
     }
   }
 
