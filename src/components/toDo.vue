@@ -300,7 +300,6 @@ export default {
             margin-right: 10px;
             margin-bottom: 7px;
 
-
             span {
               font-size: 15px !important;
             }

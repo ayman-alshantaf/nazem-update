@@ -2,8 +2,137 @@
   <section class="executeDutiesView">
     <v-main>
       <div class="container--fluid">
-        <to-do/>
+        <div class="read-lesson">
+          <h2 style="font-size: 25px" class="mb-4">قراءة الشرح</h2>
+          <div class="image-lesson">
+            <span class="number-page">القراءة من صفحة (13) ال(22)</span>
+            <div class="image">
+              <img :src="imageLesson">
+            </div>
+            <div class="question-lesson">
+              <span style="font-size: 19px">هل تمت قراءة الشـــــــــــــــــرح المـــــــــقرر؟</span>
+              <div class="btn-question">
+                <btn-submit color-value="#00B5AD" value-btn="نعم"/>
+                <btn-submit class="no-btn" color-value="transparent" value-btn="لا"/>
+              </div>
+            </div>
+          </div>
+          <h2 style="font-size: 25px" class="mt-5 mb-3">الأسئلة </h2>
+        </div>
+        <div class="container-question">
+          <div class="number-question">
+            <div class="right-section">
+              <div class="icon">
+                <img :src="imageIcon.squareIcon" alt="image icon">
+              </div>
+              <h3> السؤال الأول</h3>
+            </div>
+            <div class="left-section">
+              <div class="degree">
+                <h3>درجة السؤال</h3>
+                <input type="text" placeholder="50" class="number ml-4">
+                <span @click="hideQuestion()" class="close-icon"><i class="fa fa-times"></i></span>
+              </div>
+            </div>
+          </div>
+          <div class="content-question">
+            <div class="question">
+              <h5>عبدالله بن عباس.. لماذا لقب بـ حبر الأمة وترجمان القرآن؟</h5>
+              <span class="type-question">سؤال أختر</span>
+            </div>
+            <div class="all-answer">
+              <div class="content-answer">
+                <div class="image-option">
+                  <div class="image">
+                    <img :src="imageIcon.squareIcon2">
+                  </div>
+                  <div class="number-option">
+                    <span>السؤال الاول</span>
+                  </div>
+                </div>
+                <div class="answer">
+                  <v-radio-group v-model="radioGroup" dir="ltr">
+                    <div class="container-radio">
+                      <p>عبدالله بن عباس</p>
+                    </div>
+                  </v-radio-group>
+                </div>
+                <div class="true-answer active ">
+                  <span>
+                      <i class="fa fa-check"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="content-answer">
+                <div class="image-option">
+                  <div class="image">
+                    <img :src="imageIcon.squareIcon2">
+                  </div>
+                  <div class="number-option">
+                    <span>السؤال الثاني</span>
+                  </div>
+                </div>
+                <div class="answer">
+                  <v-radio-group v-model="radioGroup" dir="ltr">
+                    <div class="container-radio">
+                      <p>أبو الحسن علي بن أبي طالب الهاشمي </p>
+                    </div>
+                  </v-radio-group>
+                </div>
+                <div class="true-answer">
+                     <span>
+                      <i class="fa fa-check"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="content-answer">
+                <div class="image-option">
+                  <div class="image">
+                    <img :src="imageIcon.squareIcon2">
+                  </div>
+                  <div class="number-option">
+                    <span>السؤال الثالث</span>
+                  </div>
+                </div>
+                <div class="answer">
+                  <v-radio-group v-model="radioGroup" dir="ltr">
+                    <div class="container-radio">
+                      <p>طَلْحَة بن عُبَيْد اللّه التَّيمي القُرشي</p>
+                    </div>
+                  </v-radio-group>
+                </div>
+                <div class="true-answer">
+                      <span>
+                      <i class="fa fa-check"></i>
+                  </span>
+                </div>
+              </div>
+              <div class="content-answer">
+                <div class="image-option">
+                  <div class="image">
+                    <img :src="imageIcon.squareIcon2">
+                  </div>
+                  <div class="number-option">
+                    <span>السؤال الرابع</span>
+                  </div>
+                </div>
+                <div class="answer">
+                  <v-radio-group v-model="radioGroup" dir="ltr">
+                    <div class="container-radio">
+                      <p>عبد الرّحمن بن عوف القرشيّ الزهريّ</p>
+                    </div>
+                  </v-radio-group>
+                </div>
+                <div class="true-answer">
+                  <span>
+                      <i class="fa fa-check"></i>
+                  </span>
+                </div>
+              </div>
 
+            </div>
+          </div>
+        </div>
         <div class="container-question">
           <div class="number-question">
             <div class="right-section">
@@ -167,12 +296,12 @@ import DialogModal from "@/components/dialogModal";
 import StepBystep from "@/components/stepBystep";
 import SelectInput from "@/components/select-input";
 import InputText from "@/components/input-text";
-import ToDo from "@/components/toDo";
 import {mapMutations} from "vuex";
+import BtnSubmit from "@/components/btnSubmit";
 
 export default {
   name: "executeDutiesView",
-  components: {ToDo, InputText, SelectInput, StepBystep, DialogModal},
+  components: {BtnSubmit, InputText, SelectInput, StepBystep, DialogModal},
   data() {
     return {
       imageIcon: {
@@ -180,19 +309,22 @@ export default {
         squareIcon2: require('@/assets/image/icon/Group 78248.png'),
         blockIcon: require('@/assets/image/icon/Icon ionic-md-remove-circle-outline.png'),
       },
+      imageLesson: require('@/assets/image/informationStudent/Image 6.png'),
       radioGroup: 1,
-      displayShow: 'block'
-
+      displayShow: 'block',
+      isActive: false
     }
   },
   methods: {
     ...mapMutations(['pageTitle']),
     hideQuestion() {
       this.displayShow = 'none'
-    }
+    },
+
   },
   beforeMount() {
-    this.pageTitle('أسئلة المقابلات')
+    this.pageTitle('تنفيذ الواجب')
+    this.asa()
   }
 }
 </script>
@@ -205,11 +337,64 @@ export default {
   padding: 20px 15px 40px 15px;
   @media only screen and (max-width: 700px) {
     padding: 20px 8px 40px 8px;
+
   }
 
+
   .container--fluid {
-    border-radius: 15px;
-    padding: 10px 15px 15px 15px;
+    border-radius: 20px;
+    padding: 10px 15px 50px 15px;
+    background-color: white;
+  }
+
+  .read-lesson {
+    background-color: white;
+    border-radius: 30px;
+    padding: 25px;
+
+    .image-lesson {
+      width: 85%;
+      margin: 0 auto;
+
+      span.number-page {
+        text-align: center;
+        display: block;
+        margin-bottom: 20px;
+      }
+
+      .image {
+        width: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    .question-lesson {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+
+      span {
+        width: 50%;
+      }
+
+      .btn-question {
+        width: 100%;
+        display: flex;
+
+        .no-btn {
+          width: 30%;
+          margin-right: 15px;
+
+          .btn-submit {
+            color: black !important;
+          }
+        }
+      }
+    }
   }
 
   .container-question {
@@ -256,6 +441,7 @@ export default {
         .degree {
           display: flex;
           align-items: center;
+
           h3 {
             font-size: 22px !important;
             color: #272727;
@@ -342,6 +528,7 @@ export default {
         align-items: center;
 
         .image-option {
+          width: 12%;
           display: flex;
           align-items: center;
           margin-bottom: 19px;
@@ -414,6 +601,40 @@ export default {
             width: 22px;
           }
         }
+
+        .true-answer {
+          border: 1px solid rgba(6, 83, 254, 0.21);
+          border-radius: 5px;
+          margin-right: 5px;
+          display: flex;
+          align-items: center;
+
+          cursor: pointer;
+          margin-bottom: 19px !important;
+
+          i {
+            display: none;
+            padding: 14px 5px;
+            background-color: #00C8AE;
+            color: white
+          }
+
+          span {
+            width: 30px;
+            height: 50px;
+            color: white;
+            overflow: hidden;
+
+          }
+        }
+
+        .true-answer.active {
+          i {
+            display: block;
+            width: 100%;
+            height: 100%;
+          }
+        }
       }
 
       .rows-number {
@@ -444,9 +665,36 @@ export default {
 </style>
 <style lang="scss">
 .executeDutiesView {
+  .true-answer .v-input--selection-controls__input {
+    background-color: aquamarine;
+    margin-right: 0 !important;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
   .v-size--default {
     padding-top: 22px !important;
     padding-bottom: 24px !important;
+  }
+
+  .read-lesson {
+
+    .question-lesson {
+      .btn-question {
+        .no-btn {
+          width: 30%;
+          margin-right: 15px;
+
+          .btn-submit {
+            color: #00B5AD !important;
+            box-shadow: none;
+            border: 1px solid #00B5AD !important;
+
+          }
+        }
+      }
+    }
   }
 
   .v-input--selection-controls .v-input__slot > .v-label, .v-input--selection-controls .v-radio > .v-label {
@@ -565,6 +813,7 @@ label.custom-label-recitation-interview {
         @media only screen and (max-width: 700px) {
           display: none !important;
         }
+
         .image {
           width: 22px;
           margin-top: 5px;
@@ -590,6 +839,7 @@ label.custom-label-recitation-interview {
         @media only screen and (max-width: 700px) {
           width: 100%;
         }
+
         .container-radio {
           border: 1px solid rgba(6, 83, 254, 0.21);
           border-radius: 5px;

@@ -27,6 +27,7 @@ import recitersView from "@/views/others/recitersView";
 import recitationAlertsView from "@/views/others/recitationAlertsView";
 import detailsRecitationAlertsView from "@/views/others/detailsRecitationAlertsView";
 import officialHolidaysView from "@/views/students/officialHolidaysView";
+import executeDutiesView from "@/views/executeDuties/executeDutiesView";
 
 Vue.use(VueRouter)
 
@@ -36,7 +37,11 @@ const routes = [
         name: 'dashboard',
         component: dashboardView
     },
-
+    {
+        path: '/executeDutiesView',
+        name: 'executeDutiesView',
+        component: executeDutiesView
+    },
     {
         path: '/login',
         name: 'login',

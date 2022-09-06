@@ -9,7 +9,7 @@ export default new Vuex.Store({
         linkBarRight: {
             home: [
                 {id: 1, title: "الرئيسية", icon: 'fa fa-home', urlPath: "/"},
-
+                {id: 2, title: "تنفيذ الواجب", icon: 'fa fa-book', urlPath: "/executeDutiesView"},
             ],
             students: [
                 {id: 1, title: "المتابعة الطلاب اليومية", icon: 'fa fa-users', urlPath: "/followStudent"},
@@ -40,7 +40,9 @@ export default new Vuex.Store({
                 {id: 2, title: "المسارات", icon: 'fa fa-exchange', urlPath: "/tracks"},
                 {id: 3, title: "المقرئين", icon: 'fa fa-users', urlPath: "/reciters"},
                 {id: 4, title: "تنبيهات التسميع", icon: 'fa fa-bell-o', urlPath: "/recitationAlerts"},
+                {id: 4, title: "تنبيهات التسميع", icon: 'fa fa-bell-o', urlPath: "/recitationAlerts"},
             ],
+
         },
         dataChartCardOne:
             [
