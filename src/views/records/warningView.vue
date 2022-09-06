@@ -289,9 +289,5 @@ export default {
     }
   }
 
-  .theme--light.v-tabs > .v-tabs-bar {
-    min-height: 65px !important;
-  }
-
 }
 </style>

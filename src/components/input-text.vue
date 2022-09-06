@@ -38,7 +38,14 @@ export default {
 
   .v-text-field .v-label {
     top: 3px !important;
+
   }
+
+  input::placeholder {
+    color: #CBCACA !important;
+    font-size: 13px !important;
+  }
+
   label {
     display: block;
     margin-bottom: 10px;
@@ -50,6 +57,7 @@ export default {
     padding: 0 1px;
     right: 11px !important;
     font-weight: bold;
+
   }
   label.custom-label{
     font-size: 14px !important;

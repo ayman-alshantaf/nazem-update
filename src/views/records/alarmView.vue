@@ -25,33 +25,26 @@
                         <form>
                           <v-row>
                             <v-col cols="12">
-                              <label style="right: 4%">اسم الطالب</label>
-                              <select-input :name="'أختر من هنا اسم الطالب'" :items="items"/>
+                              <select-input :label="'اسم الطالب'" :name="'أختر من هنا اسم الطالب'" :items="items"/>
                             </v-col>
                             <v-col cols="12">
-                              <label style="right: 4%">اسم المسار</label>
-                              <select-input :name="'اسم المسار'" :items="items"/>
+                              <select-input :label="'اسم المسار'" :name="'اسم المسار'" :items="items"/>
                             </v-col>
                             <v-col cols="12">
-                              <label style="right: 4%">اسم التحذير</label>
-                              <input-text :placeholder="'اسم التحذير'"/>
+                              <input-text :label-top="'اسم التحذير'" :placeholder="'اسم التحذير'"/>
                             </v-col>
                             <v-col cols="12" lg="6" md="6">
-                              <label>تحويل التحذير لانذار</label>
-                              <select-input :name="'نعم/لا'" :items="['نعم','لا']"/>
+                              <select-input :label="'تحويل التحذير لانذار'" :name="'نعم/لا'" :items="['نعم','لا']"/>
                             </v-col>
                             <v-col cols="12" lg="6" md="6">
-                              <label>استبعاد من البرنامج</label>
-                              <select-input :name="'نعم/لا/ايقاف مؤقت'" :items="['ايقاف مؤقت','نعم','لا']"/>
+                              <select-input :label="'استبعاد من البرنامج'" :name="'نعم/لا/ايقاف مؤقت'" :items="['ايقاف مؤقت','نعم','لا']"/>
                             </v-col>
 
                             <v-col cols="12" lg="6" md="6">
-                              <label>تحديد المده</label>
-                              <select-input :name="'شهري'" :items="['شهري','اسبوعي','سنوي']"/>
+                              <select-input :label="'تحديد المده'" :name="'شهري'" :items="['شهري','اسبوعي','سنوي']"/>
                             </v-col>
                             <v-col cols="12" lg="6" md="6">
-                              <label>عدد الانذرات</label>
-                              <input-text :placeholder="'عدد الانذرات'"/>
+                              <input-text :label-top="'عدد الانذرات'" :placeholder="'عدد الانذرات'"/>
                             </v-col>
                             <v-col cols="12">
                               <v-btn block color="#00B5AD" style="color: white;font-size: 15px;height: 45px">اضافة
@@ -226,59 +219,6 @@ export default {
 </style>
 <style lang="scss">
 .alarm-view {
-  .theme--light.v-input input, .theme--light.v-input textarea {
-    font-size: 14px !important;
-    font-weight: bold !important;
-    color: #707070 !important;
-    margin-top: 5px;
-  }
-
-  .v-input__icon i {
-    font-size: 14px !important;
-    font-weight: normal !important;
-    color: #707070 !important;
-  }
-
-  .v-text-field__details {
-    display: none;
-  }
-
-  .v-input__slot:focus .v-text-field__details {
-    border: none !important;
-    display: none;
-
-  }
-
-  .v-input__slot:active .v-text-field__details {
-    border: none !important;
-    display: none;
-
-  }
-
-  .theme--light.v-input {
-    margin: 0px 2px 0px 9px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #D2D5E1;
-    border-radius: 5px;
-  }
-
-  .v-calendar-daily__interval-text {
-    color: transparent !important
-  }
-
-  .v-text-field {
-    padding: 0;
-  }
-
-  .v-text-field__slot input {
-    padding: 2px 0 !important;
-  }
-
-  .v-input__prepend-outer {
-    margin-right: 3px;
-  }
 
   .v-btn:not(.v-btn--round).v-size--default {
     padding: 20px 12px !important;
@@ -288,10 +228,12 @@ export default {
       margin-right: 1px !important;
     }
   }
-
-  .theme--light.v-tabs > .v-tabs-bar {
-    min-height: 65px !important;
+  @media only screen and (min-width: 1140px) {
+    .theme--light.v-tabs > .v-tabs-bar {
+      min-height: 65px !important;
+    }
   }
+
 
 }
 </style>
