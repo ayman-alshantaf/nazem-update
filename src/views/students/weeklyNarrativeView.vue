@@ -31,11 +31,13 @@
                 </form>
               </div>
               <div class="import-export-file">
-                <div class="export-file">
-                  <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
-                </div>
-                <div class="import-file">
-                  <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+                <div style="display: flex">
+                  <div class="export-file">
+                    <import-file :icon="'fa fa-upload'" :name="'رفع ملف اكسل'"/>
+                  </div>
+                  <div class="import-file">
+                    <import-file :icon="'fa fa-cloud-download'" :name="'تصدير الملف'"/>
+                  </div>
                 </div>
                 <div class="add-new">
                   <dialog-modal :name-input="'إضافة سرد'" :title="'إضافة سرد اسبوعي'">
@@ -64,7 +66,7 @@
                           <v-col cols="12" lg="6" md="6" class="custom-input">
                             <input-text :label-top="'الى الوجه'" :placeholder="'الى الوجه'"/>
                           </v-col>
-                          <v-col cols="12">
+                          <v-col  cols="12">
                             <v-btn block color="#00B5AD" style="color: white;font-size: 15px;height: 45px">اضافة</v-btn>
                           </v-col>
                         </v-row>
@@ -204,17 +206,13 @@ export default {
     align-items: center;
     margin-bottom: 8px;
     @media only screen and (max-width: 1200px) {
-      justify-content: space-around;
       width: 100%;
       div {
-        width: 33%;
+        width: 50%;
         label {
           width: 100%;
           display: inline-block;
         }
-      }
-      .add-new{
-        width: 35%;
       }
       .export-file, .import-file {
         margin-top: 8px;
@@ -224,7 +222,24 @@ export default {
         width: 100%;
       }
     }
-
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+      display: unset;
+      div {
+        width: 100%;
+        label {
+          width: 100%;
+          display: inline-block;
+        }
+      }
+      .export-file, .import-file {
+        margin-top: 8px;
+        text-align: center;
+      }
+      .text-center{
+        width: 100%;
+      }
+    }
     div {
       margin: 0 5px;
     }

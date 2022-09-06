@@ -2,7 +2,7 @@
   <div class="text-center modal-custom">
     <v-dialog v-model="dialog" :width="widthSize">
       <template v-slot:activator="{ on, attrs }">
-        <v-btn  v-show="showBasicBtn" color="button-modal" dark v-bind="attrs" v-on="on">
+        <v-btn block class="pl-4"  v-show="showBasicBtn" color="button-modal" dark v-bind="attrs" v-on="on">
           <i class="fa fa-plus" style="font-size: 13px;margin-bottom: 2px"></i>
           {{ nameInput }}
         </v-btn>
