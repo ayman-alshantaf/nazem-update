@@ -124,7 +124,7 @@ export default {
   .dote {
     position: absolute;
     bottom: -27%;
-    z-index: 999;
+    z-index: 1;
     border-radius: 50%;
     width: 25px;
     height: 25px;

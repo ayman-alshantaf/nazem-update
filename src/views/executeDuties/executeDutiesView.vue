@@ -324,7 +324,6 @@ export default {
   },
   beforeMount() {
     this.pageTitle('تنفيذ الواجب')
-    this.asa()
   }
 }
 </script>
