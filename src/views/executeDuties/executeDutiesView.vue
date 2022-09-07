@@ -57,7 +57,7 @@
                     </div>
                   </v-radio-group>
                 </div>
-                <div class="true-answer active ">
+                <div class="true-answer active " @click="asasas($event)" ref="trueAnswer">
                   <span>
                       <i class="fa fa-check"></i>
                   </span>
@@ -79,7 +79,7 @@
                     </div>
                   </v-radio-group>
                 </div>
-                <div class="true-answer">
+                <div class="true-answer"  @click="asasas($event)">
                      <span>
                       <i class="fa fa-check"></i>
                   </span>
@@ -101,7 +101,7 @@
                     </div>
                   </v-radio-group>
                 </div>
-                <div class="true-answer">
+                <div class="true-answer"  @click="asasas($event)">
                       <span>
                       <i class="fa fa-check"></i>
                   </span>
@@ -123,7 +123,7 @@
                     </div>
                   </v-radio-group>
                 </div>
-                <div class="true-answer">
+                <div class="true-answer"  @click="asasas($event)">
                   <span>
                       <i class="fa fa-check"></i>
                   </span>
@@ -320,10 +320,18 @@ export default {
     hideQuestion() {
       this.displayShow = 'none'
     },
-
+    asasas(e){
+      let as = document.querySelectorAll('.true-answer');
+      let i;
+      for ( i = 0 ; i < as.length ; i++){
+        as[i].classList.remove('active');
+      }
+      e.currentTarget.className += ' active';
+    }
   },
   beforeMount() {
     this.pageTitle('تنفيذ الواجب')
+    this.asasas()
   }
 }
 </script>
@@ -629,6 +637,7 @@ export default {
 
         .true-answer.active {
           i {
+            background-color: #00C8AE;
             display: block;
             width: 100%;
             height: 100%;
