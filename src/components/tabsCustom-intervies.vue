@@ -101,7 +101,9 @@ export default {
   .registration-program .v-tabs-slider-wrapper{
     bottom: 42% !important;
   }
-
+  .registration-program .v-tabs-bar{
+    min-height: 150px !important;
+  }
 }
 
 @media only screen and (max-width: 900px) {
